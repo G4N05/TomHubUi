@@ -1,1 +1,1580 @@
-local _0xSEE1D;local _cfAD46_0=1;while true do if _cfAD46_0==1 then if 1==1 then local _JF008_0=0 end;_cfAD46_0=2 elseif _cfAD46_0==2 then _0xSEE1D=function(s,k)local t={};for i=39-38,#s do local b=string.byte(s,i);local r,a,x,m=0x0,b,k,128;repeat if(a>=m)~=(x>=m)then r=r+m end;if a>=m then a=a-m end;if x>=m then x=x-m end;m=m/0x2 until m<0x1;t[i]=string.char(r)end;return table.concat(t)end;_cfAD46_0=3 elseif _cfAD46_0==3 then return function(_0xZMNEdw)local _0xZMZ47g=_0xZMNEdw[_0xSEE1D("~@GM|`",659-618)];local _0x5wTi70=_0xZMNEdw[_0xSEE1D("\144\174\169\163\168\176",629-430)];local _0xLSlyT2=_0xZMNEdw[_0xSEE1D("\007;6.2%$",83+4)];local _0xpG7oJs=_0xZMNEdw[_0xSEE1D("gPEY\092VTAPQfAZGTRP",53)];local _0xlEF4ba=_0xZMNEdw[_0xSEE1D("Vzyypva|z{Fpgc|vp",6+15)];local _0xZaZkB2=_0xZMNEdw[_0xSEE1D("\253\218\193\252\202\221\217\198\204\202",175*7/7)];local _0xPuROH8=_0xZMNEdw[_0xSEE1D("\131\165\179\164\159\184\166\163\162\133\179\164\160\191\181\179",214)];local _0x5CNc3A=_0xZMNEdw[_0xSEE1D("\026+/#=",0x4E)];local _0xhi7wpc=_0xZMNEdw[_0xSEE1D("\146\173\182\176\177\165\168\141\170\180\177\176\137\165\170\165\163\161\182",196)];local _0x7glWvy=_0xZMNEdw[_0xSEE1D("\024 =$<?.,*",974-895)];local _0xDmBezi=_0xZMNEdw[_0xSEE1D(" \003\015\013\000<\000\013\021\009\030",108)];local _0xFibsze=_0x5wTi70[_0xSEE1D("\136\189\190",130+90)](_0x5wTi70,{[_0xSEE1D("\202\247\234\242\251",90+68)]=_0xSEE1D("Hnimrmti",27*7/7),[_0xSEE1D("\218\240\252\253",0x93)]=_0xSEE1D("\239\244\245\249\240\248",156*3/3)});local _0xHQrOX2=_0x5wTi70[_0xSEE1D("@uv",20)](_0x5wTi70,{[_0xSEE1D("\171\150\139\147\154",255)]=_0xSEE1D("vJG_CT",975-937),[_0xSEE1D("\233\195\207\206",0xA0)]=_0xSEE1D("\137\143\153\142",0xFC)});local _0xPyVO5G=_0x5wTi70[_0xSEE1D("\138\191\188",222*5/5)](_0x5wTi70,{[_0xSEE1D("\194\255\226\250\243",1094-944)]=_0xSEE1D(",\019\009\015\027\022",122*5/5),[_0xSEE1D("\224\202\198\199",169*5/5)]=_0xSEE1D("\248\228\248",157*2/2)});local _0x1Yfgpy=_0x5wTi70[_0xSEE1D("qDG",37*3/3)](_0x5wTi70,{[_0xSEE1D("Rorjc",0x6)]=_0xSEE1D("Xpt",25),[_0xSEE1D("\197\239\227\226",0x8C)]=_0xSEE1D("\204\221\192\220\220\199\206\198\221",0xAF)});local function _0xpSzm1m()local _0xBkDW5a=_0xDmBezi[_0xSEE1D("9\008\012\000",368-259)];return _0xBkDW5a~=nil and(_0xBkDW5a[_0xSEE1D("Mbnf",520-517)]==_0xSEE1D("\0235009.",0x5C)or _0xBkDW5a[_0xSEE1D("\165\138\134\142",812-577)]==_0xSEE1D("Jlkopovkj",25*5/5))end;_0xZMNEdw[_0xSEE1D("\200\222\207\246\218\207\216\211\248\211\222\216\208\222\201",0xBB)](_0xpSzm1m);local _0xNylArm=_0xDmBezi[_0xSEE1D("Bi`s`buds",975-974)]or _0xDmBezi[_0xSEE1D("bI@S@BUDS`EEDE",33*5/5)][_0xSEE1D("\192\246\254\227",151)](_0xDmBezi[_0xSEE1D("EngtgerctGbbcb",0x6)]);local _0xHG7AfC=_0xNylArm[_0xSEE1D("Lzro]tiXsrw\127",0x1B)](_0xNylArm,_0xSEE1D("\254\195\219\215\216\217\223\210",0xB6));local _0xLMloXU=_0xNylArm[_0xSEE1D("\233\223\215\202\248\209\204\253\214\215\210\218",181+9)](_0xNylArm,_0xSEE1D("'\026\002\014\001\000\006\011=\000\000\027?\014\029\027",353-242));local _0xRGTIns=_0xpG7oJs[_0xSEE1D("\178\132\140\145\163\138\151\166\141\140\137\129",581-352)](_0xpG7oJs,_0xSEE1D("zMEG\092M[",105-65));local _0xlOLOJ8=(function()local _oi0=_0xRGTIns[_0xSEE1D("\218\236\228\249\203\226\255\206\229\228\225\233",0x8D)](_0xRGTIns,_0xSEE1D("\143\178\163\171\181",0xC6));return _oi0[_0xSEE1D("\252\202\194\223\237\196\217\232\195\194\199\207",100+71)](_oi0,_0xSEE1D("aPCCHX_V\017uPVVTC",48+1))end)();local _0xjWp0Ju=_0xlOLOJ8[_0xSEE1D("\217\239\231\250\200\225\252\205\230\231\226\234",142*5/5)](_0xlOLOJ8,_0xSEE1D("\196\213\198\198\205\230\209\199\193\216\192",180));local _0x5WnEL6=(function()local _oi1=_0xRGTIns[_0xSEE1D("\020\034*7\005,1\000+*/'",247-180)](_0xRGTIns,_0xSEE1D("\024:??6! ",83));return _oi1[_0xSEE1D("\233\223\215\202\248\209\204\253\214\215\210\218",1091-901)](_oi1,_0xSEE1D("\225\196\200\196\194\192\211\204\223",0xA5))end)();local _0xXCfyvw=(function()local _oi2=_0xRGTIns[_0xSEE1D("~H@]oF[jA@EM",41)](_0xRGTIns,_0xSEE1D("\187\153\156\156\149\130\131",0xF0));return _oi2[_0xSEE1D("\004+,&\004+016\001*+.&",66*2/2)](_oi2,_0xSEE1D("-\018\017\009?\010\010\031\029\021",0x7E))end)();local _0x7mxix2=_0x5CNc3A[_0xSEE1D("ZurxZunoh_tupx",28)](_0x5CNc3A,_0xSEE1D("\226\192\197\197\204\219",392-223));local _0xpuZw5c=1929-930;local _0x12vGrE=nil;local _0xtwfEn0={_0xNylArm};_0xDmBezi[_0xSEE1D("'\012\005\022\005\007\016\001\022%\000\000\001\000",771-671)][_0xSEE1D("\249\213\212\212\223\217\206",54+132)](_0xDmBezi[_0xSEE1D("'\012\005\022\005\007\016\001\022%\000\000\001\000",0x64)],function(_0xNwrEpK)_0xNylArm=_0xNwrEpK;_0xHG7AfC=_0xNwrEpK[_0xSEE1D("\150\160\168\181\135\174\179\130\169\168\173\165",0xC1)](_0xNwrEpK,_0xSEE1D("\227\222\198\202\197\196\194\207",708-537));_0xLMloXU=_0xNwrEpK[_0xSEE1D("[mexJc~Ode`h",355-343)](_0xNwrEpK,_0xSEE1D("lQIEJKM@vKKPtEVP",385-349))end);_0xZaZkB2[_0xSEE1D("\232\197\193\210\212\194\197\193\212",160*5/5)][_0xSEE1D("Dhiibds",0x7)](_0xZaZkB2[_0xSEE1D("\195\238\234\249\255\233\238\234\255",139*3/3)],function()if not _0xLMloXU or not _0xLMloXU[_0xSEE1D("\011:)>5/",488-397)]then return end;local _0xXO5yJo=9999;local _0xtMbIL2=nil;table[_0xSEE1D("\170\165\172\168\187",646-445)](_0xtwfEn0);table[_0xSEE1D("#$9/8>",49+25)](_0xtwfEn0,_0xNylArm);if _0x7mxix2 then for _0x9K9gDu,_0xl8Dypu in ipairs(_0x7mxix2[_0xSEE1D("Om|Xdiqmz{",0x8)](_0x7mxix2))do local _0xbeDKzu=_0xl8Dypu[_0xSEE1D("?\020\029\014\029\031\008\025\014",233-109)];if _0xbeDKzu then table[_0xSEE1D("\182\177\172\186\173\171",27+196)](_0xtwfEn0,_0xbeDKzu);local _0xTyXajK=_0xbeDKzu[_0xSEE1D("\208\255\248\242\208\255\228\229\226\213\254\255\250\242",0x96)](_0xbeDKzu,_0xSEE1D("Row{tus~HuunJ{hn",0x1A));if _0xTyXajK then local _0xrOHebK=(_0xLMloXU[_0xSEE1D("\237\210\206\212\201\212\210\211",0xBD)]-_0xTyXajK[_0xSEE1D("$\027\007\029\000\029\027\026",591-475)])[_0xSEE1D("\019?907*+:;",94)];if _0xrOHebK<_0xXO5yJo then _0xXO5yJo=_0xrOHebK;_0xtMbIL2=_0xTyXajK end end end end end;_0xpuZw5c=_0xXO5yJo;_0x12vGrE=_0xtMbIL2 end);local function _0xxI9INm()if not _0xLMloXU or not _0xLMloXU[_0xSEE1D("\169\152\139\156\151\141",249*2/2)]or not _0x12vGrE then return false end;local _0xxYNCRu=RaycastParams[_0xSEE1D("\237\230\244",131*5/5)]();_0xxYNCRu[_0xSEE1D("\157\178\183\175\190\169\143\162\171\190",150+69)]=Enum[_0xSEE1D("_ltnl~yKdayh\127Yt}h",0xD)][_0xSEE1D("{F]RKZ[",62*2/2)];_0xxYNCRu[_0xSEE1D("\194\236\229\228\249\238\220\234\255\238\249",794-655)]=true;_0xxYNCRu[_0xSEE1D("wX]ETCuTBRT_UP_EBx_BEP_RTB",0x31)]=_0xtwfEn0;local _0x3OnYPe=_0x7glWvy[_0xSEE1D("\204\255\231\253\255\237\234",158*3/3)](_0x7glWvy,_0xLMloXU[_0xSEE1D("Zeyc~ced",0xA)],_0x12vGrE[_0xSEE1D("\234\213\201\211\206\211\213\212",186*3/3)]-_0xLMloXU[_0xSEE1D("lSOUHUSR",42+18)],_0xxYNCRu);if _0x3OnYPe then return false end;return true end;local _0xLQb2T0={};local _0xFeZiXI={};local function _0xRyzoHe(_0xd47cLa,_0xnWh0rG,_0xnmVatE)for _0xdSfGlC,_0xRIPEvA in ipairs(_0xLQb2T0)do pcall(_0xRIPEvA,_0xd47cLa,_0xnWh0rG,_0xnmVatE)end end;local function _0x1ezohu()for _0xvmRC3G,_0xTQp0z2 in ipairs(_0xFeZiXI)do _0xTQp0z2[_0xSEE1D("\228\201\211\195\207\206\206\197\195\212",160)](_0xTQp0z2)end;table[_0xSEE1D(".!(,?",77*7/7)](_0xFeZiXI);if _0x7mxix2 then for _0xNQn2rC,_0xVcDWBQ in ipairs(_0x7mxix2[_0xSEE1D("\255\221\204\232\212\217\193\221\202\203",913-729)](_0x7mxix2))do local function _0xbCTIJk(_0xZKzqzW)local _0x5ylynA=_0xZKzqzW[_0xSEE1D("UckvDmpAjknf",2)](_0xZKzqzW,_0xSEE1D("#\030\006\010\005\004\002\015",23+84),703-698);if _0x5ylynA then local _0xDMXkPS=_0x5ylynA[_0xSEE1D("Cu}`R{fW|}xp",1006-986)](_0x5ylynA,_0xSEE1D("\241\222\217\221\209\196\223\194",176),3+2);if _0xDMXkPS then table[_0xSEE1D("fa|j}{",11+4)](_0xFeZiXI,_0xDMXkPS[_0xSEE1D("\202\229\226\230\234\255\226\228\229\219\231\234\242\238\239",139*7/7)][_0xSEE1D("Zvww|zm",25*7/7)](_0xDMXkPS[_0xSEE1D("\167\136\143\139\135\146\143\137\136\182\138\135\159\131\130",0xE6)],function(_0xZ0RCrc)local _0xNqDmzu=_0xZ0RCrc[_0xSEE1D("\154\181\178\182\186\175\178\180\181",213+6)]and _0xZ0RCrc[_0xSEE1D("\229\202\205\201\197\208\205\203\202",0xA4)][_0xSEE1D("Kdcgk~cedCn",10*7/7)];local _0xpc9cJi=_0xNqDmzu and(function()local _oi3=tostring(_0xNqDmzu);return _oi3[_0xSEE1D("iepgl",0x4)](_oi3,_0xSEE1D("\244\181\250",368-159))end)()or"";_0xRyzoHe(_0xVcDWBQ,_0xNqDmzu,_0xpc9cJi)end))end end end;if _0xVcDWBQ[_0xSEE1D("\0305</<>)8/",93*7/7)]then task[_0xSEE1D("KHYOV",56)](_0xbCTIJk,_0xVcDWBQ[_0xSEE1D("rYPCPRETC",49*5/5)])end;table[_0xSEE1D("\184\191\162\180\163\165",209*3/3)](_0xFeZiXI,_0xVcDWBQ[_0xSEE1D("\189\150\159\140\159\157\138\155\140\191\154\154\155\154",254*2/2)][_0xSEE1D("\231\203\202\202\193\199\208",1073-909)](_0xVcDWBQ[_0xSEE1D(";\016\025\010\025\027\012\029\0109\028\028\029\028",120)],_0xbCTIJk))end end end;local _0xhqTCng=getrawmetatable~=nil and getnamecallmethod~=nil and newcclosure~=nil;local _0x7sJItS={};local _0x1qJIBa=nil;local function _0xfs7Uli()if not _0xhqTCng then return end;local _0xNi1kVo=getrawmetatable(game);if setreadonly then pcall(setreadonly,_0xNi1kVo,false)end;if getgenv and getgenv()[_0xSEE1D("\026\0261*($\004,(\0107,\034",69*7/7)]then pcall(function()_0xNi1kVo[_0xSEE1D("\187\187\138\133\137\129\135\133\136\136",228)]=getgenv()[_0xSEE1D("\193\193\234\241\243\255\223\247\243\209\236\247\249",158*2/2)]end)end;local _0x3yhqJQ=_0xNi1kVo[_0xSEE1D("\160\160\145\158\146\154\156\158\147\147",255*7/7)];if getgenv then getgenv()[_0xSEE1D("IIby{wW\127{Yd\127q",246-224)]=_0x3yhqJQ end;_0x1qJIBa=function(_0xJQBsTY,...)return _0x3yhqJQ(_0xJQBsTY,...)end;local _0xb6t23Q=function(_0xHox2V0,...)if typeof(_0xHox2V0)==_0xSEE1D("\187\156\129\134\147\156\145\151",189+53)then local _0xjiDU7y=getnamecallmethod();for _0xVAVKTi,_0xlsXqr4 in ipairs(_0x7sJItS)do local _0xFu3wbY,_0xDGPaXk=_0xlsXqr4(_0xHox2V0,_0xjiDU7y,...);if _0xFu3wbY then return _0xDGPaXk end end end;return _0x3yhqJQ(_0xHox2V0,...)end;_0xNi1kVo[_0xSEE1D("88\009\006\010\002\004\006\011\011",103*3/3)]=newcclosure and newcclosure(_0xb6t23Q)or _0xb6t23Q end;local _0xtkdULm={[_0xSEE1D("XfakZF",0xF)]=_0xZMZ47g,[_0xSEE1D("Npw}vn",17+8)]=_0x5wTi70,[_0xSEE1D("\232\253\254\239",0x9C)]={[_0xSEE1D("\207\227\225\238\237\248",140)]=_0xFibsze,[_0xSEE1D("\163\159\146\138\150\129",243*5/5)]=_0xHQrOX2,[_0xSEE1D("\159\160\186\188\168\165",945-744)]=_0xPyVO5G,[_0xSEE1D("xPT",57*5/5)]=_0x1Yfgpy},[_0xSEE1D("\163\159\146\138\150\129\128",493-250)]=_0xLSlyT2,[_0xSEE1D("nYLPU_]HYXoHSN][Y",516-456)]=_0xpG7oJs,[_0xSEE1D("\0302118>)423\0148/+4>8",0x5D)]=_0xlEF4ba,[_0xSEE1D("\228\195\216\229\211\196\192\223\213\211",642-460)]=_0xZaZkB2,[_0xSEE1D("\145\183\161\182\141\170\180\177\176\151\161\182\178\173\167\161",196)]=_0xPuROH8,[_0xSEE1D("\136\185\189\177\175",332-112)]=_0x5CNc3A,[_0xSEE1D("\195\252\231\225\224\244\249\220\251\229\224\225\216\244\251\244\242\240\231",0x95)]=_0xhi7wpc,[_0xSEE1D("\142\182\171\178\170\169\184\186\188",0xD9)]=_0x7glWvy,[_0xSEE1D("\230\197\201\203\198\250\198\203\211\207\216",170*2/2)]=_0xDmBezi,[_0xSEE1D("uBJHSBT",28+11)]=_0xRGTIns,[_0xSEE1D("\186\171\184\184\179\152\175\185\191\166\190",202)]=_0xjWp0Ju,[_0xSEE1D("\232\205\193\205\203\201\218\197\214\233\218\201\194\216",578-406)]=_0x5WnEL6,[_0xSEE1D("HwtlZoozxp",433-406)]=_0xXCfyvw,[_0xSEE1D("\143\173\168\168\161\182\144\161\165\169",442-246)]=_0x7mxix2,[_0xSEE1D("xzk\092w~m~|kzm",6+25)]=function()return _0xNylArm end,[_0xSEE1D("\165\167\182\138\183\175\163\172\173\171\166",194*2/2)]=function()return _0xHG7AfC end,[_0xSEE1D("\249\251\234\204\241\241\234\206\255\236\234",560-402)]=function()return _0xLMloXU end,[_0xSEE1D("\157\159\142\177\147\150\150\159\136\168\149\149\142",250*3/3)]=function()return _0x12vGrE end,[_0xSEE1D("\191\189\172\147\177\180\180\189\170\156\177\171\172\185\182\187\189",606-390)]=function()return _0xpuZw5c end,[_0xSEE1D("\000\009\027$\001\006\013'\014;\001\015\000\028",104)]=_0xxI9INm,[_0xSEE1D(": %,'=\026<99&;=,-",63+10)]=_0xhqTCng,[_0xSEE1D("ihMojjctGhok",6)]=function(_0xDIj8Ns)table[_0xSEE1D("*-0&17",67)](_0xLQb2T0,_0xDIj8Ns)end,[_0xSEE1D("\149\148\180\155\151\159\153\155\150\150",250*2/2)]=function(_0xZOnM9M)table[_0xSEE1D("\188\187\166\176\167\161",213*5/5)](_0x7sJItS,_0xZOnM9M)end,[_0xSEE1D("'%((\0116-#-*%(",73-5)]=function(_0x5EzY50,...)return _0x1qJIBa(_0x5EzY50,...)end};local _0xRCdyhA={};_0xRCdyhA[_0xSEE1D("\229\201\203\196\199\210\137\231\211\210\201\246\199\212\212\223\136\202\211\199",166*7/7)]=(function()return function(_0xPEheTo)local _0xVM7Mfc=_0xPEheTo[_0xSEE1D("\177\157\158\158\151\145\134\155\157\156\161\151\128\132\155\145\151",22+220)];local _0xrcba7G=_0xPEheTo[_0xSEE1D("JlzmVqojkLzmiv|z",1+30)];local _0xtqhgfs=_0xPEheTo[_0xSEE1D(" \031\004\002\003\023\026?\024\006\003\002;\023\024\023\017\019\004",118*3/3)];local _0xbwTi5O=_0xPEheTo[_0xSEE1D("uRItBUQNDB",34+5)];local _0xnYTWPu=_0xPEheTo[_0xSEE1D("\02259;6\0106;#?(",40+50)];local _0xZC3cRa=_0xPEheTo[_0xSEE1D("\175\190\173\173\166\141\186\172\170\179\171",806-583)];local _0xZ4bM1w=_0xPEheTo[_0xSEE1D("!\004\008\004\002\000\019\012\031 \019\000\011\017",205-104)];local _0xBq58Rk=_0xPEheTo[_0xSEE1D("\255\192\195\219\237\216\216\205\207\199",521-349)];local _0xPcB8Ho=false;local _0x9UZ03u=false;local _0x96zuJW=false;local _0xD8TWLs=false;local _0xJIj2L6=false;local _0xBCNSf0=0x9;local _0xVg7wNE={[_0xSEE1D("\140\140\138\141\137\143\132\132\133\137\139\133\143\137\140",189*5/5)]=true,[_0xSEE1D("\203\200\195\205\194\206\200\205\203\200\202\203\202\205\203",856-606)]=true,[_0xSEE1D("\170\170\168\169\174\174\171\173\163\172\169\175\175\175\173",155*3/3)]=true,[_0xSEE1D("%%,-$#\034$'& \034,,!",0x14)]=true,[_0xSEE1D("\231\228\228\238\231\228\230\227\227\226\226\225\238\239\224",91+123)]=true,[_0xSEE1D("\130\130\131\128\134\134\131\130\130\138\139\132\138\128\138",262-83)]=true,[_0xSEE1D("\034 &##!\034+ !+!+$ ",19*7/7)]=true,[_0xSEE1D("xy|z~}qz}}p\127|{y",0x49)]=true,[_0xSEE1D("B@KDACAJB@BDAG@",520-405)]=true,[_0xSEE1D("\162\162\166\161\167\167\162\166\160\163\166\160\171\166\171",903-756)]=true,[_0xSEE1D("\198\199\193\207\192\198\194\196\193\198\196\195\197\194\195",247*7/7)]=true};local _0xViXeBy=43-43;local _0xV6z6b0=0.08;local _0xZKHo9s=1/4;local _0xfEdYh2=154-154;local _0x74pIRY=0.1;local function _0x7wRkfg()if _0xPcB8Ho or _0x96zuJW or _0xnYTWPu[_0xSEE1D("`BSfSSUNERSB",2+37)](_0xnYTWPu,_0xSEE1D("+\017&\007\003\006",98*3/3))then return false end;local _0xvY9Qzu=_0xPEheTo[_0xSEE1D("\129\131\146\165\142\135\148\135\133\146\131\148",978-748)]();local _0xXAXKXi=_0xPEheTo[_0xSEE1D("\142\140\157\187\134\134\157\185\136\155\157",0xE9)]();if not _0xvY9Qzu or not _0xvY9Qzu[_0xSEE1D("Bs`w|f",4+14)]or _0xvY9Qzu[_0xSEE1D("&\004\021 \021\021\019\008\003\020\021\004",97*5/5)](_0xvY9Qzu,_0xSEE1D("[aQs``{wv",0x12))or _0xvY9Qzu[_0xSEE1D("'\005\020!\020\020\018\009\002\021\020\005",0x60)](_0xvY9Qzu,_0xSEE1D("\134\188\135\160\160\164\170\171",207))then return false end;if _0xVM7Mfc[_0xSEE1D("\0178*\0138>",89*2/2)](_0xVM7Mfc,_0xXAXKXi,_0xSEE1D("MF@GN\009HJ]@FG",6+35))then return false end;return true end;local function _0xTQroNM()local _0xdi7oNS=_0xPEheTo[_0xSEE1D("ln\127Ydd\127[jy\127",9+2)]();if not _0xdi7oNS or not _0xdi7oNS[_0xSEE1D("\172\157\142\153\146\136",252)]then return end;if _0xVM7Mfc[_0xSEE1D(".\007\0212\007\001",991-889)](_0xVM7Mfc,_0xdi7oNS,_0xSEE1D("\027\016\022\017\024_\030\028\011\022\016\017",127))then local _0xxeFk1Q=_0xnYTWPu[_0xSEE1D("'\012\005\022\005\007\016\001\022",100*5/5)];if _0xxeFk1Q then local _0xNcXot8=_0xxeFk1Q[_0xSEE1D("fINDfIRSTcHILD",32*3/3)](_0xxeFk1Q,_0xSEE1D("4\031\018\020\028>\025\003\018\005\005\022\020\003\022\021\027\018",119*3/3));if not _0xNcXot8 or not _0xNcXot8[_0xSEE1D("fDU`UUSHCTUD",584-551)](_0xNcXot8,_0xSEE1D("\162\184\153\174\187\170\162\185\162\165\172",135+68))then _0xVM7Mfc[_0xSEE1D("\00708:#0\00142",0x55)](_0xVM7Mfc,_0xdi7oNS,_0xSEE1D("\031\020\018\021\028[\026\024\015\018\020\021",76+47));if _0xdi7oNS[_0xSEE1D(";\020\025\018\021\008\031\030",0x7A)]then _0xdi7oNS[_0xSEE1D("\139\164\169\162\165\184\175\174",202*3/3)]=false end;_0x9UZ03u=false;_0xPcB8Ho=false end end end end;local function _0xnUzEZo()local _0x747Ahu=_0xPEheTo[_0xSEE1D("\143\141\156\163\129\132\132\141\154\186\135\135\156",232*3/3)]();local _0xvaL4N6=_0xPEheTo[_0xSEE1D("\009\011\026<\001\001\026>\015\028\026",650-540)]();if not _0x747Ahu or not _0x747Ahu[_0xSEE1D("\211\226\241\230\237\247",982-851)]or not _0xvaL4N6 or not _0xvaL4N6[_0xSEE1D(")\024\011\028\023\013",985-864)]then return true end;local _0xVoJYRy=_0x747Ahu[_0xSEE1D("\192\197\241\226\238\230",89+42)][_0xSEE1D("\136\171\171\175\146\161\167\176\171\182",12+184)][_0xSEE1D("\002)2",66+4)](_0x747Ahu[_0xSEE1D("PUar~v",0x13)][_0xSEE1D("\235\200\200\204\241\194\196\211\200\213",567-400)],(_0xvaL4N6[_0xSEE1D("\168\151\139\145\140\145\151\150",286-38)]-_0x747Ahu[_0xSEE1D("\223\224\252\230\251\230\224\225",143*7/7)])[_0xSEE1D("|G@]",136-95)]);return _0xVoJYRy>=_0x74pIRY end;local function _0xfgBkPo()_0xD8TWLs=true;_0xfEdYh2=os[_0xSEE1D("\192\207\204\192\200",163*5/5)]();_0xViXeBy=os[_0xSEE1D("XWTXP",9+50)]();_0xtqhgfs[_0xSEE1D("pFMGnLVPFaVWWLMfUFMW",35)](_0xtqhgfs,0x0,0x0,1*2/2,true,game,1*7/7);task[_0xSEE1D("qpytl",4+17)](0.05,function()_0xtqhgfs[_0xSEE1D("\020\034)#\010(24\034\005233()\0021\034)3",0x47)](_0xtqhgfs,0x0,0x0,25-24,false,game,978-977);_0xD8TWLs=false end)end;local function _0xvWrinu(_0xH0f812)if not _0xJIj2L6 or _0xPEheTo[_0xSEE1D("\232\234\251\196\230\227\227\234\253\203\230\252\251\238\225\236\234",143)]()>_0xH0f812 or not _0x7wRkfg()then return end;if os[_0xSEE1D("\170\165\166\170\162",201)]()-_0xViXeBy<_0xV6z6b0 then return end;if not _0xPEheTo[_0xSEE1D("\253\244\230\217\252\251\240\218\243\198\252\242\253\225",149)]()then return end;if not _0xnUzEZo()then return end;_0xfgBkPo()end;local function _0xFw10TE()_0xvWrinu(_0xBCNSf0)end;_0xZ4bM1w[_0xSEE1D("\164\133\168\135\130\142\133\159\174\157\142\133\159",329-94)][_0xSEE1D("\153\181\180\180\191\185\174",92+126)](_0xZ4bM1w[_0xSEE1D("\182\151\186\149\144\156\151\141\188\143\156\151\141",242+7)],_0xFw10TE);if _0xBq58Rk then _0xBq58Rk[_0xSEE1D("\233\200\229\202\207\195\200\210\227\208\195\200\210",0xA6)][_0xSEE1D("\238\194\195\195\200\206\217",369-196)](_0xBq58Rk[_0xSEE1D("\209\240\221\242\247\251\240\234\219\232\251\240\234",241-83)],_0xFw10TE)end;_0xPEheTo[_0xSEE1D("{z_}xxqfUz}y",20*3/3)](function(_0xxIza7w,_0xrIn6vm,_0xj2dU7s)if _0xVg7wNE[_0xj2dU7s]then _0xFw10TE()end end);_0xZC3cRa[_0xSEE1D("[zWx}qz`Qbqz`",20*3/3)][_0xSEE1D("\163\143\142\142\133\131\148",133+91)](_0xZC3cRa[_0xSEE1D("#\002/\000\005\009\002\024)\026\009\002\024",108)],function(_0xBQZSRS,_0xRQxi9A)_0x9UZ03u=false;if _0xBQZSRS then _0xPcB8Ho=true;task[_0xSEE1D("1094,",992-907)](_0xZKHo9s,function()_0xPcB8Ho=false end)end end);_0xrcba7G[_0xSEE1D("\024?!$%\019460?",81)][_0xSEE1D("Yutt\127yn",26*2/2)](_0xrcba7G[_0xSEE1D("\0318&#\034\0203178",0x56)],function(_0xRozGDG,_0xRMV6N6)if not _0xRMV6N6 and _0xRozGDG[_0xSEE1D("Y\127i~Eb|yxXu|i",12)]==Enum[_0xSEE1D("\219\253\235\252\199\224\254\251\250\218\247\254\235",142)][_0xSEE1D("\0180*,:\029*++01m",95*5/5)]then if _0xD8TWLs or os[_0xSEE1D("\181\186\185\181\189",214*3/3)]()-_0xfEdYh2<0.2 then return end;if _0x7wRkfg()then _0x9UZ03u=true end end end);(function()local _oi4=_0xVM7Mfc[_0xSEE1D("\237\207\222\227\196\217\222\203\196\201\207\235\206\206\207\206\249\195\205\196\203\198",170)](_0xVM7Mfc,_0xSEE1D("Lvszq|z{",31*5/5));return _oi4[_0xSEE1D("\023;::17 ",0x54)](_oi4,function(_0xzqZ0nS)if _0xzqZ0nS==_0xPEheTo[_0xSEE1D("b`qFmdwdfq`w",1+4)]()then _0x96zuJW=true end end)end)();(function()local _oi5=_0xVM7Mfc[_0xSEE1D("\135\165\180\137\174\179\180\161\174\163\165\146\165\173\175\182\165\164\147\169\167\174\161\172",0xC0)](_0xVM7Mfc,_0xSEE1D("\207\245\240\249\242\255\249\248",156));return _oi5[_0xSEE1D("2\030\031\031\020\018\005",113)](_oi5,function(_0xpAFE3G)if _0xpAFE3G==_0xPEheTo[_0xSEE1D("b`qFmdwdfq`w",0x5)]()then _0x96zuJW=false end end)end)();_0xnYTWPu[_0xSEE1D("\186\145\152\139\152\154\141\156\139\184\157\157\156\157",0xF9)][_0xSEE1D("2\030\031\031\020\018\005",113*5/5)](_0xnYTWPu[_0xSEE1D("\235\192\201\218\201\203\220\205\218\233\204\204\205\204",0xA8)],function()_0xPcB8Ho,_0x9UZ03u,_0x96zuJW=false,false,false end);_0xbwTi5O[_0xSEE1D("Obfusebfs",6+1)][_0xSEE1D("\241\221\220\220\215\209\198",178*3/3)](_0xbwTi5O[_0xSEE1D("\212\249\253\238\232\254\249\253\232",156*2/2)],function()local _0xfEnSZa=_0xPEheTo[_0xSEE1D("\148\150\135\161\156\156\135\163\146\129\135",929-686)]();if _0xfEnSZa and _0xVM7Mfc[_0xSEE1D("\0178*\0138>",75+14)](_0xVM7Mfc,_0xfEnSZa,_0xSEE1D("\215\220\218\221\212\147\210\208\199\218\220\221",0xB3))then _0xTQroNM()end end);_0xPEheTo[_0xSEE1D("\151\134\149\149\158",0xE7)]={[_0xSEE1D("\211\201\255\212\219\216\214\223\222",65+121)]=function()return _0xJIj2L6 end,[_0xSEE1D("#!.\016!229",64)]=_0x7wRkfg,[_0xSEE1D("MFyH[[Py[LZZ",41)]=_0xfgBkPo};local _0xX0FoLM=_0xPEheTo[_0xSEE1D("\145\132\135\150",1084-855)][_0xSEE1D("L`bmn{",0xF)][_0xSEE1D("\224\214\208\199\218\220\221",87+92)](_0xPEheTo[_0xSEE1D("\135\146\145\128",243*2/2)][_0xSEE1D("\03020?<)",93*5/5)],{[_0xSEE1D("uHUMD",33*7/7)]=_0xSEE1D("h\092]F\009yH[[P",12+29),[_0xSEE1D("\148\181\163\179",1113-905)]=_0xSEE1D("Lbame.}k|o`io`.egbbk|.azacozg}",14),[_0xSEE1D(";\022\001",121*7/7)]=true,[_0xSEE1D("Gj}Gjwa`w",5)]=true,[_0xSEE1D("A~k`kj",10+4)]=true});_0xX0FoLM[_0xSEE1D("\189\134\142\142\133\140",233*2/2)](_0xX0FoLM,{[_0xSEE1D("\133\184\165\189\180",209*2/2)]=_0xSEE1D("+\031\030\005J:\011\024\024\019",573-467),[_0xSEE1D("\246\215\193\209",143+35)]=_0xSEE1D("pDE^\092PEXRP]]H\017S]^RZ\017ZX]]TC\017PEEPRZB",0x31),[_0xSEE1D("\194\245\248\225\241",148)]=_0xJIj2L6,[_0xSEE1D("1\019\030\030\016\019\017\025",68+46)]=function(_0x1K5q52)_0xJIj2L6=_0x1K5q52 end});_0xX0FoLM[_0xSEE1D("4\011\014\003\002\021",0x67)](_0xX0FoLM,{[_0xSEE1D("Vkvng",1+1)]=_0xSEE1D("7\006\021\021\030G#\014\020\019\006\009\004\002",0x67),[_0xSEE1D("Ih~n",22-9)]=_0xSEE1D(">\018\011\026\030\006\030S\023\026\000\007\018\029\016\022S\007\028S\007\001\026\020\020\022\001S2\006\007\028S#\018\001\001\010",0x73),[_0xSEE1D("\009.?*",0x5A)]=1*2/2,[_0xSEE1D("\026- 9)",0x4C)]={[_0xSEE1D("Cg`",11+3)]=92-87,[_0xSEE1D("\237\193\216",0xA0)]=30+20,[_0xSEE1D("\221\252\255\248\236\245\237",0x99)]=9*2/2},[_0xSEE1D("kIDDJIKC",0x28)]=function(_0xL6P0zM)if _0xL6P0zM and _0xL6P0zM>=5*3/3 then _0xBCNSf0=_0xL6P0zM end end})end end)();_0xRCdyhA[_0xSEE1D("q]_PSF\029sGF]bS@@KvSAZz[VVW\092\028^GS",50)]=(function()return function(_0xbm9WVC)if not _0xbm9WVC[_0xSEE1D("\148\133\150\150\157",0xE4)]then warn(_0xSEE1D("\180\187\128\130\142\167\154\141\178\207\171\142\156\135\207\191\142\157\157\150\207\141\154\155\154\135\207\174\154\155\128\191\142\157\157\150\207\139\134\194\131\128\142\139\207\139\154\131\154\142\129\193",0xEF));return end;local _0xnW1Ej2=_0xSEE1D("\232\233\224\231\226\228\232\230\224\232\226\228\224\224",209);local _0xXUX6JK=92-62;local _0xTIvuBM=0.775;local _0xtCp2d8=281-271;local _0x9sbW1Y=math[_0xSEE1D("uye",2+20)](math[_0xSEE1D("bqt",0x10)](_0xtCp2d8));local _0xRwJKr2=true;local _0x5kxER8=1.4;local _0x1mrAby=false;local _0xbC1Yxc=-0x3E7;local function _0xX4XCJ4(_0xhcTI3M)local _0xdOR6NW=_0xbm9WVC[_0xSEE1D("\007\005\0202\015\015\0200\001\018\020",1061-965)]();if not _0xhcTI3M or not _0xhcTI3M[_0xSEE1D("\185\136\155\140\135\157",233*7/7)]or not _0xdOR6NW or not _0xdOR6NW[_0xSEE1D("4\005\022\001\010\016",88+12)]then return 999*2/2,false end;local _0xveZcJC=_0xdOR6NW[_0xSEE1D("\189\130\158\132\153\132\130\131",0xED)]-_0xhcTI3M[_0xSEE1D("c\092@ZGZ\092]",19+32)];local _0xX21Gb0=_0xveZcJC[_0xSEE1D("oCELKVWFG",0x22)];if _0xX21Gb0<0.01 then return _0xX21Gb0,true end;local _0xHQ3CJM=math[_0xSEE1D("\175\160\173\161\188",520-316)](_0xhcTI3M[_0xSEE1D("\204\201\253\238\226\234",143*7/7)][_0xSEE1D("KhhlQbdshu",7*7/7)][_0xSEE1D("\248\211\200",188)](_0xhcTI3M[_0xSEE1D(",)\029\014\002\010",0x6F)][_0xSEE1D("\250\217\217\221\224\211\213\194\217\196",182*3/3)],_0xveZcJC[_0xSEE1D("\129\186\189\160",212)]),-(1*5/5),0x1);return _0xX21Gb0,_0xHQ3CJM>=_0x9sbW1Y end;local function _0xB0hsz0(_0xHyzSJG)_0x1mrAby=false;if not _0xbm9WVC[_0xSEE1D(")8++ ",234-145)][_0xSEE1D("\178\168\158\181\186\185\183\190\191",3+216)]()then return end;local _0xXGf4L2=_0xHyzSJG();local _0xRYNiB6,_0x7InsBS=_0xX4XCJ4(_0xXGf4L2);if _0xRYNiB6>_0xXUX6JK then return end;if _0xRwJKr2 and not _0x7InsBS then return end;if not _0xbm9WVC[_0xSEE1D("\255\238\253\253\246",0x8F)][_0xSEE1D("\248\250\245\203\250\233\233\226",155)]()then return end;if not _0xbm9WVC[_0xSEE1D("\003\010\024'\002\005\014$\0138\002\012\003\031",107*5/5)]()then return end;_0xbm9WVC[_0xSEE1D("\191\174\189\189\182",207)][_0xSEE1D("K@\127N]]V\127]J\092\092",0x2F)]()end;local function _0xhS30Tw(_0xjoj2n2,_0xpG1kD4)if not _0xbm9WVC[_0xSEE1D("\255\238\253\253\246",0x8F)][_0xSEE1D("\180\174\152\179\188\191\177\184\185",78+143)]()or _0x1mrAby or os[_0xSEE1D(")&%)!",10+64)]()-_0xbC1Yxc<_0x5kxER8 then return end;local _0xLszgN8,_0xDQjOFG=_0xX4XCJ4(_0xpG1kD4);if _0xLszgN8>_0xXUX6JK or not _0xDQjOFG then return end;_0x1mrAby=true;_0xbC1Yxc=os[_0xSEE1D("\232\231\228\232\224",502-363)]();task[_0xSEE1D("\138\139\130\143\151",238*5/5)](_0xTIvuBM,function()_0xB0hsz0(function()return _0xjoj2n2[_0xSEE1D("\136\163\170\185\170\168\191\174\185",203*7/7)]and _0xjoj2n2[_0xSEE1D("\237\198\207\220\207\205\218\203\220",174*7/7)][_0xSEE1D("\166\137\142\132\166\137\146\147\148\163\136\137\140\132",218+6)](_0xjoj2n2[_0xSEE1D("\163\136\129\146\129\131\148\133\146",224)],_0xSEE1D("\025$<0?>85\003>>%\0010#%",330-249))end)end)end;_0xbm9WVC[_0xSEE1D("\146\147\182\148\145\145\152\143\188\147\148\144",0xFD)](function(_0xRuRETg,_0xTyJsH6,_0xTctKdy)if _0xTyJsH6 and(function()local _oi6=tostring(_0xTyJsH6);return _oi6[_0xSEE1D("\220\211\212\222",9+177)](_oi6,_0xnW1Ej2)end)()then _0xhS30Tw(_0xRuRETg,_0xRuRETg[_0xSEE1D("Mfo|omzk|",14*7/7)]and _0xRuRETg[_0xSEE1D("\148\191\182\165\182\180\163\178\165",153+62)][_0xSEE1D("*\005\002\008*\005\030\031\024/\004\005\000\008",0x6C)](_0xRuRETg[_0xSEE1D("Sxqbqsdub",16)],_0xSEE1D("\136\181\173\161\174\175\169\164\146\175\175\180\144\161\178\180",192*3/3)))end end);local _0xp8daD2=_0xbm9WVC[_0xSEE1D("(=>/",65+27)][_0xSEE1D("\145\189\191\176\179\166",210*2/2)][_0xSEE1D("pF@WJLM",35)](_0xbm9WVC[_0xSEE1D("\190\171\168\185",202)][_0xSEE1D("\226\206\204\195\192\213",736-575)],{[_0xSEE1D("\148\169\180\172\165",139+53)]=_0xSEE1D("jO]F\014~O\092\092W",0x2E),[_0xSEE1D("<\029\011\027",120)]=_0xSEE1D("\00376-b2#00;b&#1*bj\015pkb)+..'0",66*3/3),[_0xSEE1D("\127RE",227-166)]=true,[_0xSEE1D("\174\131\148\174\131\158\136\137\158",7+229)]=true,[_0xSEE1D("\027$1:10",84*7/7)]=true});_0xp8daD2[_0xSEE1D("C|ytub",16)](_0xp8daD2,{[_0xSEE1D("1\012\017\009\000",0x65)]=_0xSEE1D("\218\255\237\246\190\206\255\236\236\231\190\218\247\237\234\255\240\253\251",980-822),[_0xSEE1D(";\026\012\028",0x7F)]=_0xSEE1D("\013&5&,g#\0343\034,4.g#&4/go\010ung,.++\0345",0x47),[_0xSEE1D("\208\247\230\243",131)]=562-561,[_0xSEE1D("Ds~gw",18)]={[_0xSEE1D("\146\182\177",223)]=1+4,[_0xSEE1D("&\010\019",78+29)]=99-39,[_0xSEE1D("\021470$=%",81)]=22+8},[_0xSEE1D("\139\169\164\164\170\169\171\163",106+94)]=function(_0xZS7sT2)if _0xZS7sT2 and _0xZS7sT2>=1+4 then _0xXUX6JK=_0xZS7sT2 end end})end end)();_0xRCdyhA[_0xSEE1D("-\001\003\012\015\026A/\027\026\001*\001\009\010\011/\012\012\023\029@\002\027\015",0x6E)]=(function()return function(_0xxk3kRo)local _0xtMLIre=_0xxk3kRo[_0xSEE1D("\177\142\149\147\146\134\139\174\137\151\146\147\170\134\137\134\128\130\149",231*7/7)];local _0x105QjS=false;local _0xNAL2HG=0x19;local _0xl6tal8=50-49;local _0xvYLmjO=0.1;local _0x3cLuPm=1+1;local _0xZWNQjC=0.1;local _0xZYZW12=_0xSEE1D("@HLIIKHANHONNN",487-367);local _0xlkXopY=false;local _0xXIfaRM=false;local function _0xZMtE9k()if _0xlkXopY then return end;_0xlkXopY=true;_0xtMLIre[_0xSEE1D("\005382\0293/\019 38\034",86)](_0xtMLIre,true,Enum[_0xSEE1D("+\005\025#\015\004\005",313-217)][_0xSEE1D("\242\219\216\202\253\209\208\202\204\209\210",190*2/2)],false,game);task[_0xSEE1D("\225\224\233\228\252",0x85)](_0xl6tal8,function()_0xtMLIre[_0xSEE1D("$\018\025\019<\018\0142\001\018\025\003",34+85)](_0xtMLIre,false,Enum[_0xSEE1D("\183\153\133\191\147\152\153",252)][_0xSEE1D("\172\133\134\148\163\143\142\148\146\143\140",224)],false,game);_0xlkXopY=false end)end;local function _0xb2Zszi()if not _0x105QjS or _0xlkXopY then return end;if _0xxk3kRo[_0xSEE1D("\188\190\175\144\178\183\183\190\169\159\178\168\175\186\181\184\190",859-640)]()<=_0xNAL2HG and _0xxk3kRo[_0xSEE1D("\249\240\226\221\248\255\244\222\247\194\248\246\249\229",145*5/5)]()then task[_0xSEE1D("+*#.6",24+55)](_0xvYLmjO,function()if not _0xlkXopY and not _0xXIfaRM and _0xxk3kRo[_0xSEE1D("capOmhhav@mwpejga",290-286)]()<=_0xNAL2HG and _0xxk3kRo[_0xSEE1D("\005\012\030!\004\003\008\034\011>\004\010\005\025",51+58)]()then _0xZMtE9k()end end);return end;if _0xXIfaRM then return end;_0xXIfaRM=true;task[_0xSEE1D("\252\255\238\248\225",0x8F)](function()local _0xvWri7G=181-181;while _0xvWri7G<_0x3cLuPm do task[_0xSEE1D("bt|a",21)](_0xZWNQjC);_0xvWri7G=_0xvWri7G+_0xZWNQjC;if not _0x105QjS or _0xlkXopY then break end;if _0xxk3kRo[_0xSEE1D("dfwHjoofqGjpwbm`f",1+2)]()<=_0xNAL2HG and _0xxk3kRo[_0xSEE1D("^WEz_XSyPe_Q^B",5+49)]()then task[_0xSEE1D("() -5",76*5/5)](_0xvYLmjO,function()if not _0xlkXopY and not _0xXIfaRM and _0xxk3kRo[_0xSEE1D("\224\226\243\204\238\235\235\226\245\195\238\244\243\230\233\228\226",79+56)]()<=_0xNAL2HG and _0xxk3kRo[_0xSEE1D("LEWhMJAkBwMCLP",0x24)]()then _0xZMtE9k()end end);break end end;_0xXIfaRM=false end)end;_0xxk3kRo[_0xSEE1D("\170\171\142\172\169\169\160\183\132\171\172\168",985-788)](function(_0xPcPqv2,_0xXQHOVW,_0x50hip4)if _0xXQHOVW and(function()local _oi7=tostring(_0xXQHOVW);return _oi7[_0xSEE1D("kdci",0xD)](_oi7,_0xZYZW12)end)()then _0xb2Zszi()end end);local _0xzYHqfQ=_0xxk3kRo[_0xSEE1D("\133\144\147\130",238+3)][_0xSEE1D("\154\182\180\187\184\173",217*7/7)][_0xSEE1D("\00353$9?>",872-792)](_0xxk3kRo[_0xSEE1D("\211\198\197\212",167)][_0xSEE1D("kGEJI\092",20+20)],{[_0xSEE1D("\145\172\177\169\160",0xC5)]=_0xSEE1D("]ihs<Xsx{y",25+3),[_0xSEE1D("\026;-=",82+12)]=_0xSEE1D("\017%$?p:?>7;?;p<1'1>p\0172)##'1<;5\034",687-607),[_0xSEE1D("fK\092",36*5/5)]=true,[_0xSEE1D("zW@zWJ\092]J",345-289)]=true,[_0xSEE1D("\214\233\252\247\252\253",0x99)]=true});_0xzYHqfQ[_0xSEE1D("\199\252\244\244\255\246",56+91)](_0xzYHqfQ,{[_0xSEE1D("\188\129\156\132\141",232*7/7)]=_0xSEE1D("\155\175\174\181\250\158\181\190\189\191\250\155\184\163\169\169\173\187\182\177\191\168",114+104),[_0xSEE1D("\191\158\136\152",813-562)]=_0xSEE1D("\238\218\219\192\143\197\192\193\200\196\192\196\143\223\206\220\143\238\205\214\220\220\216\206\195\196\202\221\143\223\206\196\202\143\220\196\198\195\195",858-683),[_0xSEE1D("Mzwn~",121-94)]=_0x105QjS,[_0xSEE1D("\151\181\184\184\182\181\183\191",0xD4)]=function(_0xvK7gp8)_0x105QjS=_0xvK7gp8 end});_0xzYHqfQ[_0xSEE1D("$\027\030\019\018\005",0x77)](_0xzYHqfQ,{[_0xSEE1D(" \029\000\024\017",116*5/5)]=_0xSEE1D("\0296=><y\0290*-87:<",89),[_0xSEE1D("\163\130\148\132",513-282)]=_0xSEE1D("/\004\023\004\014E\001\000\017\000\014\022\012E\022\014\012\009\009E$\007\028\022\022\018\004\009\014\000\023",49+52),[_0xSEE1D("\240\215\198\211",0xA3)]=1,[_0xSEE1D("\213\226\239\246\230",0x83)]={[_0xSEE1D("Gcd",693-683)]=0x5,[_0xSEE1D("\131\175\182",46+160)]=764-704,[_0xSEE1D("\151\182\181\178\166\191\167",8+203)]=25*7/7},[_0xSEE1D("\168\138\135\135\137\138\136\128",235*2/2)]=function(_0xp6d8ri)if _0xp6d8ri and _0xp6d8ri>=5 then _0xNAL2HG=_0xp6d8ri end end})end end)();_0xRCdyhA[_0xSEE1D("\136\164\166\169\170\191\228\152\160\162\167\167\136\163\174\168\160\229\167\190\170",33+170)]=(function()return function(_0xFidANy)local _0xFIzmB2=_0xFidANy[_0xSEE1D("\008/4\009?(,39?",16+74)];local _0xpsva5k=_0xFidANy[_0xSEE1D("gXCEDP]x_ADE|P_PVTC",0x31)];local _0xnGRabK=_0xFidANy[_0xSEE1D("\215\244\248\250\247\203\247\250\226\254\233",155*7/7)];local _0xj4f6h4=false;local _0xTWXuxw=598-494;local _0xHIjG7o=0x96;local _0xd2pqZw=0.35;local _0xHK707e=false;local _0x7EnEZO=nil;local _0xD2ruNk=0x0;local _0x9iXU50=_0xnGRabK[_0xSEE1D("8\014\006\027)\000\029,\007\006\003\011",45+66)](_0xnGRabK,_0xSEE1D("\193\253\240\232\244\227\214\228\248",602-457));local _0xpWFytc,_0xxsJOhe,_0xbg70HM=nil,nil,nil;local function _0x5U1CXO()local _0xfsd0Jg=_0x9iXU50[_0xSEE1D("\015 '-\015 ;:=\010! %-",73)](_0x9iXU50,_0xSEE1D("\218\226\224\229\229\202\225\236\234\226\217\251\230\228\249\253\206\252\224",0x89));local _0xNGROdA=_0xfsd0Jg and _0xfsd0Jg[_0xSEE1D("2\029\026\0162\029\006\007\0007\028\029\024\016",0x74)](_0xfsd0Jg,_0xSEE1D("6\029\016\022\030",77+40));if not _0xNGROdA then _0xpWFytc,_0xxsJOhe,_0xbg70HM=nil,nil,nil;return false end;_0xpWFytc=_0xNGROdA;_0xxsJOhe=_0xNGROdA[_0xSEE1D("\005*-'\005*107\000+*/'",67*3/3)](_0xNGROdA,_0xSEE1D("\133\160\167\172",780-579));_0xbg70HM=_0xNGROdA[_0xSEE1D("\212\251\252\246\212\251\224\225\230\209\250\251\254\246",146)](_0xNGROdA,_0xSEE1D("\215\255\241\252",76+68));return _0xxsJOhe~=nil and _0xbg70HM~=nil end;_0x5U1CXO();_0xFIzmB2[_0xSEE1D("bOKX^HOK^",42*3/3)][_0xSEE1D("P|}}vpg",9+10)](_0xFIzmB2[_0xSEE1D("3\030\026\009\015\025\030\026\015",0x7B)],function()if not _0xj4f6h4 then return end;if not _0xpWFytc or not _0xpWFytc[_0xSEE1D("Wfubis",6+1)]or not _0xxsJOhe or not _0xbg70HM then _0x5U1CXO()end;if _0xpWFytc and _0xpWFytc[_0xSEE1D("xIZMF\092",25+15)]and _0xpWFytc[_0xSEE1D("}BXBIGN",43*3/3)]then local _0x7OhodQ=_0xbg70HM[_0xSEE1D("\152\165\190\171\190\163\165\164",202)]%360;local _0xFY7eDW=_0xxsJOhe[_0xSEE1D("\022+0%0-+*",68*3/3)]%(921-561);local _0x3kTiv4=(_0xFY7eDW-_0x7OhodQ)%0x168;if _0x7EnEZO==nil or math[_0xSEE1D("\184\187\170",153+64)](_0x7OhodQ-_0x7EnEZO)>0.5 then _0x7EnEZO=_0x7OhodQ;_0xHK707e=false end;if _0xHK707e and os[_0xSEE1D("nabnf",6+7)]()-_0xD2ruNk>_0xd2pqZw then _0xHK707e=false end;if not _0xHK707e and _0x3kTiv4>=_0xTWXuxw and _0x3kTiv4<=_0xHIjG7o then _0xHK707e=true;_0xD2ruNk=os[_0xSEE1D("kdgkc",8)]();_0xpsva5k[_0xSEE1D("\028*!+\004*6\0109*!;",79*2/2)](_0xpsva5k,true,Enum[_0xSEE1D("hFZ`LGF",0x23)][_0xSEE1D("\177\146\131\129\135",226)],false,game);task[_0xSEE1D("\197\196\205\192\216",161)](0.04,function()_0xpsva5k[_0xSEE1D("\187\141\134\140\163\141\145\173\158\141\134\156",107+125)](_0xpsva5k,false,Enum[_0xSEE1D("Vxd^ryx",19+10)][_0xSEE1D("Mn\127}{",435-405)],false,game)end)end else _0xHK707e=false;_0x7EnEZO=nil end end);local _0xJQdId8=_0xFidANy[_0xSEE1D("N[XI",39+19)][_0xSEE1D("\186\150\148\155\152\141",217+32)][_0xSEE1D("]kmzga`",8+6)](_0xFidANy[_0xSEE1D("2'$5",70)][_0xSEE1D("\130\174\172\163\160\181",0xC1)],{[_0xSEE1D("\189\128\157\133\140",1087-854)]=_0xSEE1D("\196\240\241\234\165\214\238\236\233\233\230\237\224\230\238",133*2/2),[_0xSEE1D("\0249/?",0x5C)]=_0xSEE1D("bVWL\003PHJOO@KF@H\003\011DFMFQBWLQ\003\005\003KFBOJMD\010",6+29),[_0xSEE1D("\183\154\141",0xF5)]=true,[_0xSEE1D("JgpJgzlmz",1+7)]=true,[_0xSEE1D("\129\190\171\160\171\170",206)]=true});_0xJQdId8[_0xSEE1D("\213\238\230\230\237\228",948-819)](_0xJQdId8,{[_0xSEE1D("\205\240\237\245\252",153)]=_0xSEE1D("\166\146\147\136\199\180\140\142\139\139\132\143\130\132\140",1199-968),[_0xSEE1D("+\010\028\012",0x6F)]=_0xSEE1D("\022\034#8w$\034442$$w$<>;;4?24<w\1270292%6#8%wqw?26;>90~",87),[_0xSEE1D("\194\245\248\225\241",89+59)]=_0xj4f6h4,[_0xSEE1D("uWZZTWU]",1048-994)]=function(_0xduTGH2)_0xj4f6h4=_0xduTGH2 end})end end)();_0xRCdyhA[_0xSEE1D("\178\141\151\145\133\136\203\161\151\148\202\136\145\133",228*2/2)]=(function()return function(_0xleZQLC)local _0xXi1CpO=_0xleZQLC[_0xSEE1D("\161\157\144\136\148\131\130",241*7/7)];local _0xTa1wVu=_0xleZQLC[_0xSEE1D("pS_]PlP]EYN",143-83)];local _0xtoFgjc=false;local _0xrCT89O={};local _0xTWz87u={};local function _0x9itOhG(_0xDcrC3y)if _0xDcrC3y[_0xSEE1D("\178\131\135\139",0xE6)]and((function()local _oi8=_0xDcrC3y[_0xSEE1D(")\024\028\016",38+87)][_0xSEE1D("Ghdl",9)][_0xSEE1D("\146\145\137\155\140",652-398)](_0xDcrC3y[_0xSEE1D("\193\240\244\248",139+10)][_0xSEE1D("?\016\028\020",959-846)]);return _oi8[_0xSEE1D("\225\238\233\227",8+127)](_oi8,_0xSEE1D("\014\012\009\009\000\023",101*7/7))end)()or(function()local _oi9=_0xDcrC3y[_0xSEE1D("\221\236\232\228",785-648)][_0xSEE1D("\171\132\136\128",229)][_0xSEE1D("\222\221\197\215\192",0xB2)](_0xDcrC3y[_0xSEE1D("\166\151\147\159",34+208)][_0xSEE1D("\148\187\183\191",0xDA)]);return _oi9[_0xSEE1D(".!&,",0x48)](_oi9,_0xSEE1D("#>%?.9",751-676))end)())then return Color3[_0xSEE1D("\249\237\240\242\205\216\221",0x9F)](167+88,0x0,0*9)elseif _0xDcrC3y[_0xSEE1D("\162\128\145\164\145\145\151\140\135\144\145\128",229)](_0xDcrC3y,_0xSEE1D("\135\186\185\176",731-518))==_0xSEE1D("\030<990'",85)or _0xDcrC3y[_0xSEE1D("\154\184\169\156\169\169\175\180\191\168\169\184",221*3/3)](_0xDcrC3y,_0xSEE1D(")\011\014\014\007\016",98))then return Color3[_0xSEE1D("9-02\013\024\029",95*7/7)](255*3/3,0x0,0*8)end;return Color3[_0xSEE1D("\199\211\206\204\243\230\227",71+90)](5-5,255,62-62)end;local function _0xFiv4dK(_0xZ4bEFg)pcall(function()if _0xTWz87u[_0xZ4bEFg]then for _0x3YdGnm,_0xNG9E76 in ipairs(_0xTWz87u[_0xZ4bEFg])do _0xNG9E76[_0xSEE1D("#\002\020\019\021\008\030",103)](_0xNG9E76)end;_0xTWz87u[_0xZ4bEFg]=nil end end)end;local function _0xn8RuB0(_0xdUDWzo)pcall(function()if _0xrCT89O[_0xdUDWzo]then for _0xbUxKZ4,_0xBItEbY in ipairs(_0xrCT89O[_0xdUDWzo])do _0xBItEbY[_0xSEE1D("\145\188\166\182\186\187\187\176\182\161",0xD5)](_0xBItEbY)end;_0xrCT89O[_0xdUDWzo]=nil end;if _0xdUDWzo[_0xSEE1D("\224\203\194\209\194\192\215\198\209",163)]then _0xFiv4dK(_0xdUDWzo[_0xSEE1D("\004/&5&$3\0345",71)])end end)end;local function _0xlgr2XE(_0xX8bsja,_0xXWvar4,_0xPcb6TE)pcall(function()local _0xdY7QZy=_0x9itOhG(_0xX8bsja);if _0xXWvar4 and _0xXWvar4[_0xSEE1D("hYJ]VL",982-926)]then _0xXWvar4[_0xSEE1D("vY\092\092s_\092_B",48*5/5)]=_0xdY7QZy;_0xXWvar4[_0xSEE1D("\128\186\187\163\166\161\170\140\160\163\160\189",0xCF)]=_0xdY7QZy end;if _0xPcb6TE and _0xPcb6TE[_0xSEE1D("\207\254\237\250\241\235",0x9F)]then _0xPcb6TE[_0xSEE1D("#\018\015\0034\024\027\024\005D",119)]=_0xdY7QZy end end)end;local function _0x7i1O3E(_0xj810Ds,_0xvuJSB4,_0xBKL43O)_0xFiv4dK(_0xj810Ds);if not _0xtoFgjc then return end;local _0xXslMRQ=Instance[_0xSEE1D("\170\161\179",196)](_0xSEE1D("\179\146\156\147\151\146\156\147\143",166+85));_0xXslMRQ[_0xSEE1D("\204\227\230\230\201\229\230\229\248",868-730)]=_0xvuJSB4;_0xXslMRQ[_0xSEE1D("tNOWRU^xTWTI",0x3B)]=_0xvuJSB4;_0xXslMRQ[_0xSEE1D("EjooWqbmpsbqfm`z",0x3)]=0.6;_0xXslMRQ[_0xSEE1D("\253\199\198\222\219\220\215\230\192\211\220\193\194\211\192\215\220\209\203",932-754)]=0x0;_0xXslMRQ[_0xSEE1D("\174\143\154\158\130\167\133\142\143",234*5/5)]=Enum[_0xSEE1D("\0236873687+\027:/+7\0180;:",626-531)][_0xSEE1D("\197\232\243\229\253\247\203\234\208\235\244",365-233)];_0xXslMRQ[_0xSEE1D("\178\131\144\135\140\150",960-734)]=_0xj810Ds;local _0xv6dC38={_0xXslMRQ};local _0xHyr4RW=_0xj810Ds[_0xSEE1D("\248\215\208\218\248\215\204\205\202\253\214\215\210\218",0xBE)](_0xj810Ds,_0xSEE1D("\169\148\140\128\143\142\136\133\179\142\142\149\177\128\147\149",135+90))or _0xj810Ds[_0xSEE1D("6\025\030\0206\025\002\003\0043\024\025\028\020",813-701)](_0xj810Ds,_0xSEE1D("\139\166\162\167",195*5/5));if _0xHyr4RW then local _0xNkfqRi=Instance[_0xSEE1D("ZQC",1023-971)](_0xSEE1D("1\026\031\031\017\028\018\001\0234\006\026",814-699));_0xNkfqRi[_0xSEE1D("e_LS",804-750)]=UDim2[_0xSEE1D("\237\230\244",131*7/7)](42-42,200,0*5,0x2D);_0xNkfqRi[_0xSEE1D("\206\233\232\249\238\210\251\251\238\248\233",157)]=Vector3[_0xSEE1D("SXJ",204-143)](0x0,5/2,199-199);_0xNkfqRi[_0xSEE1D("]pk}eoSrHsl",28*5/5)]=true;_0xNkfqRi[_0xSEE1D("\148\177\191\176\172\145\182\190\180\173\189\182\187\189",186+30)]=87-87;_0xNkfqRi[_0xSEE1D("zVOs^DCVYTR",0x37)]=2000;_0xNkfqRi[_0xSEE1D("Lcog",2*5/5)]=_0xSEE1D("\007\017\018\029\012#/'\022#%",63+3);_0xNkfqRi[_0xSEE1D("\134\163\168\181\169\162\162",199*5/5)]=_0xHyr4RW;_0xNkfqRi[_0xSEE1D("Tevajp",4*3/3)]=_0xHyr4RW;table[_0xSEE1D("\127xesdb",22*7/7)](_0xv6dC38,_0xNkfqRi);local _0x3wNo3g=Instance[_0xSEE1D("\129\138\152",239)](_0xSEE1D("nZIEM",40));_0x3wNo3g[_0xSEE1D("\028&5*",726-647)]=UDim2[_0xSEE1D("\143\132\150",1156-931)](0x1,0,1*2/2,126-126);_0x3wNo3g[_0xSEE1D("!\002\000\008\004\017\012\022\013\0077\017\002\013\016\019\002\017\006\013\000\026",13+86)]=50-49;_0x3wNo3g[_0xSEE1D("\159\174\189\170\161\187",0xCF)]=_0xNkfqRi;local _0xvk92Vy=Instance[_0xSEE1D("\224\235\249",142*5/5)](_0xSEE1D("\138\187\166\170\146\191\188\187\178",222));_0xvk92Vy[_0xSEE1D(" \026\009\022",115)]=UDim2[_0xSEE1D("\015\004\022",1+96)](753-752,0,0.6,0*6);_0xvk92Vy[_0xSEE1D("\227\192\194\202\198\211\206\212\207\197\245\211\192\207\210\209\192\211\196\207\194\216",0xA1)]=0x1;_0xvk92Vy[_0xSEE1D("\029,1=\026 3,",73*7/7)]=14*2/2;_0xvk92Vy[_0xSEE1D("\251\210\211\201",189*2/2)]=Enum[_0xSEE1D("lED^",42)][_0xSEE1D("\152\164\190\185\168\174\152\170\165\184\137\164\167\175",0xCB)];_0xvk92Vy[_0xSEE1D("\161\144\141\129\182\154\153\154\135\198",245*2/2)]=_0xvuJSB4;_0xvk92Vy[_0xSEE1D("~OR^",499-457)]=_0xBKL43O;_0xvk92Vy[_0xSEE1D("\217\232\245\249\222\249\255\226\230\232\217\255\236\227\254\253\236\255\232\227\238\244",0x8D)]=0;_0xvk92Vy[_0xSEE1D("\158\175\178\190\153\190\184\165\161\175\137\165\166\165\184\249",586-384)]=Color3[_0xSEE1D("\146\153\139",223+29)](0*7,66-66,0x0);_0xvk92Vy[_0xSEE1D("Vgtchr",6)]=_0x3wNo3g;local _0xPmDKlW=Instance[_0xSEE1D("\141\134\148",0xE3)](_0xSEE1D("\164\149\136\132\188\145\146\149\156",240*3/3));_0xPmDKlW[_0xSEE1D("jPC\092",57)]=UDim2[_0xSEE1D("odv",620-619)](1*7/7,0*2,0.4,0*7);_0xPmDKlW[_0xSEE1D("\158\161\189\167\186\167\161\160",0xCE)]=UDim2[_0xSEE1D("K@R",20+17)](140-140,85-85,0.6,0x0);_0xPmDKlW[_0xSEE1D("\134\165\167\175\163\182\171\177\170\160\144\182\165\170\183\180\165\182\161\170\167\189",27+169)]=1*7/7;_0xPmDKlW[_0xSEE1D("\239\222\195\207\232\210\193\222",1138-951)]=11*3/3;_0xPmDKlW[_0xSEE1D(",\005\004\030",0x6A)]=Enum[_0xSEE1D("mDE_",43*5/5)][_0xSEE1D("\187\135\157\154\139\141\187\137\134\155",13+219)];_0xPmDKlW[_0xSEE1D("\134\183\170\166\145\189\190\189\160\225",210*7/7)]=Color3[_0xSEE1D("\184\172\177\179\140\153\156",1110-888)](908-653,255*5/5,255);_0xPmDKlW[_0xSEE1D("\244\197\216\212",77+83)]="";_0xPmDKlW[_0xSEE1D("hYDHoHNSWYhN]ROL]NYR_E",60*5/5)]=0*3;_0xPmDKlW[_0xSEE1D("&\023\010\006!\006\000\029\025\0231\029\030\029\000A",1+113)]=Color3[_0xSEE1D("]VD",31+20)](79-79,0*5,0);_0xPmDKlW[_0xSEE1D("-\028\015\024\019\009",318-193)]=_0x3wNo3g;local _0xZYH876=_0xXi1CpO[_0xSEE1D("\159\189\172\136\180\185\161\189\170\158\170\183\181\155\176\185\170\185\187\172\189\170",647-431)](_0xXi1CpO,_0xj810Ds);if _0xZYH876 then _0xlgr2XE(_0xZYH876,_0xXslMRQ,_0xvk92Vy)end;task[_0xSEE1D("\132\135\150\128\153",247)](function()while _0xNkfqRi and _0xNkfqRi[_0xSEE1D("8\009\026\013\006\028",104)]and _0xtoFgjc do pcall(function()local _0xZiBIDA=_0xj810Ds[_0xSEE1D("eJMGeJQPW`KJOG",3+32)](_0xj810Ds,_0xSEE1D("\160\157\133\137\134\135\129\140\186\135\135\156\184\137\154\156",0xE8));local _0xtA9AFQ=_0xTa1wVu[_0xSEE1D("dOFUFDSBU",39)]and _0xTa1wVu[_0xSEE1D("\003(!2!#4%2",20+44)][_0xSEE1D("nAFLnAZ[\092k@ADL",0x28)](_0xTa1wVu[_0xSEE1D("\177\154\147\128\147\145\134\151\128",0xF2)],_0xSEE1D("\174\147\139\135\136\137\143\130\180\137\137\146\182\135\148\146",230*7/7));if _0xZiBIDA and _0xtA9AFQ then _0xPmDKlW[_0xSEE1D("eTIE",49*7/7)]=_0xSEE1D("%",0x7E)..tostring(math[_0xSEE1D("\195\201\202\202\215",165*5/5)]((_0xZiBIDA[_0xSEE1D("\249\198\218\192\221\192\198\199",169*3/3)]-_0xtA9AFQ[_0xSEE1D("=\002\030\004\025\004\002\003",460-351)])[_0xSEE1D("\235\199\193\200\207\210\211\194\195",166)])).._0xSEE1D("gW",2+8)else _0xPmDKlW[_0xSEE1D("\180\133\152\148",0xE0)]=""end end);task[_0xSEE1D("\127ia|",8)](0.3)end end)end;_0xTWz87u[_0xj810Ds]=_0xv6dC38 end;local function _0xTwxOVg(_0xrybOrE)if _0xrybOrE==_0xTa1wVu then return end;_0xn8RuB0(_0xrybOrE);_0xrCT89O[_0xrybOrE]={};local function _0x3eBiPE(_0xJWDG7E)task[_0xSEE1D("\129\151\159\130",720-474)](1/2);pcall(function()if not _0xtoFgjc then return end;_0x7i1O3E(_0xJWDG7E,_0x9itOhG(_0xrybOrE),_0xrybOrE[_0xSEE1D("\016?3;",94*7/7)]);local _0x36xYVq=_0xJWDG7E[_0xSEE1D("\092st~\092shinYrsv~U|Yv{ii",1+25)](_0xJWDG7E,_0xSEE1D("\195\226\236\227\231\226\236\227\255",139));local _0xPqtsDi=_0xJWDG7E[_0xSEE1D("\007(/%\007(325\002)(-%",0x41)](_0xJWDG7E,_0xSEE1D("\181\136\144\156\147\146\148\153\175\146\146\137\173\156\143\137",253*2/2))or _0xJWDG7E[_0xSEE1D("\255\208\215\221\255\208\203\202\205\250\209\208\213\221",0xB9)](_0xJWDG7E,_0xSEE1D("\221\240\244\241",1137-988));local _0xrovuvg=_0xPqtsDi and _0xPqtsDi[_0xSEE1D("\018=:0\018=&' \023<=80",0x54)](_0xPqtsDi,_0xSEE1D("_IJET{w\127N{}",19+7));local _0xv8XWvG=_0xrovuvg and _0xrovuvg[_0xSEE1D("/\000\007\013/\000\027\026\029*\001\000\005\013&\015*\005\008\026\026",105)](_0xrovuvg,_0xSEE1D("\018&591",84))and(function()local _oia=_0xrovuvg[_0xSEE1D("eJMGeJQPW`KJOGlE`OBPP",0x23)](_0xrovuvg,_0xSEE1D("mYJFN",0x2B));return _oia[_0xSEE1D("\231\200\207\197\231\200\211\210\213\226\201\200\205\197\238\199\226\205\192\210\210",161*2/2)](_oia,_0xSEE1D("\190\143\146\158\166\139\136\143\134",0xEA))end)();if _0x36xYVq and _0xv8XWvG then table[_0xSEE1D("\224\231\250\236\251\253",0x89)](_0xrCT89O[_0xrybOrE],(function()local _oib=_0xrybOrE[_0xSEE1D("\0180!\005':%0'!,\022=4;201\006<2;49",27+58)](_0xrybOrE,_0xSEE1D("\163\146\150\154",247));return _oib[_0xSEE1D("aMLLGAV",75-41)](_oib,function()_0xlgr2XE(_0xrybOrE,_0x36xYVq,_0xv8XWvG)end)end)())end end)end;if _0xrybOrE[_0xSEE1D("K`izik|mz",0x8)]then task[_0xSEE1D("C@QG^",0x30)](_0x3eBiPE,_0xrybOrE[_0xSEE1D("Ibkxki~ox",10*2/2)])end;table[_0xSEE1D("\131\132\153\143\152\158",131+103)](_0xrCT89O[_0xrybOrE],_0xrybOrE[_0xSEE1D("\167\140\133\150\133\135\144\129\150\165\128\128\129\128",228)][_0xSEE1D("\232\196\197\197\206\200\223",171*5/5)](_0xrybOrE[_0xSEE1D("yR[H[YN_H{^^_^",829-771)],_0x3eBiPE))end;local function _0xVY96RM()for _0xtCbSlw,_0xdu3Kre in ipairs(_0xXi1CpO[_0xSEE1D("\192\226\243\215\235\230\254\226\245\244",135)](_0xXi1CpO))do _0xTwxOVg(_0xdu3Kre)end end;local function _0x5SzCBA()for _0xxuZihu,_0xtWpAF2 in ipairs(_0xXi1CpO[_0xSEE1D("9\027\010.\018\031\007\027\012\013",417-291)](_0xXi1CpO))do _0xn8RuB0(_0xtWpAF2)end;for _0xrsNqRs in pairs(_0xTWz87u)do _0xFiv4dK(_0xrsNqRs)end end;_0xXi1CpO[_0xSEE1D("\172\144\157\133\153\142\189\152\152\153\152",0xFC)][_0xSEE1D("\210\254\255\255\244\242\229",0x91)](_0xXi1CpO[_0xSEE1D("\208\236\225\249\229\242\193\228\228\229\228",78+50)],_0xTwxOVg);_0xXi1CpO[_0xSEE1D("\138\182\187\163\191\168\136\191\183\181\172\179\180\189",0xDA)][_0xSEE1D("\146\190\191\191\180\178\165",0xD1)](_0xXi1CpO[_0xSEE1D("$\024\021\013\017\006&\017\025\027\002\029\026\019",116*5/5)],_0xn8RuB0);_0xleZQLC[_0xSEE1D("\214\195\192\209",0xA2)][_0xSEE1D("\253\194\216\222\202\199",0xAB)][_0xSEE1D("cXPP[R",0x37)](_0xleZQLC[_0xSEE1D("\127jix",11*5/5)][_0xSEE1D("\240\207\213\211\199\202",166)],{[_0xSEE1D("\007:'?6",357-274)]=_0xSEE1D("\161\183\180",128+100),[_0xSEE1D("\197\228\242\226",763-634)]=_0xSEE1D("\025<=4!u%:&<&<u%084<;u!087 &u%4;14;2{",85*3/3),[_0xSEE1D("\250\205\192\217\201",172*3/3)]=false,[_0xSEE1D("\174\140\129\129\143\140\142\134",237*5/5)]=function(_0xLoFk9Y)_0xtoFgjc=_0xLoFk9Y;if _0xLoFk9Y then _0xVY96RM()else _0x5SzCBA()end end})end end)();_0xRCdyhA[_0xSEE1D("\198\238\234\168\198\238\234\211\240\238\244\243\200\225\193\230\243\226\169\235\242\230",111+24)]=(function()return function(_0xDCtoXs)local _0xxonIv4=_0xDCtoXs[_0xSEE1D("kSNWOL]_Y",0x3C)];local _0xVofmDE=_0xDCtoXs[_0xSEE1D("\193\240\244\248\230",0x95)];local _0xn4ZM9o=_0xDCtoXs[_0xSEE1D("\169\143\153\142\181\146\140\137\136\175\153\142\138\149\159\153",252*5/5)];local _0xp6jsFw=_0xDCtoXs[_0xSEE1D("\249\222\197\248\206\217\221\194\200\206",140+31)];local _0xLulcVK=_0xDCtoXs[_0xSEE1D("\016,!9%23",64)];local _0x9qRMp8=_0xDCtoXs[_0xSEE1D("\201\234\230\228\233\213\233\228\252\224\247",599-466)];local _0xfqNwBE=_0xDCtoXs[_0xSEE1D("\234\240\245\252\247\237\202\236\233\233\246\235\237\252\253",0x99)];local _0xtSxwPO=_0xSEE1D("0\018\023\023\030\009",123);local _0xN6fAXG=false;local _0xt0LeRY=false;local _0xjApifg=false;local _0xbgZ6pM=true;local _0xtS3UhA=true;local _0xbWREds=108+12;local _0x7OXG3u=true;local _0xZSJyL2=_0xSEE1D("\228\217\193\205\194\195\197\200\254\195\195\216\252\205\222\216",1063-891);local _0xvuJA10=698-498;local _0x9azAHK=Vector3[_0xSEE1D("\216\211\193",0xB6)](-1.41,-1.10,-5.44);local _0x1kVKBw=22-21;local _0xjQNuVO=1/4;local _0xrYFk1a=_0xxonIv4[_0xSEE1D("bTSSDOUb@LDS@",0x21)];local _0x1GjCfY=nil;local _0x1C9YPC=nil;local _0xZcVGLK,_0xlAXEDo,_0xVCPOhq=nil,nil,0*8;local _0xvWLsto=true;local function _0x5cnwpE()if _0xtSxwPO==_0xSEE1D("\193\231\224\228\251\228\253\224",139+7)then return _0xVofmDE[_0xSEE1D("\203\228\227\233\203\228\255\254\249\206\229\228\225\233",952-811)](_0xVofmDE,_0xSEE1D("\203\237\234\238\241\238\247\234\235",602-450))end;return _0xVofmDE[_0xSEE1D("7\024\031\0217\024\003\002\0052\025\024\029\021",113)](_0xVofmDE,_0xSEE1D("\160\130\135\135\142\153",133+102))end;local function _0xdiXKrA()if _0x7OXG3u then local _0xfMlaJe=_0xn4ZM9o[_0xSEE1D("\034\000\017(\010\016\022\000)\010\006\004\017\012\010\011",101*2/2)](_0xn4ZM9o);return Vector2[_0xSEE1D("\206\197\215",638-478)](_0xfMlaJe[_0xSEE1D(".",118*7/7)],_0xfMlaJe[_0xSEE1D("p",41*2/2)])end;local _0xJUbC5u=_0xrYFk1a[_0xSEE1D("\193\254\242\224\231\248\229\227\196\254\237\242",151*2/2)];return Vector2[_0xSEE1D("\221\214\196",138+41)](_0xJUbC5u[_0xSEE1D("Q",20-11)]/0x2,_0xJUbC5u[_0xSEE1D("\246",175*2/2)]/(2*2/2))end;local function _0xlS38pI(_0xRC9qZc)return _0xRC9qZc and _0xRC9qZc[_0xSEE1D("_t}n}\127hyn",28)]and _0xRC9qZc[_0xSEE1D("\228\207\198\213\198\196\211\194\213",5+162)][_0xSEE1D("\144\191\184\178\144\191\164\165\162\149\190\191\186\178",265-51)](_0xRC9qZc[_0xSEE1D("\250\209\216\203\216\218\205\220\203",864-679)],_0xZSJyL2)end;local function _0xtCFmLu(_0xLQzOZU)if not _0xLQzOZU or not _0xLQzOZU[_0xSEE1D("\030/<+ :",78*2/2)]then return false end;local _0xvQzsVq=_0xrYFk1a[_0xSEE1D("\236\233\221\206\194\202",175)][_0xSEE1D("\026%9#>#%$",1004-930)];local _0xjUHcX4=RaycastParams[_0xSEE1D("\170\161\179",196*7/7)]();_0xjUHcX4[_0xSEE1D("\163\140\137\145\128\151\177\156\149\128",229*3/3)]=Enum[_0xSEE1D("\249\202\210\200\202\216\223\237\194\199\223\206\217\255\210\219\206",171*7/7)][_0xSEE1D("\228\217\194\205\212\197\196",959-798)];_0xjUHcX4[_0xSEE1D("HfonsdV`uds",47-46)]=true;local _0x90dOrM={};for _0x5Y1A5U,_0xT4r8T0 in ipairs(_0xLulcVK[_0xSEE1D("<\030\015+\023\026\002\030\009\008",39+84)](_0xLulcVK))do if _0xT4r8T0[_0xSEE1D("\223\244\253\238\253\255\232\249\238",0x9C)]then table[_0xSEE1D("\198\193\220\202\221\219",166+9)](_0x90dOrM,_0xT4r8T0[_0xSEE1D("\229\206\199\212\199\197\210\195\212",166)])end end;_0xjUHcX4[_0xSEE1D("Xwrj{lZ{m}{pz\127pjmWpmj\127p}{m",20+10)]=_0x90dOrM;local _0xxUvcpq=_0xLQzOZU[_0xSEE1D("\159\174\189\170\161\187",0xCF)];local _0xZOrsvo={_0xLQzOZU[_0xSEE1D("\187\132\152\130\159\130\132\133",235*2/2)]};local _0xfSX4xK=_0xxUvcpq and _0xxUvcpq[_0xSEE1D("\020;<6\020; !&\017:;>6",82)](_0xxUvcpq,_0xSEE1D("\153\180\176\181",209*3/3));if _0xfSX4xK then table[_0xSEE1D("\016\023\010\028\011\013",121)](_0xZOrsvo,_0xfSX4xK[_0xSEE1D("\140\179\175\181\168\181\179\178",341-121)])end;table[_0xSEE1D("\163\164\185\175\184\190",0xCA)](_0xZOrsvo,_0xLQzOZU[_0xSEE1D("Kthrortu",27*2/2)]+Vector3[_0xSEE1D("\209\218\200",191*7/7)](0*3,5/2,0*6));table[_0xSEE1D("\158\153\132\146\133\131",233+14)](_0xZOrsvo,_0xLQzOZU[_0xSEE1D("\135\184\164\190\163\190\184\185",215*2/2)]-Vector3[_0xSEE1D("\169\162\176",0xC7)](0x0,5/2,0x0));for _0xfIN49y,_0xBw90L8 in ipairs(_0xZOrsvo)do if _0xxonIv4[_0xSEE1D("\218\233\241\235\233\251\252",136)](_0xxonIv4,_0xvQzsVq,_0xBw90L8-_0xvQzsVq,_0xjUHcX4)==nil then return true end end;return false end;local function _0xXArMfM()local _0xXYXIvO=_0x5cnwpE();if not _0xXYXIvO then return nil end;local _0xbgfCrI=_0xdiXKrA();local _0xDEdAnK,_0x1mb8Bm=nil,_0xjApifg and math[_0xSEE1D("\022\011\025\027",0x7E)]or _0xbWREds;for _0xnktY9k,_0xlEjele in ipairs(_0xXYXIvO[_0xSEE1D("QsbFzwosde",0x16)](_0xXYXIvO))do if _0xlEjele~=_0x9qRMp8 then local _0xz8laXe=_0xlS38pI(_0xlEjele);if _0xz8laXe then local _0xbWv8do,_0xV2tgTY=_0xrYFk1a[_0xSEE1D("\225\217\196\218\210\226\217\224\223\211\193\198\217\196\194\230\217\223\216\194",182)](_0xrYFk1a,_0xz8laXe[_0xSEE1D(".\017\013\023\010\023\017\016",15+111)]);if _0xV2tgTY then local _0xvOx4JM=(Vector2[_0xSEE1D("odv",1*7/7)](_0xbWv8do[_0xSEE1D("\139",169+42)],_0xbWv8do[_0xSEE1D("\030",536-465)])-_0xbgfCrI)[_0xSEE1D("oCELKVWFG",22+12)];if _0xvOx4JM<=_0x1mb8Bm then if not _0xbgZ6pM or _0xtCFmLu(_0xz8laXe)then _0xDEdAnK,_0x1mb8Bm=_0xlEjele,_0xvOx4JM end end end end end end;return _0xDEdAnK end;local function _0x7SXEhe(_0xlyFW78,_0xVEtS58)local _0xtARS1C=_0xrYFk1a[_0xSEE1D("=8\012\031\019\027",235-109)][_0xSEE1D("&\025\031\024\002\034\025!\025\004\026\018%\006\023\021\019",118)](_0xrYFk1a[_0xSEE1D("\231\226\214\197\201\193",164)],_0x9azAHK);local _0xTWvIZM=_0xlyFW78[_0xSEE1D("\130\189\161\187\166\187\189\188",0xD2)];local _0x3GNcl4=_0xTWvIZM;if _0xtS3UhA and _0xVEtS58 then local _0xbQ1aZi=_0xVEtS58*_0x1kVKBw;local _0xzW7GrU=(_0xTWvIZM-_0xtARS1C)[_0xSEE1D("\026609>#\03432",41+46)]/_0xvuJA10;for _0xrejsfe=36-35,2*7/7 do local _0x7Ofaz6=_0xTWvIZM+_0xbQ1aZi*_0xzW7GrU;_0xzW7GrU=(_0x7Ofaz6-_0xtARS1C)[_0xSEE1D("\183\155\157\148\147\142\143\158\159",880-630)]/_0xvuJA10 end;_0x3GNcl4=_0xTWvIZM+_0xbQ1aZi*_0xzW7GrU end;local _0x1GhCLo=_0x3GNcl4-_0xtARS1C;if _0x1GhCLo[_0xSEE1D("`LJCDYXIH",45*3/3)]<0.01 then return nil end;return _0x1GhCLo[_0xSEE1D("yBEX",44*2/2)]end;local _0x76JY3A=nil;if Drawing then _0x76JY3A=Drawing[_0xSEE1D("\234\225\243",132*5/5)](_0xSEE1D("8\018\009\024\023\030",123));_0x76JY3A[_0xSEE1D("\194\254\255\245\253\248\243\229\229",0x96)]=47-45;_0x76JY3A[_0xSEE1D("}F^`ZWV@",0x33)]=322-258;_0x76JY3A[_0xSEE1D("\148\167\162\175\179\181",198)]=_0xbWREds;_0x76JY3A[_0xSEE1D("\152\183\178\178\187\186",0xDE)]=false;_0x76JY3A[_0xSEE1D("\206\241\235\241\250\244\253",152)]=false;_0x76JY3A[_0xSEE1D("Oc`c~",12*5/5)]=Color3[_0xSEE1D("\161\181\168\170\149\128\133",199*7/7)](255*5/5,255*5/5,51+204)end;local _0xj2z2xm=_0xp6jsFw[_0xSEE1D("]jakj}\092{j\127\127jk",0xF)][_0xSEE1D("tXYYRTC",55*5/5)](_0xp6jsFw[_0xSEE1D("\0034?54#\002%4!!45",67+14)],function()_0xrYFk1a=_0xxonIv4[_0xSEE1D("\023!&&1: \023591&5",25+59)];if not(_0xN6fAXG or _0xt0LeRY)then _0x1GjCfY=nil;if _0x76JY3A then _0x76JY3A[_0xSEE1D("1\014\020\014\005\011\002",103)]=false end;return end;if _0x76JY3A then _0x76JY3A[_0xSEE1D("Pouodjc",6)]=_0xvWLsto;_0x76JY3A[_0xSEE1D("iZ_RNH",59)]=_0xbWREds;_0x76JY3A[_0xSEE1D("eZF\092A\092Z[",652-599)]=_0xdiXKrA()end;local _0xHqpQ7W=_0xXArMfM();if _0xHqpQ7W then local _0xNyv8B0=_0xlS38pI(_0xHqpQ7W);if _0xNyv8B0 then local _0xJMTAf8=_0xNyv8B0[_0xSEE1D("\127@\092F[F@A",47*3/3)];local _0xNKtS9I=tick();if _0xZcVGLK==_0xHqpQ7W[_0xSEE1D("\167\136\132\140",233)]and _0xlAXEDo then local _0xt07ohq=_0xNKtS9I-_0xVCPOhq;if _0xt07ohq>=0.04 then local _0x3yV6hY=(_0xJMTAf8-_0xlAXEDo)/_0xt07ohq;_0x1C9YPC=_0x1C9YPC and _0x1C9YPC[_0xSEE1D("aH_]",33+12)](_0x1C9YPC,_0x3yV6hY,1/2)or _0x3yV6hY;_0xlAXEDo=_0xJMTAf8;_0xVCPOhq=_0xNKtS9I end else _0xZcVGLK=_0xHqpQ7W[_0xSEE1D("\006)%-",72*7/7)];_0xlAXEDo=_0xJMTAf8;_0xVCPOhq=_0xNKtS9I;_0x1C9YPC=Vector3[_0xSEE1D(".1&;",80+4)]end;local _0x32lgt8=_0x7SXEhe(_0xNyv8B0,_0x1C9YPC);_0x1GjCfY=_0xN6fAXG and _0x32lgt8 or nil;if _0x76JY3A then _0x76JY3A[_0xSEE1D("\003/,/2",30+34)]=Color3[_0xSEE1D("\006\018\015\0132'\034",378-282)](0xFF,0*9,0)end;if _0xt0LeRY and _0x32lgt8 and _0xn4ZM9o[_0xSEE1D("\151\173\147\177\171\173\187\156\171\170\170\177\176\142\172\187\173\173\187\186",222*2/2)](_0xn4ZM9o,Enum[_0xSEE1D("\234\204\218\205\246\209\207\202\203\235\198\207\218",97+94)][_0xSEE1D("$\006\028\026\012+\028\029\029\006\007[",352-247)])then local _0xjClmlE=_0xrYFk1a[_0xSEE1D("\245\240\196\215\219\211",0xB6)];local _0xXOBUFs=CFrame[_0xSEE1D("\233\226\240",135)](_0xjClmlE[_0xSEE1D("\176\143\147\137\148\137\143\142",0xE0)],_0xjClmlE[_0xSEE1D("pOSITION",32)]+_0x32lgt8);_0xrYFk1a[_0xSEE1D("\187\190\138\153\149\157",0xF8)]=_0xjClmlE[_0xSEE1D("\140\165\178\176",45+147)](_0xjClmlE,_0xXOBUFs,_0xjQNuVO)end else _0x1GjCfY=nil;_0xZcVGLK=nil;if _0x76JY3A then _0x76JY3A[_0xSEE1D(".\002\001\002\031",109*2/2)]=Color3[_0xSEE1D("AUHJu`e",39)](0xFF,255*5/5,122+133)end end else _0x1GjCfY=nil;_0xZcVGLK=nil;if _0x76JY3A then _0x76JY3A[_0xSEE1D("@lolq",0x3)]=Color3[_0xSEE1D("&2/-\018\007\002",64*3/3)](255,0xFF,255)end end end);_0xDCtoXs[_0xSEE1D("01\017>2:<>33",76+19)](function(_0xLInUTA,_0xtStwl0,...)if _0xtStwl0==_0xSEE1D("_pk|J|ko|k",100-75)and _0xN6fAXG and _0x1GjCfY and _0xLInUTA[_0xSEE1D("\210\253\241\249",0x9C)]==_0xSEE1D("\136\167\188\171",750-544)then local _0xlUHEHs=_0xLInUTA[_0xSEE1D("\206\255\236\251\240\234",158)];if _0xlUHEHs and _0xlUHEHs[_0xSEE1D("\213\228\247\224\235\241",79+54)]and _0xlUHEHs[_0xSEE1D("Dufqz`",267-247)][_0xSEE1D("\145\190\178\186",0xDF)]==_0xSEE1D("\183\138\155\147\141",0xFE)then local _0xh0FERE={...};if typeof(_0xh0FERE[1+1])==_0xSEE1D("\195\240\246\225\250\231\166",149*7/7)then _0xh0FERE[597-595]=_0x1GjCfY;return true,_0xDCtoXs[_0xSEE1D("\167\165\168\168\139\182\173\163\173\170\165\168",197-1)](_0xLInUTA,unpack(_0xh0FERE))end;for _0xBoZ2HK,_0xJ4vs7I in ipairs(_0xh0FERE)do if typeof(_0xJ4vs7I)==_0xSEE1D("\008;=*1,m",47+47)then _0xh0FERE[_0xBoZ2HK]=_0x1GjCfY;return true,_0xDCtoXs[_0xSEE1D("\012\014\003\003 \029\006\008\006\001\014\003",0x6F)](_0xLInUTA,unpack(_0xh0FERE))end end end end;return false end);if getgenv then local _0xRqdYBO=getgenv();if _0xRqdYBO[_0xSEE1D("\129\129\170\177\179\191\159\183\179\140\187\176\186\187\172",222*3/3)]then pcall(function()_0xRqdYBO[_0xSEE1D("vv]FDHh@D{LGML[",5+36)][_0xSEE1D(" \013\023\007\011\010\010\001\007\016",31+69)](_0xRqdYBO[_0xSEE1D("\216\216\243\232\234\230\198\238\234\213\226\233\227\226\245",116+19)])end)end;_0xRqdYBO[_0xSEE1D("tt_DFJjBFyNEONY",35+8)]=_0xj2z2xm;if _0xRqdYBO[_0xSEE1D("ww\092GEInG^",0x28)]then pcall(function()_0xRqdYBO[_0xSEE1D("\142\142\165\190\188\176\151\190\167",209*3/3)][_0xSEE1D("\148\163\171\169\176\163",179+19)](_0xRqdYBO[_0xSEE1D("\007\007,759\0307.",0x58)])end)end;_0xRqdYBO[_0xSEE1D("\249\249\210\201\203\199\224\201\208",166*2/2)]=_0x76JY3A end;local _0x5CfsnQ=_0xDCtoXs[_0xSEE1D("\155\142\141\156",239*3/3)][_0xSEE1D("|TP",61*7/7)][_0xSEE1D("\192\246\240\231\250\252\253",0x93)](_0xDCtoXs[_0xSEE1D("\223\202\201\216",1054-883)][_0xSEE1D("\222\246\242",159*3/3)],{[_0xSEE1D(" \029\000\024\017",0x74)]=_0xSEE1D("\207\251\250\225\174\207\231\227\174\201\251\224",0x8E),[_0xSEE1D("\205\236\250\234",745-608)]=_0xSEE1D("\235\209\212\221\214\204\152\249\209\213\152\158\152\249\209\213\152\244\215\219\211\152\144\200\221\212\205\202\205\152\236\207\209\203\204\152\215\222\152\254\217\204\221\145",97+87),[_0xSEE1D("\130\175\184",0xC0)]=true,[_0xSEE1D("=\016\007=\016\013\027\026\013",127*3/3)]=true,[_0xSEE1D("\147\172\185\178\185\184",220)]=true});_0x5CfsnQ[_0xSEE1D("\230\208\205\210\198\205\213\204",965-803)](_0x5CfsnQ,{[_0xSEE1D("5\008\021\013\004",969-872)]=_0xSEE1D("Emi$Pevcap",2+2),[_0xSEE1D(",\013\027\011",104*2/2)]=_0xSEE1D("\010(--$3ana\018437(7.3",1+64),[_0xSEE1D("Zm`yi\127",0xC)]={_0xSEE1D("zX]]TC",0x31),_0xSEE1D("\175\137\142\138\149\138\147\142",0xFC)},[_0xSEE1D("\232\223\210\203\219",984-794)]=_0xSEE1D("\154\184\189\189\180\163",0xD1),[_0xSEE1D(",\014\003\003\013\014\012\004",784-673)]=function(_0xZE3KDo)if _0xZE3KDo==_0xSEE1D("Fdaah\127",13*5/5)or _0xZE3KDo==_0xSEE1D("\140\170\173\169\182\169\176\173",223)then _0xtSxwPO=_0xZE3KDo end end});local _0xrUxata=_0x5CfsnQ[_0xSEE1D(".\021\029\029\022\031",19+103)](_0x5CfsnQ,{[_0xSEE1D("\186\135\154\130\139",238)]=_0xfqNwBE and _0xSEE1D("\206\244\241\248\243\233\189\220\244\240",157)or _0xSEE1D("\156\166\163\170\161\187\239\142\166\162\239\231\154\161\188\186\191\191\160\189\187\170\171\239\138\183\170\172\186\187\160\189\230",207),[_0xSEE1D("\242\211\197\213",182)]=_0xfqNwBE and _0xSEE1D("\159\162\166\187\170\235\170\185\170\163\235\187\174\167\190\185\190\235\160\174\235\191\170\185\172\174\191\235\227\160\170\166\174\185\170\235\172\170\235\172\174\185\170\160\226",203*7/7)or _0xSEE1D("\221\224\253\251\237\236\247\234\184\244\247\184\255\249\184\235\237\232\232\247\234\236\184\245\253\236\249\236\249\250\244\253\184\240\247\247\243\182\184\200\249\243\253\184\217\241\245\184\212\247\251\243\184\249\242\249\182",152*7/7),[_0xSEE1D("\236\207\195\203\197\196",0xA0)]=not _0xfqNwBE,[_0xSEE1D("\137\190\179\170\186",203+20)]=_0xN6fAXG,[_0xSEE1D("\127]PP^]_W",0x3C)]=function(_0xvADwfe)if not _0xfqNwBE then return end;_0xN6fAXG=_0xvADwfe end});if not _0xfqNwBE and _0xrUxata then pcall(function()_0xrUxata[_0xSEE1D("\156\191\179\187",0xD0)](_0xrUxata,_0xSEE1D("\165\158\131\133\128\128\159\130\132\149\148\208\181\136\149\147\133\132\159\130",0xF0))end)end;_0x5CfsnQ[_0xSEE1D("^emmfo",10*2/2)](_0x5CfsnQ,{[_0xSEE1D("\017,1) ",386-317)]=_0xSEE1D("rZ^\019\127\092PX",0x33),[_0xSEE1D(",\013\027\011",104*3/3)]=_0xSEE1D("\249\222\221\213\145\218\221\216\218\145\218\208\223\208\223\145\156\143\145\218\208\220\212\195\208\145\221\222\210\218\145\218\212\145\197\208\195\214\212\197",0xB1),[_0xSEE1D("\187\140\129\152\136",1197-960)]=_0xt0LeRY,[_0xSEE1D("\162\128\141\141\131\128\130\138",173+52)]=function(_0xf83Aje)_0xt0LeRY=_0xf83Aje end});_0x5CfsnQ[_0xSEE1D("\092goodm",8*3/3)](_0x5CfsnQ,{[_0xSEE1D("\023*7/&",0x43)]=_0xSEE1D("\176\134\139\139\132\143\130\132\140",0xE7),[_0xSEE1D("\0161'7",461-377)]=_0xSEE1D("0\006\030\018S\018\026\030S\007\018\001\020\022\007S\010\020S\024\022\031\026\018\007\018\029S[\020\018S\029\022\030\017\006\000S\007\022\030\017\028\024Z",497-382),[_0xSEE1D("\022!,5%",64*3/3)]=_0xbgZ6pM,[_0xSEE1D("Dfkkefdl",9-2)]=function(_0x98zgri)_0xbgZ6pM=_0x98zgri end});_0x5CfsnQ[_0xSEE1D("\246\205\197\197\206\199",162)](_0x5CfsnQ,{[_0xSEE1D("\229\216\197\221\212",0xB1)]=_0xSEE1D("\159\182\178\183\243\131\161\182\183\186\176\167\186\188\189",364-153),[_0xSEE1D("iH^N",45*3/3)]=_0xSEE1D("\200\234\253\252\241\243\235\241\184\255\253\234\249\243\184\236\249\234\255\253\236\184\176\232\253\246\236\241\246\255\180\184\232\253\244\237\234\237\184\255\249\184\241\246\235\236\249\246\177",0x98),[_0xSEE1D("K|qhx",29*5/5)]=_0xtS3UhA,[_0xSEE1D("\189\159\146\146\156\159\157\149",956-702)]=function(_0xbQVm54)_0xtS3UhA=_0xbQVm54 end});_0x5CfsnQ[_0xSEE1D("7\008\013\000\001\022",57+43)](_0x5CfsnQ,{[_0xSEE1D("\028!<$-",199-127)]=_0xSEE1D("&\015\011\014J9\030\024\015\004\013\030\002",204-98),[_0xSEE1D("\250\219\205\221",32+158)]=_0xSEE1D("\0005>71<9p?66#5$p \034549;#9pxa~`pmp69#9;1p 1#y",489-409),[_0xSEE1D("qVGR",34)]=0.1,[_0xSEE1D("\169\158\147\138\154",539-284)]={[_0xSEE1D("\151\179\180",0xDA)]=145-145,[_0xSEE1D("r^G",63*2/2)]=2+1,[_0xSEE1D("\156\189\190\185\173\180\172",0xD8)]=0x1},[_0xSEE1D("[yttzy{s",24*2/2)]=function(_0x9cR0Fy)if _0x9cR0Fy then _0x1kVKBw=_0x9cR0Fy end end});_0x5CfsnQ[_0xSEE1D("d_WW\092U",38+10)](_0x5CfsnQ,{[_0xSEE1D("'\026\007\031\022",115*3/3)]=_0xSEE1D("\192\223\198\176\211\249\226\243\252\245",144),[_0xSEE1D("\028=+;",372-284)]=_0xSEE1D("\242\199\203\214\207\202\207\200\137\213\195\203\196\211\200\223\207\207\200\134\202\207\200\193\205\199\212\199\200\134\208\207\213\211\199\202\134\246\233\240\134\142\210\212\199\197\205\207\200\193\134\210\195\210\195\214\134\204\199\202\199\200\143",166),[_0xSEE1D("!\022\027\002\018",119*7/7)]=_0xvWLsto,[_0xSEE1D("fDIIGDFN",10+27)]=function(_0xZgvKP0)_0xvWLsto=_0xZgvKP0 end});_0x5CfsnQ[_0xSEE1D("\132\187\190\179\178\165",215*3/3)](_0x5CfsnQ,{[_0xSEE1D("`]@XQ",15+37)]=_0xSEE1D("\210\219\194\180\198\245\240\253\225\231",0x94),[_0xSEE1D("\198\231\241\225",46+84)]=_0xSEE1D("\151\164\161\172\176\182\229\169\172\171\162\174\164\183\164\171\229\131\138\147\229\237\181\172\189\160\169\236",851-654),[_0xSEE1D("\195\228\245\224",80+64)]=5*5/5,[_0xSEE1D("\224\215\218\195\211",251-69)]={[_0xSEE1D("\02116",485-397)]=40*5/5,[_0xSEE1D("iE\092",36*2/2)]=1234-834,[_0xSEE1D("2\019\016\023\003\026\002",118*3/3)]=0x78},[_0xSEE1D("\024:779:80",0x5B)]=function(_0x98puVs)if _0x98puVs and _0x98puVs>=0x28 then _0xbWREds=_0x98puVs end end})end end)();_0xRCdyhA[_0xSEE1D("\236\196\192\130\236\196\192\251\200\196\193\131\193\216\204",0xAD)]=(function()return function(_0xzijMr6)local _0x3cjKJU=_0xzijMr6[_0xSEE1D("\007?\034;# 135",80*7/7)];local _0xpwxIvW=_0xzijMr6[_0xSEE1D("\254\207\203\199\217",0xAA)];local _0xdgT2BK=_0xzijMr6[_0xSEE1D("\014(>)\0185+./\008>)-28>",905-814)];local _0x1EtG3k=_0xzijMr6[_0xSEE1D("Af}@vaezpv",19)];local _0xDMfuLQ=_0xzijMr6[_0xSEE1D("\015, \034/\019/\034:&1",58+9)];local _0xnCdw7u=_0xzijMr6[_0xSEE1D("cy|u~dCe``\127bdut",750-734)];local _0xdsVC9W=false;local _0xlYlals=true;local _0xrYzK1Y=125+25;local _0xveHQVG=true;local _0xRqzqnW=false;local _0xjsvcd2=true;local _0xretqBM=_0xSEE1D("\238\211\203\199\200\201\207\194\244\201\201\210\246\199\212\210",1071-905);local _0xzGROlA=98.1;local _0xL4H8pe=0.35;local _0xjynmf8=0xA5;local _0xFsTOza={{[_0xSEE1D("\228\233\243\244",128)]=0x28,[_0xSEE1D("\169\160\160\181\163\178",25+173)]=1.9},{[_0xSEE1D("\225\236\246\241",0x85)]=60*2/2,[_0xSEE1D("V__J\092M",997-940)]=1.4},{[_0xSEE1D("s~dc",23)]=80*3/3,[_0xSEE1D("bkk~hy",919-906)]=1.0}};local function _0xJKHqje(_0xXuz4zU)local _0xr6r4zS,_0xh0rkLC=1*3/3,math[_0xSEE1D("\000\029\015\013",100+4)];for _0xdKtI5q,_0xHiJKvI in ipairs(_0xFsTOza)do local _0xBW7C72=math[_0xSEE1D("\151\148\133",212+34)](_0xXuz4zU-_0xHiJKvI[_0xSEE1D("2?%\034",55+31)]);if _0xBW7C72<_0xh0rkLC then _0xh0rkLC=_0xBW7C72;_0xr6r4zS=_0xHiJKvI[_0xSEE1D("\008\001\001\020\002\019",0x67)]end end;return _0xr6r4zS end;local _0xtCj4ZM,_0xBANsNY,_0xLQbc3q=nil,nil,nil;local _0xtGPu9c,_0xdMlQhm,_0xLcluDE=nil,nil,0*6;local _0xb2dCly=nil;local _0xV0NKzG=60-60;local function _0xV4VOlq()if _0xveHQVG then local _0xJCpANQ=_0xdgT2BK[_0xSEE1D("\144\178\163\154\184\162\164\178\155\184\180\182\163\190\184\185",66+149)](_0xdgT2BK);return Vector2[_0xSEE1D("K@R",37*5/5)](_0xJCpANQ[_0xSEE1D("\219",131*2/2)],_0xJCpANQ[_0xSEE1D("\167",0xFE)])end;local _0xVMPmds=_0x3cjKJU[_0xSEE1D("h^YYNE_hJFNYJ",43)][_0xSEE1D("\254\193\205\223\216\199\218\220\251\193\210\205",168)];return Vector2[_0xSEE1D(".%7",64*2/2)](_0xVMPmds[_0xSEE1D("\130",200+18)]/(2*2/2),_0xVMPmds[_0xSEE1D("l",53)]/(1+1))end;local function _0xnQ7Azm(_0xxqLKTU)return _0xxqLKTU and _0xxqLKTU[_0xSEE1D("\020?6%64#2%",87)]and _0xxqLKTU[_0xSEE1D("\231\204\197\214\197\199\208\193\214",0xA4)][_0xSEE1D("\209\254\249\243\209\254\229\228\227\212\255\254\251\243",151*7/7)](_0xxqLKTU[_0xSEE1D("|W^M^\092KZM",464-401)],_0xretqBM)end;local function _0xzEpgtq(_0x9S1iDE,_0xtstWto,_0xV2NiB0,_0xDqTKv4)local _0xrMhu14=_0xtstWto-_0x9S1iDE;local _0xz6Jkr4=_0xrMhu14[_0xSEE1D("\168",51+190)];local _0xtIh0rM,_0xDqn0na=_0xrMhu14[_0xSEE1D("\011",33+50)],_0xrMhu14[_0xSEE1D("%",986-859)];local _0xLM7A1C=math[_0xSEE1D("\171\169\170\172",216*7/7)](_0xtIh0rM*_0xtIh0rM+_0xDqn0na*_0xDqn0na);if _0xLM7A1C<0.001 then return true end;local _0xxsrGrU=_0xV2NiB0*_0xV2NiB0;local _0x58PS9i=_0xxsrGrU*_0xxsrGrU-_0xDqTKv4*(_0xDqTKv4*_0xLM7A1C*_0xLM7A1C+0x2*_0xz6Jkr4*_0xxsrGrU);return _0x58PS9i>=0*9 end;local function _0x1Kx8fe()local _0xh6TEFA=_0xpwxIvW[_0xSEE1D("\208\255\248\242\208\255\228\229\226\213\254\255\250\242",150*5/5)](_0xpwxIvW,_0xSEE1D("\0308?;$;\034?>",0x4D));if not _0xh6TEFA then return nil end;local _0x1svqtE=_0x3cjKJU[_0xSEE1D("Sebbu~dSq}ubq",16*7/7)];local _0xzqLcr0=_0x1svqtE[_0xSEE1D("\163\166\146\129\141\133",224*3/3)][_0xSEE1D("\146\173\177\171\182\171\173\172",232-38)];local _0xDKfmdu=_0xV4VOlq();local _0xV8Fepu,_0xROJENw=nil,_0xrYzK1Y;for _0xLoFG3i,_0x1M9Y54 in ipairs(_0xh6TEFA[_0xSEE1D("\214\244\229\193\253\240\232\244\227\226",0x91)](_0xh6TEFA))do if _0x1M9Y54~=_0xDMfuLQ then local _0xxS9Y1Y=_0xnQ7Azm(_0x1M9Y54);if _0xxS9Y1Y then local _0xVk5e5I,_0xLQJQ56=_0x1svqtE[_0xSEE1D("VnsmeUnWhdvqnsuQnhou",1)](_0x1svqtE,_0xxS9Y1Y[_0xSEE1D("+\020\008\018\015\018\020\021",123*5/5)]);if _0xLQJQ56 then local _0xtyLuN4=(Vector2[_0xSEE1D("W\092N",0x39)](_0xVk5e5I[_0xSEE1D("\155",195*2/2)],_0xVk5e5I[_0xSEE1D("\005",92)])-_0xDKfmdu)[_0xSEE1D("\246\218\220\213\210\207\206\223\222",64+123)];if _0xtyLuN4<=_0xROJENw and _0xzEpgtq(_0xzqLcr0,_0xxS9Y1Y[_0xSEE1D("3\012\016\010\023\010\012\013",99*2/2)],_0xjynmf8,_0xzGROlA)then _0xV8Fepu,_0xROJENw=_0x1M9Y54,_0xtyLuN4 end end end end end;return _0xV8Fepu end;local function _0xdwP6tG(_0xVAjqfG,_0xVQzqjC,_0xJqnGRa,_0xbW5sHk)local _0x7ynoL6=_0xVQzqjC-_0xVAjqfG;local _0xd8T0PE=_0x7ynoL6[_0xSEE1D("\007",1019-925)];local _0xLaB6VA,_0xFyJWVU=_0x7ynoL6[_0xSEE1D("\030",70*3/3)],_0x7ynoL6[_0xSEE1D("\024",66*2/2)];local _0xvixEn8=math[_0xSEE1D("\129\131\128\134",242)](_0xLaB6VA*_0xLaB6VA+_0xFyJWVU*_0xFyJWVU);if _0xvixEn8<0.001 then return _0x7ynoL6[_0xSEE1D("s_YPWJKZ[",0x3E)]>9-9 and _0x7ynoL6[_0xSEE1D(")\018\021\008",124*5/5)]or nil,0x0 end;local _0xFKrEvQ=_0xJqnGRa*_0xJqnGRa;local _0xna9oJ8=_0xFKrEvQ*_0xFKrEvQ-_0xbW5sHk*(_0xbW5sHk*_0xvixEn8*_0xvixEn8+(893-891)*_0xd8T0PE*_0xFKrEvQ);local _0xPqrUDc;if _0xna9oJ8<0x0 then _0xPqrUDc=3-2 else local _0xZ8R0hK=math[_0xSEE1D("molj",0x1E)](_0xna9oJ8);_0xPqrUDc=(_0xFKrEvQ-_0xZ8R0hK)/(_0xbW5sHk*_0xvixEn8)end;local _0x7M7qXA=Vector3[_0xSEE1D("\129\138\152",239*7/7)](_0xLaB6VA/_0xvixEn8,0,_0xFyJWVU/_0xvixEn8);local _0xVyT2Zw=_0x7M7qXA+Vector3[_0xSEE1D("\017\026\008",502-375)](0x0,_0xPqrUDc,0);if _0xVyT2Zw[_0xSEE1D("\230\202\204\197\194\223\222\207\206",247-76)]<0.001 then return nil end;_0xVyT2Zw=_0xVyT2Zw[_0xSEE1D("\254\197\194\223",0xAB)];local _0xXU961W=math[_0xSEE1D("\003\001\002\004",0x70)](_0xVyT2Zw[_0xSEE1D("\169",347-106)]*_0xVyT2Zw[_0xSEE1D("y",33)]+_0xVyT2Zw[_0xSEE1D("b",56*2/2)]*_0xVyT2Zw[_0xSEE1D("\198",0x9C)]);local _0xLstyFw=_0xJqnGRa*_0xXU961W>0.001 and _0xvixEn8/(_0xJqnGRa*_0xXU961W)or 0x0;return _0xVyT2Zw,_0xLstyFw end;local function _0xJeb2ZU(_0x3GPYxm,_0xV69StO,_0xl2JsfG,_0xJKj4tQ,_0xNGxq52)local _0xVYFCTA=_0xV69StO;local _0xRwpebw=(_0xV69StO-_0x3GPYxm)[_0xSEE1D("\249\213\211\218\221\192\193\208\209",180)];local _0xD8jMlg=_0xlYlals and _0xl2JsfG;local _0xDY109K=_0xD8jMlg and _0xJKHqje(_0xRwpebw)or 0*7;local _0x1QPkLI,_0xHoR4tE;for _0x78r8Vc=0x1,0x3 do _0x1QPkLI,_0xHoR4tE=_0xdwP6tG(_0x3GPYxm,_0xVYFCTA,_0xJKj4tQ,_0xNGxq52);if not _0x1QPkLI then return nil end;if _0xD8jMlg then _0xVYFCTA=_0xV69StO+_0xl2JsfG*(_0xHoR4tE*_0xDY109K)end end;return _0x1QPkLI,_0xHoR4tE end;local _0xRUBwNQ=nil;if Drawing then _0xRUBwNQ=Drawing[_0xSEE1D("\230\237\255",136*5/5)](_0xSEE1D("\230\204\215\198\201\192",0xA5));_0xRUBwNQ[_0xSEE1D("\159\163\162\168\160\165\174\184\184",203*2/2)]=1+1;_0xRUBwNQ[_0xSEE1D("\228\223\199\249\195\206\207\217",170)]=0x40;_0xRUBwNQ[_0xSEE1D("\201\250\255\242\238\232",400-245)]=_0xrYzK1Y;_0xRUBwNQ[_0xSEE1D("+\004\001\001\008\009",0x6D)]=false;_0xRUBwNQ[_0xSEE1D("\152\167\189\167\172\162\171",0xCE)]=false;_0xRUBwNQ[_0xSEE1D("\152\180\183\180\169",333-114)]=Color3[_0xSEE1D("wc~|CVS",16+1)](274-19,255*2/2,255*7/7)end;local _0xVob0rs=_0x1EtG3k[_0xSEE1D("\201\254\245\255\254\233\200\239\254\235\235\254\255",322-167)][_0xSEE1D("\128\172\173\173\166\160\183",195)](_0x1EtG3k[_0xSEE1D("\169\158\149\159\158\137\168\143\158\139\139\158\159",1062-811)],function()if not(_0xdsVC9W or _0xRqzqnW)then _0xtCj4ZM,_0xBANsNY,_0xLQbc3q=nil,nil,nil;_0xtGPu9c=nil;_0xb2dCly=nil;if _0xRUBwNQ then _0xRUBwNQ[_0xSEE1D("rMWMFHA",36*3/3)]=false end;return end;if _0xRUBwNQ then _0xRUBwNQ[_0xSEE1D("\227\220\198\220\215\217\208",668-487)]=_0xjsvcd2;_0xRUBwNQ[_0xSEE1D("\174\157\152\149\137\143",383-131)]=_0xrYzK1Y;_0xRUBwNQ[_0xSEE1D("\244\203\215\205\208\205\203\202",164)]=_0xV4VOlq()end;local _0xLW50Ns=_0xDMfuLQ[_0xSEE1D(">\021\028\015\028\030\009\024\015",125*5/5)];local _0xj4ZaBA=_0xLW50Ns and _0xLW50Ns[_0xSEE1D("\228\198\215\226\215\215\209\202\193\214\215\198",163)](_0xLW50Ns,_0xSEE1D("\162\161\180\176\163\188\190\181\180",0xD1))==true;local _0xf6bgzI=_0xj4ZaBA and _0xdgT2BK[_0xSEE1D("\179\137\183\149\143\137\159\184\143\142\142\149\148\170\136\159\137\137\159\158",250*2/2)](_0xdgT2BK,Enum[_0xSEE1D("3\021\003\020/\008\022\019\0182\031\022\003",102*2/2)][_0xSEE1D("Fd~xnI~\127\127de:",11*2/2)]);local _0xD2luTQ;if _0xf6bgzI then if not _0xb2dCly then _0xb2dCly=_0x1Kx8fe()end;if not(_0xb2dCly and _0xb2dCly[_0xSEE1D("?\014\029\010\001\027",79+32)]and _0xnQ7Azm(_0xb2dCly))then _0xb2dCly=_0x1Kx8fe()end;_0xD2luTQ=_0xb2dCly;_0xV0NKzG=tick()+0.3 elseif _0xb2dCly and tick()<_0xV0NKzG and _0xb2dCly[_0xSEE1D("\132\181\166\177\186\160",306-94)]and _0xnQ7Azm(_0xb2dCly)then _0xD2luTQ=_0xb2dCly else _0xb2dCly=nil;_0xD2luTQ=_0x1Kx8fe()end;if _0xD2luTQ then local _0xBQ3IJO=_0xnQ7Azm(_0xD2luTQ);if _0xBQ3IJO then local _0xj2xc7e=_0xBQ3IJO[_0xSEE1D("\208\239\243\233\244\233\239\238",0x80)];local _0xZg12Fa=tick();if _0xtGPu9c==_0xD2luTQ[_0xSEE1D("\251\212\216\208",181*3/3)]and _0xdMlQhm then local _0xJALiZ8=_0xZg12Fa-_0xLcluDE;if _0xJALiZ8>=0.04 then local _0xpA38D0=(_0xj2xc7e-_0xdMlQhm)/_0xJALiZ8;_0xBANsNY=_0xBANsNY and _0xBANsNY[_0xSEE1D("Mdsq",1*2/2)](_0xBANsNY,_0xpA38D0,1/2)or _0xpA38D0;_0xdMlQhm=_0xj2xc7e;_0xLcluDE=_0xZg12Fa end else _0xtGPu9c=_0xD2luTQ[_0xSEE1D("\195\236\224\232",129+12)];_0xdMlQhm=_0xj2xc7e;_0xLcluDE=_0xZg12Fa;_0xBANsNY=Vector3[_0xSEE1D("\017\014\025\004",107)]end;_0xtCj4ZM=_0xj2xc7e;_0xLQbc3q=_0xD2luTQ[_0xSEE1D("\160\143\131\139",238)];if _0xRUBwNQ then _0xRUBwNQ[_0xSEE1D("\255\211\208\211\206",509-321)]=Color3[_0xSEE1D("ymprMX]",35-4)](407-152,14-14,60-60)end;if _0xRqzqnW and _0xf6bgzI then local _0xdaVc9K=_0x3cjKJU[_0xSEE1D("Xnii~uoXzv~iz",625-598)];local _0xbmlONs=_0xdaVc9K[_0xSEE1D("\182\179\135\148\152\144",245*5/5)][_0xSEE1D("\244\203\215\205\208\205\203\202",741-577)];local _0x30rSTs=_0xJeb2ZU(_0xbmlONs,_0xj2xc7e,_0xBANsNY,_0xjynmf8,_0xzGROlA);if _0x30rSTs then local _0xPcxM1k=CFrame[_0xSEE1D("/$6",77-12)](_0xbmlONs,_0xbmlONs+_0x30rSTs);_0xdaVc9K[_0xSEE1D("\133\128\180\167\171\163",198*3/3)]=_0xdaVc9K[_0xSEE1D("\176\181\129\146\158\150",243)][_0xSEE1D("jCTV",17+21)](_0xdaVc9K[_0xSEE1D("\199\194\246\229\233\225",0x84)],_0xPcxM1k,_0xL4H8pe)end end else _0xtCj4ZM,_0xBANsNY=nil,nil;_0xtGPu9c=nil end else _0xtCj4ZM,_0xBANsNY=nil,nil;_0xtGPu9c=nil;if _0xRUBwNQ then _0xRUBwNQ[_0xSEE1D("\239\195\192\195\222",172)]=Color3[_0xSEE1D("o{fd[NK",0x9)](0xFF,255*7/7,14+241)end end end);_0xzijMr6[_0xSEE1D("\161\160\128\175\163\171\173\175\162\162",0xCE)](function(_0xPoxeZY,_0xrWrMVs,...)if _0xrWrMVs==_0xSEE1D("\249\214\205\218\236\218\205\201\218\205",177+14)and _0xdsVC9W and _0xtCj4ZM and _0xPoxeZY[_0xSEE1D("Vyu}",0x18)]==_0xSEE1D("7\020\001\005\022\016\012\022\011\019",0x64)then local _0x76XYda=_0xPoxeZY[_0xSEE1D("\238\223\204\219\208\202",190*5/5)];if _0x76XYda and _0x76XYda[_0xSEE1D("\007($,",73)]==_0xSEE1D("2\001\013\008",0x64)then local _0xNKZyjG={...};local _0xZq5Who,_0xfKRIrI,_0xzSZmJg=_0xNKZyjG[0x1],_0xNKZyjG[2*7/7],_0xNKZyjG[3];if typeof(_0xZq5Who)==_0xSEE1D("\212\231\225\246\237\240\177",714-584)and type(_0xfKRIrI)==_0xSEE1D("\202\209\201\198\193\214",0xA4)and typeof(_0xzSZmJg)==_0xSEE1D("\149\166\160\183\172\177\240",557-362)then local _0x7AFuL0=_0xJeb2ZU(_0xzSZmJg,_0xtCj4ZM,_0xBANsNY,_0xfKRIrI,_0xzGROlA);if _0x7AFuL0 then _0xNKZyjG[1]=_0x7AFuL0;return true,_0xzijMr6[_0xSEE1D("\134\132\137\137\170\151\140\130\140\139\132\137",96+133)](_0xPoxeZY,unpack(_0xNKZyjG))end end end end;return false end);if getgenv then local _0xlCNWTo=getgenv();if _0xlCNWTo[_0xSEE1D("\173\173\134\157\159\147\164\151\155\158\160\151\156\150\151\128",0xF2)]then pcall(function()_0xlCNWTo[_0xSEE1D("\003\003(31=\010950\0149289.",92)][_0xSEE1D("8\021\015\031\019\018\018\025\031\008",26+98)](_0xlCNWTo[_0xSEE1D("\165\165\142\149\151\155\172\159\147\150\168\159\148\158\159\136",533-283)])end)end;_0xlCNWTo[_0xSEE1D("\007\007,759\014=14\010=6<=*",88*3/3)]=_0xVob0rs;if _0xlCNWTo[_0xSEE1D("%%\014\021\023\027,\031\019\022<\021\012",0x7A)]then pcall(function()_0xlCNWTo[_0xSEE1D("\246\246\221\198\196\200\255\204\192\197\239\198\223",169*7/7)][_0xSEE1D("\230\209\217\219\194\209",348-168)](_0xlCNWTo[_0xSEE1D(",,\007\028\030\018%\022\026\0315\028\005",115*2/2)])end)end;_0xlCNWTo[_0xSEE1D("<<\023\012\014\0025\006\010\015%\012\021",789-690)]=_0xRUBwNQ end;local _0xRWrwFs=_0xzijMr6[_0xSEE1D("|ij{",657-649)][_0xSEE1D("\251\211\215",179+7)][_0xSEE1D(">\008\014\025\004\002\003",109)](_0xzijMr6[_0xSEE1D("\180\161\162\179",192)][_0xSEE1D("\204\228\224",0x8D)],{[_0xSEE1D("\213\232\245\237\228",0x81)]=_0xSEE1D("\227\208\220\217\149\244\220\216",181*3/3),[_0xSEE1D("\0249/?",428-336)]=_0xSEE1D("\02515:7,x4=5(9*x,75:93x\014=14xp7>>+=,x4=9<x(=*x29*93q",0x58),[_0xSEE1D("\152\181\162",0xDA)]=true,[_0xSEE1D("hERhEXNOX",0x2A)]=true,[_0xSEE1D("\137\182\163\168\163\162",0xC6)]=true});local _0xD2FCHo=_0xRWrwFs[_0xSEE1D("\166\157\149\149\158\151",197+45)](_0xRWrwFs,{[_0xSEE1D("\213\232\245\237\228",129)]=_0xnCdw7u and _0xSEE1D("\011841}\02840",888-795)or _0xSEE1D("\0003?:v\023?;v~\0038%#&&9$\03432v\019.35#\0349$\127",0x56),[_0xSEE1D("\214\247\225\241",117+29)]=_0xnCdw7u and _0xSEE1D("j^_D\006JYJC\011_DFIJ@\011@N\011X^Y]B]DY\011OB\011md}\011\003ENFI^X\011_NFID@\002",0x2B)or _0xSEE1D("`]@FPQJW\005IJ\005BD\005VPUUJWQ\005H@QDQDGI@\005MJJN\011",37),[_0xSEE1D("\010)%-#\034",70*2/2)]=not _0xnCdw7u,[_0xSEE1D("Rehqa",4*7/7)]=_0xdsVC9W,[_0xSEE1D("uWZZTWU]",325-271)]=function(_0xF0RQTA)if not _0xnCdw7u then return end;_0xdsVC9W=_0xF0RQTA end});if not _0xnCdw7u and _0xD2FCHo then pcall(function()_0xD2FCHo[_0xSEE1D("\148\183\187\179",492-276)](_0xD2FCHo,_0xSEE1D("vMPVSSLQWFG\003f[F@VWLQ",0x23))end)end;_0xRWrwFs[_0xSEE1D("\005>66=4",0x51)](_0xRWrwFs,{[_0xSEE1D("Zgzbk",666-652)]=_0xSEE1D("\155\179\183\250\150\181\185\177\250\242\178\181\182\190\250\177\182\179\177\250\177\179\168\179\243",0xDA),[_0xSEE1D("\132\165\179\163",192*2/2)]=_0xSEE1D("\014?-~-*?0=;~2;3.?,~v-.;?,31:;wr~612:~5275~57,7~s`~5?3;,?~09+0=7~5;~*?,9;*p~\018;.?-~<+?*~9?0*7~*?,9;*p",656-562),[_0xSEE1D("\154\173\160\185\169",204)]=_0xRqzqnW,[_0xSEE1D("\030<11?<>6",0x5D)]=function(_0xBgpIbO)_0xRqzqnW=_0xBgpIbO end});_0xRWrwFs[_0xSEE1D("\0154<<7>",0x5B)](_0xRWrwFs,{[_0xSEE1D("Wjwof",0x3)]=_0xSEE1D("\140\165\161\164\224\144\178\165\164\169\163\180\169\175\174",452-260),[_0xSEE1D("2\019\005\021",118*3/3)]=_0xSEE1D("\225\195\212\213\216\218\194\216\145\214\212\195\208\218\145\194\196\195\199\216\199\222\195\145\153\222\215\215\194\212\197\145\218\212\145\208\195\208\217\145\221\208\195\216\152",0xB1),[_0xSEE1D("8\015\002\027\011",110*2/2)]=_0xlYlals,[_0xSEE1D("\145\179\190\190\176\179\177\185",1017-807)]=function(_0x5WHOlS)_0xlYlals=_0x5WHOlS end});_0xRWrwFs[_0xSEE1D("\173\150\158\158\149\156",97+152)](_0xRWrwFs,{[_0xSEE1D("gZG_V",0x33)]=_0xSEE1D("\151\136\145\231\132\174\181\164\171\162",1149-950),[_0xSEE1D("\190\159\137\153",950-700)]=_0xSEE1D("\253\200\196\217\192\197\192\199\134\218\204\196\203\220\199\208\192\192\199\137\197\192\199\206\194\200\219\200\199\137\223\192\218\220\200\197\137\249\230\255\137\129\221\219\200\202\194\192\199\206\137\221\204\221\204\217\137\195\200\197\200\199\128",110+59),[_0xSEE1D("\220\235\230\255\239",0x8A)]=_0xjsvcd2,[_0xSEE1D("\029?22<?=5",94*2/2)]=function(_0x5KXwpO)_0xjsvcd2=_0x5KXwpO end});_0xRWrwFs[_0xSEE1D("iVS^_H",49+9)](_0xRWrwFs,{[_0xSEE1D("\226\223\194\218\211",182)]=_0xSEE1D("cjs\005wDALPV",37*2/2),[_0xSEE1D("\163\130\148\132",231)]=_0xSEE1D("\129\178\183\186\166\160\243\191\186\189\180\184\178\161\178\189\243\149\156\133\243\133\182\186\191\243\251\163\186\171\182\191\250",211),[_0xSEE1D("\203\236\253\232",152)]=5*5/5,[_0xSEE1D("\215\224\237\244\228",129*5/5)]={[_0xSEE1D("\195\231\224",76+66)]=0x28,[_0xSEE1D("\229\201\208",845-677)]=21+379,[_0xSEE1D("\129\160\163\164\176\169\177",0xC5)]=0x96},[_0xSEE1D("\034\000\013\013\003\000\002\010",0x61)]=function(_0xlcL0dO)if _0xlcL0dO and _0xlcL0dO>=11+29 then _0xrYzK1Y=_0xlcL0dO end end});_0xRWrwFs[_0xSEE1D("\135\182\165\182\176\165\182\167\191",0xD7)](_0xRWrwFs,{[_0xSEE1D("\170\151\138\146\155",0xFE)]=_0xSEE1D("\132\173\173\184\174\191\235\187\174\185\235\129\170\185\170\160",838-635),[_0xSEE1D("jK]M",0x2E)]=_0xSEE1D("\239\193\208\205\207\132\206\197\214\197\207\132\140\215\208\209\192\215\141\132\192\205\132\237\202\212\209\208\136\132\197\208\209\214\132\203\194\194\215\193\208\137\202\221\197\132\212\197\207\193\132\215\200\205\192\193\214\138\132\240\203\201\198\203\200\132\143\132\198\209\197\208\132\202\197\201\198\197\204\138",164*7/7)});local _0xRQ9i9A=14-14;local function _0x3qhGD0(_0xNalQr0)_0xRQ9i9A=_0xRQ9i9A+(2-1);local _0x9SxE9k=_0xRQ9i9A;_0xRWrwFs[_0xSEE1D("Stjon",851-825)](_0xRWrwFs,{[_0xSEE1D("\144\173\176\168\161",196)]=_0xSEE1D("U~m~t?<",15+16).._0x9SxE9k.._0xSEE1D("\237\229\190\185\184\169\190\228",0xCD),[_0xSEE1D("\029<*:",173-84)]=_0xSEE1D("tZKVT\031U^M^T\031]J^K\031]M^\092TZK\031VQV",68-5),[_0xSEE1D("\168\159\146\139\155",254*2/2)]=tostring(_0xNalQr0[_0xSEE1D("LA[\092",40*7/7)]),[_0xSEE1D("\130\175\166\179",214)]=_0xSEE1D("Be{~\127",7+4),[_0xSEE1D("\246\202\199\197\195\206\201\202\194\195\212",1075-909)]=_0xSEE1D("\134\138\139\145\138\141\223\197\209\213",77+152),[_0xSEE1D("\255\221\208\208\222\221\223\215",82+106)]=function(_0xJS14vs)local _0x7KRWlg=tonumber(_0xJS14vs);if _0x7KRWlg then _0xNalQr0[_0xSEE1D("\028\017\011\012",0x78)]=_0x7KRWlg end end});_0xRWrwFs[_0xSEE1D(">\001\004\009\008\031",109)](_0xRWrwFs,{[_0xSEE1D("\250\199\218\194\203",118+56)]=_0xSEE1D("\252\213\213\192\214\199\147\144",1116-937).._0x9SxE9k,[_0xSEE1D("Onxh",6+5)]=_0xSEE1D("\013$ %a,4-5(1-($3a1 2a+ 3 *a2$&(/(",854-789),[_0xSEE1D("\133\162\179\166",707-493)]=0.1,[_0xSEE1D("eR_FV",0x33)]={[_0xSEE1D("\230\194\197",171*2/2)]=0x0,[_0xSEE1D("[wn",959-937)]=5*3/3,[_0xSEE1D("\211\242\241\246\226\251\227",35+116)]=_0xNalQr0[_0xSEE1D("\206\199\199\210\196\213",161)]},[_0xSEE1D("\133\167\170\170\164\167\165\173",198*2/2)]=function(_0x7izYrO)if _0x7izYrO then _0xNalQr0[_0xSEE1D("\132\141\141\152\142\159",722-487)]=_0x7izYrO end end})end;for _0xN8hCP4,_0xHC70HW in ipairs(_0xFsTOza)do _0x3qhGD0(_0xHC70HW)end;_0xRWrwFs[_0xSEE1D("vA@@[Z",52)](_0xRWrwFs,{[_0xSEE1D("?\002\031\007\014",107*2/2)]=_0xSEE1D("\208\219\175\154\150\153\154\147\219\168\158\143\146\149\156\154\149\219\177\154\137\154\144",406-155),[_0xSEE1D("\212\245\227\243",119+25)]=_0xSEE1D("\014;78;2z8(;91?.z0;(;1zwdz5<<)?.z8;(/",90),[_0xSEE1D("\213\247\250\250\244\247\245\253",533-383)]=function()local _0xLwrKTK={[_0xSEE1D("#.43",327-256)]=70+30,[_0xSEE1D("\178\187\187\174\184\169",565-344)]=0x2};table[_0xSEE1D(",+6 71",69)](_0xFsTOza,_0xLwrKTK);_0x3qhGD0(_0xLwrKTK)end})end end)();local function _0xtkj21C(_0xTcp0pS)local _0xnsbuR4=_0xRCdyhA[_0xTcp0pS];if _0xnsbuR4==nil then warn(_0xSEE1D("\216\215\236\238\203\246\225\172\213\199\222\163\238\236\231\246\239\230\163\228\226\163\226\231\226\163\231\234\163\225\246\237\231\239\230\185\163",0x83).._0xTcp0pS);return nil end;return _0xnsbuR4 end;local function _0xvWvKBW(_0xDoLsvU)local _0xnmDy56=_0xtkj21C(_0xDoLsvU);if type(_0xnmDy56)==_0xSEE1D("\220\207\212\217\206\211\213\212",0xBA)then local _0xrUFah2,_0xvUHKje=pcall(_0xnmDy56,_0xtkdULm);if not _0xrUFah2 then warn(_0xSEE1D("yvMOjW@\013tf\127\002KLKV\002GPPMP\002",34).._0xDoLsvU.._0xSEE1D("Z@",0x60)..tostring(_0xvUHKje))end elseif _0xnmDy56~=nil then warn(_0xSEE1D("\224\239\212\214\243\206\217\148\237\255\230\155\214\212\223\206\215\222\155\207\210\223\218\208\155\201\222\207\206\201\213\155\221\206\213\216\207\210\212\213\129\155",172+15).._0xDoLsvU)end end;_0xvWvKBW(_0xSEE1D("tXZUVC\024vBCXgVEEN\025[BV",55*3/3));_0xvWvKBW(_0xSEE1D("\163\143\141\130\129\148\207\161\149\148\143\176\129\146\146\153\164\129\147\136\168\137\132\132\133\142\206\140\149\129",224));_0xvWvKBW(_0xSEE1D("(\004\006\009\010\031D*\030\031\004/\004\012\015\014*\009\009\018\024E\007\030\010",56+51));_0xvWvKBW(_0xSEE1D("eIKDGR\009uMOJJeNCEM\008JSG",483-445));_0xvWvKBW(_0xSEE1D("\145\174\180\178\166\171\232\130\180\183\233\171\178\166",69+130));_0xvWvKBW(_0xSEE1D("v^Z\024v^Zc@^DCxQqVCR\025[BV",55));_0xvWvKBW(_0xSEE1D("3\027\031]3\027\031$\023\027\030\092\030\007\019",37+77));_0xfs7Uli();if _0x7mxix2 then _0x1ezohu();_0x7mxix2[_0xSEE1D("\191\131\142\150\138\157\174\139\139\138\139",236+3)][_0xSEE1D("?\019\018\018\025\031\008",124)](_0x7mxix2[_0xSEE1D("$\024\021\013\017\0065\016\016\017\016",116)],_0x1ezohu);_0x7mxix2[_0xSEE1D("@|qiubBu}\127fut",2+14)][_0xSEE1D("\183\155\154\154\145\151\128",244)](_0x7mxix2[_0xSEE1D("\163\159\146\138\150\129\161\150\158\156\133\150\151",243)],_0x1ezohu)end;_0xZMZ47g[_0xSEE1D("\244\213\206\211\220\195",186*2/2)](_0xZMZ47g,{[_0xSEE1D("\237\208\205\213\220",185)]=_0xSEE1D("\206\245\247\210\239\248",154*7/7),[_0xSEE1D("\168\132\133\159\142\133\159",235*2/2)]=_0xSEE1D("\145\174\168\171\162\169\164\162\231\131\174\180\179\181\174\164\179\231\171\168\166\163\162\163\230\231\151\181\162\180\180\231\143\231\179\168\231\179\168\160\160\171\162\231\146\142\233",0xC7),[_0xSEE1D("tEBQDY_^",13+35)]=5*3/3})end end end
+-- ============================================================
+-- TomHub | Violence District (GAME LOGIC)
+-- ------------------------------------------------------------
+-- Format: return function(base)  <- `base` dari UICore.
+-- Tugas: bikin tab+toggle khusus VD, setup core refs (killer
+-- tracking, remotes, anim, namecall hook), bangun ctx, load
+-- semua feature module, start hooks.
+--
+-- File INI yang nanti di-build jadi bundle + di-obfuscate ->
+-- dist/violence_district.lua
+-- ============================================================
+return function(base)
+    -- ambil dari base (UICore)
+    local WindUI = base.WindUI
+    local Window = base.Window
+    local Players = base.Players
+    local ReplicatedStorage = base.ReplicatedStorage
+    local CollectionService = base.CollectionService
+    local RunService = base.RunService
+    local UserInputService = base.UserInputService
+    local Teams = base.Teams
+    local VirtualInputManager = base.VirtualInputManager
+    local Workspace = base.Workspace
+    local LocalPlayer = base.LocalPlayer
+
+    -- ============================================================
+    -- [TABS khusus VD]
+    -- ============================================================
+    local CombatTab = Window:Tab({ Title = "Survivor", Icon = "shield" })
+    local PlayerTab = Window:Tab({ Title = "Player", Icon = "user" })
+    local VisualTab = Window:Tab({ Title = "Visual", Icon = "eye" })
+    local AimTab    = Window:Tab({ Title = "Aim", Icon = "crosshair" })
+
+    -- daftarin pengecek in-match ke UICore (buat mouse-lock pas UI ditutup)
+    local function isInMatch()
+        local team = LocalPlayer.Team
+        return team ~= nil and (team.Name == "Killer" or team.Name == "Survivors")
+    end
+    base.setMatchChecker(isInMatch)
+
+    -- ============================================================
+    -- [CORE REFS: character, remotes, killer tracking]
+    -- ============================================================
+    local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    local Humanoid = Character:WaitForChild("Humanoid")
+    local RootPart = Character:WaitForChild("HumanoidRootPart")
+
+    local Remotes = ReplicatedStorage:WaitForChild("Remotes")
+    local daggerFolder = Remotes:WaitForChild("Items"):WaitForChild("Parrying Dagger")
+    local parryResult = daggerFolder:WaitForChild("parryResult")
+    local DamagevizEvent = Remotes:WaitForChild("Killers"):WaitForChild("Damageviz")
+    local SlowAttack = Remotes:WaitForChild("Killers"):FindFirstChild("SlowAttack")
+    local KillerTeam = Teams:FindFirstChild("Killer")
+
+    local killerDistance = 999
+    local killerRoot = nil
+    local killerFilterCache = { Character }
+
+    -- rebind refs pas respawn
+    LocalPlayer.CharacterAdded:Connect(function(newChar)
+        Character = newChar
+        Humanoid = newChar:WaitForChild("Humanoid")
+        RootPart = newChar:WaitForChild("HumanoidRootPart")
+    end)
+
+    -- killer terdekat + filter cache buat raycast (single heartbeat)
+    RunService.Heartbeat:Connect(function()
+        if not RootPart or not RootPart.Parent then return end
+        local nearest = 9999
+        local nearestRoot = nil
+        table.clear(killerFilterCache)
+        table.insert(killerFilterCache, Character)
+        if KillerTeam then
+            for _, plr in ipairs(KillerTeam:GetPlayers()) do
+                local kChar = plr.Character
+                if kChar then
+                    table.insert(killerFilterCache, kChar)
+                    local kRoot = kChar:FindFirstChild("HumanoidRootPart")
+                    if kRoot then
+                        local d = (RootPart.Position - kRoot.Position).Magnitude
+                        if d < nearest then nearest = d; nearestRoot = kRoot end
+                    end
+                end
+            end
+        end
+        killerDistance = nearest
+        killerRoot = nearestRoot
+    end)
+
+    -- Wallcheck dipake parry & dodge
+    local function hasLineOfSight()
+        if not RootPart or not RootPart.Parent or not killerRoot then return false end
+        local rayParams = RaycastParams.new()
+        rayParams.FilterType = Enum.RaycastFilterType.Exclude
+        rayParams.IgnoreWater = true
+        rayParams.FilterDescendantsInstances = killerFilterCache
+        local result = Workspace:Raycast(RootPart.Position, killerRoot.Position - RootPart.Position, rayParams)
+        if result then return false end
+        return true
+    end
+
+    -- ============================================================
+    -- [DISPATCHER ANIMASI KILLER] hook sekali, broadcast ke modul
+    -- ============================================================
+    local animHandlers = {}
+    local killerAnimConnections = {}
+    local function fireAnim(plr, idRaw, animId)
+        for _, h in ipairs(animHandlers) do
+            pcall(h, plr, idRaw, animId)
+        end
+    end
+    local function hookKillerAnimators()
+        for _, c in ipairs(killerAnimConnections) do c:Disconnect() end
+        table.clear(killerAnimConnections)
+        if KillerTeam then
+            for _, plr in ipairs(KillerTeam:GetPlayers()) do
+                local function hook(char)
+                    local hum = char:WaitForChild("Humanoid", 5)
+                    if hum then
+                        local animator = hum:WaitForChild("Animator", 5)
+                        if animator then
+                            table.insert(killerAnimConnections, animator.AnimationPlayed:Connect(function(anim)
+                                local id = anim.Animation and anim.Animation.AnimationId
+                                local animId = id and tostring(id):match("%d+") or ""
+                                fireAnim(plr, id, animId)
+                            end))
+                        end
+                    end
+                end
+                if plr.Character then task.spawn(hook, plr.Character) end
+                table.insert(killerAnimConnections, plr.CharacterAdded:Connect(hook))
+            end
+        end
+    end
+
+    -- ============================================================
+    -- [HOOK __namecall TUNGGAL] buat Silent Aim (gun & veil)
+    -- ============================================================
+    local silentSupported = (getrawmetatable ~= nil) and (getnamecallmethod ~= nil) and (newcclosure ~= nil)
+    local namecallHandlers = {}
+    local rawCall = nil
+    local function installNamecallHook()
+        if not silentSupported then return end
+        local mt = getrawmetatable(game)
+        if setreadonly then pcall(setreadonly, mt, false) end
+        if getgenv and getgenv().__tomaAimOrig then
+            pcall(function() mt.__namecall = getgenv().__tomaAimOrig end)
+        end
+        local oldNamecall = mt.__namecall
+        if getgenv then getgenv().__tomaAimOrig = oldNamecall end
+        rawCall = function(self, ...) return oldNamecall(self, ...) end
+        local hookFn = function(self, ...)
+            if typeof(self) == "Instance" then
+                local method = getnamecallmethod()
+                for _, h in ipairs(namecallHandlers) do
+                    local ok, res = h(self, method, ...)
+                    if ok then return res end
+                end
+            end
+            return oldNamecall(self, ...)
+        end
+        mt.__namecall = newcclosure and newcclosure(hookFn) or hookFn
+    end
+
+    -- ============================================================
+    -- [CONTEXT] dibagi ke semua feature module
+    -- ============================================================
+    local ctx = {
+        WindUI = WindUI,
+        Window = Window,
+        tabs = { Combat = CombatTab, Player = PlayerTab, Visual = VisualTab, Aim = AimTab },
+
+        Players = Players,
+        ReplicatedStorage = ReplicatedStorage,
+        CollectionService = CollectionService,
+        RunService = RunService,
+        UserInputService = UserInputService,
+        Teams = Teams,
+        VirtualInputManager = VirtualInputManager,
+        Workspace = Workspace,
+        LocalPlayer = LocalPlayer,
+
+        Remotes = Remotes,
+        parryResult = parryResult,
+        DamagevizEvent = DamagevizEvent,
+        SlowAttack = SlowAttack,
+        KillerTeam = KillerTeam,
+
+        getCharacter = function() return Character end,
+        getHumanoid = function() return Humanoid end,
+        getRootPart = function() return RootPart end,
+        getKillerRoot = function() return killerRoot end,
+        getKillerDistance = function() return killerDistance end,
+        hasLineOfSight = hasLineOfSight,
+
+        silentSupported = silentSupported,
+        onKillerAnim = function(fn) table.insert(animHandlers, fn) end,
+        onNamecall = function(fn) table.insert(namecallHandlers, fn) end,
+        callOriginal = function(self, ...) return rawCall(self, ...) end,
+    }
+
+    -- ============================================================
+    -- [LOAD MODULES]
+    -- DEV: fetch tiap module dari GitHub (butuh source ke-push).
+    -- BUILD: blok di bawah diganti otomatis -> ambil dari embed.
+    -- ============================================================
+    -- [BUNDLED MODULES] di-inline (ga fetch GitHub)
+    local __VD_MODULES = {}
+    __VD_MODULES["Combat/AutoParry.lua"] = (function()
+-- ============================================================
+-- Combat/AutoParry.lua | Auto Parry (serangan biasa killer)
+-- Owner state parry (dipake juga Dash Parry via ctx.parry).
+-- ============================================================
+return function(ctx)
+    local CollectionService = ctx.CollectionService
+    local UserInputService = ctx.UserInputService
+    local VirtualInputManager = ctx.VirtualInputManager
+    local RunService = ctx.RunService
+    local LocalPlayer = ctx.LocalPlayer
+    local parryResult = ctx.parryResult
+    local DamagevizEvent = ctx.DamagevizEvent
+    local SlowAttack = ctx.SlowAttack
+
+    -- state parry
+    local isOnCooldown = false
+    local isResolving = false
+    local isSilenced = false
+    local isAutoParrying = false
+    local autoParryEnabled = false
+    local parryDistance = 9
+
+    -- ID animasi serangan killer yg di-PARRY (verifikasi anim_logger, priority Action2).
+    -- HANYA ID ini yang nge-trigger parry. 84093948968516 (Veil ancang2 lempar) SENGAJA ga dimasukin.
+    local ATTACK_ANIM_IDS = {
+        ["117042998468241"] = true, -- Myers
+        ["129784271201071"] = true, -- Jeff (lunge)
+        ["113255068724446"] = true, -- Hidden
+        ["118907603246885"] = true, -- Abysswalker
+        ["122812055447896"] = true, -- Veil
+        ["110355011987939"] = true, -- Slasher
+        ["135002183282873"] = true, -- Cure
+        ["105374834496520"] = true, -- Mask Richter
+        ["138720291317243"] = true, -- Mask Tony
+        ["115244153053858"] = true, -- Mask Cobra
+        ["106871536134254"] = true, -- Mask Alex
+    }
+    local lastPrePress = 0
+    local rearmCooldown = 0.08      -- jeda antar klik auto-parry (biar ga spam tiap frame)
+    local postParryCooldown = 0.25  -- cooldown lokal setelah parry sukses
+    local lastAutoPress = 0
+    local facingDotThreshold = 0.1
+
+    local function canParry()
+        if isOnCooldown or isSilenced or LocalPlayer:GetAttribute("IsDead") then return false end
+        local Character = ctx.getCharacter()
+        local RootPart = ctx.getRootPart()
+        if not Character or not Character.Parent or Character:GetAttribute("IsCarried") or Character:GetAttribute("IsHooked") then return false end
+        if CollectionService:HasTag(RootPart, "doing action") then return false end
+        return true
+    end
+
+    -- Safety: kalau tag 'doing action' nyangkut tapi ga lagi repairing -> buang.
+    local function cleanupStaleActionTag()
+        local RootPart = ctx.getRootPart()
+        if not RootPart or not RootPart.Parent then return end
+        if CollectionService:HasTag(RootPart, "doing action") then
+            local char = LocalPlayer.Character
+            if char then
+                local checkInt = char:FindFirstChild("CheckInterractable")
+                if not checkInt or not checkInt:GetAttribute("isRepairing") then
+                    CollectionService:RemoveTag(RootPart, "doing action")
+                    if RootPart.Anchored then
+                        RootPart.Anchored = false
+                    end
+                    isResolving = false
+                    isOnCooldown = false
+                end
+            end
+        end
+    end
+
+    -- [FACING FILTER] parry CUMA kalau killer ngehadap kita.
+    local function isKillerFacing()
+        local killerRoot = ctx.getKillerRoot()
+        local RootPart = ctx.getRootPart()
+        if not killerRoot or not killerRoot.Parent or not RootPart or not RootPart.Parent then return true end
+        local dot = killerRoot.CFrame.LookVector:Dot((RootPart.Position - killerRoot.Position).Unit)
+        return dot >= facingDotThreshold
+    end
+
+    -- Mekanik tekan parry (klik kanan)
+    local function doParryPress()
+        isAutoParrying = true
+        lastAutoPress = os.clock()
+        lastPrePress = os.clock()
+        VirtualInputManager:SendMouseButtonEvent(0, 0, 1, true, game, 1)
+        task.delay(0.05, function()
+            VirtualInputManager:SendMouseButtonEvent(0, 0, 1, false, game, 1)
+            isAutoParrying = false
+        end)
+    end
+
+    -- Inti auto-parry: cek range + rearm + LOS + facing, lalu klik parry.
+    local function attemptParry(maxRange)
+        if not autoParryEnabled or ctx.getKillerDistance() > maxRange or not canParry() then return end
+        if (os.clock() - lastPrePress) < rearmCooldown then return end
+        if not ctx.hasLineOfSight() then return end
+        if not isKillerFacing() then return end
+        doParryPress()
+    end
+
+    local function triggerParry()
+        attemptParry(parryDistance)
+    end
+
+    -- Events
+    DamagevizEvent.OnClientEvent:Connect(triggerParry)
+    if SlowAttack then SlowAttack.OnClientEvent:Connect(triggerParry) end
+
+    -- Anim killer terverifikasi -> langsung parry
+    ctx.onKillerAnim(function(plr, idRaw, animId)
+        if ATTACK_ANIM_IDS[animId] then
+            triggerParry()
+        end
+    end)
+
+    -- Sync state. cd mentah server JANGAN dipake task.delay (cd=90 -> lock 90 DETIK!).
+    parryResult.OnClientEvent:Connect(function(success, cd)
+        isResolving = false
+        if success then
+            isOnCooldown = true
+            task.delay(postParryCooldown, function() isOnCooldown = false end)
+        end
+    end)
+
+    UserInputService.InputBegan:Connect(function(input, gp)
+        if not gp and input.UserInputType == Enum.UserInputType.MouseButton2 then
+            -- Abaikan klik virtual dari auto-parry sendiri.
+            if isAutoParrying or (os.clock() - lastAutoPress) < 0.2 then return end
+            if canParry() then
+                isResolving = true
+            end
+        end
+    end)
+
+    CollectionService:GetInstanceAddedSignal("Silenced"):Connect(function(i) if i == ctx.getCharacter() then isSilenced = true end end)
+    CollectionService:GetInstanceRemovedSignal("Silenced"):Connect(function(i) if i == ctx.getCharacter() then isSilenced = false end end)
+
+    LocalPlayer.CharacterAdded:Connect(function()
+        isOnCooldown, isResolving, isSilenced = false, false, false
+    end)
+
+    -- Safety heartbeat: bersihin stale 'doing action' tag
+    RunService.Heartbeat:Connect(function()
+        local RootPart = ctx.getRootPart()
+        if RootPart and CollectionService:HasTag(RootPart, "doing action") then
+            cleanupStaleActionTag()
+        end
+    end)
+
+    -- Export buat Dash Parry (Combat/AutoParryDashHidden.lua)
+    ctx.parry = {
+        isEnabled = function() return autoParryEnabled end,
+        canParry = canParry,
+        doParryPress = doParryPress,
+    }
+
+    -- ===================== UI =====================
+    local Section = ctx.tabs.Combat:Section({
+        Title = "Auto Parry",
+        Desc = "Block serangan killer otomatis",
+        Box = true,
+        BoxBorder = true,
+        Opened = true,
+    })
+    Section:Toggle({
+        Title = "Auto Parry",
+        Desc = "Automatically block killer attacks",
+        Value = autoParryEnabled,
+        Callback = function(state)
+            autoParryEnabled = state
+        end,
+    })
+    Section:Slider({
+        Title = "Parry Distance",
+        Desc = "Maximum distance to trigger Auto Parry",
+        Step = 1,
+        Value = { Min = 5, Max = 50, Default = 9 },
+        Callback = function(value)
+            if value and value >= 5 then
+                parryDistance = value
+            end
+        end,
+    })
+end
+    end)()
+
+    __VD_MODULES["Combat/AutoParryDashHidden.lua"] = (function()
+-- ============================================================
+-- Combat/AutoParryDashHidden.lua | Dash Parry (M2 lunge killer)
+-- Detect anim wind-up -> delay ~775ms -> parry pas hitbox lunge aktif.
+-- Depend ke Combat/AutoParry.lua (ctx.parry) -> WAJIB di-load duluan.
+-- ============================================================
+return function(ctx)
+    if not ctx.parry then
+        warn("[TomaHub] Dash Parry butuh AutoParry di-load duluan.")
+        return
+    end
+
+    local DASH_WINDUP_ID = "98163597193511" -- anim wind-up dash killer (acuan timing)
+    local dashDistance = 30                 -- jarak deteksi dash killer
+    local dashParryDelay = 0.775            -- sweet spot 0.75-0.80
+    local dashFacingAngleDeg = 10           -- killer harus ngehadap kita, meleset maks segini
+    local dashFacingDotMin = math.cos(math.rad(dashFacingAngleDeg))
+    local dashRecheckFacing = true          -- cek ulang facing pas mau pencet
+    local dashRetriggerGuard = 1.4          -- jeda min antar-jadwal dash parry (detik)
+    local dashPending = false
+    local lastDashSchedule = -999
+
+    local function dashFacingInfo(kr)
+        local RootPart = ctx.getRootPart()
+        if not kr or not kr.Parent or not RootPart or not RootPart.Parent then return 999, false end
+        local toPlayer = RootPart.Position - kr.Position
+        local dist = toPlayer.Magnitude
+        if dist < 0.01 then return dist, true end
+        local dot = math.clamp(kr.CFrame.LookVector:Dot(toPlayer.Unit), -1, 1)
+        return dist, (dot >= dashFacingDotMin)
+    end
+
+    -- Abis delay: re-check jarak + facing + LOS, baru pencet parry.
+    local function fireDashParry(getKr)
+        dashPending = false
+        if not ctx.parry.isEnabled() then return end
+        local kr = getKr()
+        local dist, facingOk = dashFacingInfo(kr)
+        if dist > dashDistance then return end
+        if dashRecheckFacing and not facingOk then return end
+        if not ctx.parry.canParry() then return end
+        if not ctx.hasLineOfSight() then return end
+        ctx.parry.doParryPress()
+    end
+
+    -- Detect wind-up -> jadwalin dash parry (delay dashParryDelay).
+    local function scheduleDashParry(plr, kr)
+        if not ctx.parry.isEnabled() or dashPending or (os.clock() - lastDashSchedule) < dashRetriggerGuard then return end
+        local dist, facingOk = dashFacingInfo(kr)
+        if dist > dashDistance or not facingOk then return end
+        dashPending = true
+        lastDashSchedule = os.clock()
+        task.delay(dashParryDelay, function()
+            fireDashParry(function()
+                return plr.Character and plr.Character:FindFirstChild("HumanoidRootPart")
+            end)
+        end)
+    end
+
+    ctx.onKillerAnim(function(plr, idRaw, animId)
+        if idRaw and tostring(idRaw):find(DASH_WINDUP_ID) then
+            scheduleDashParry(plr, plr.Character and plr.Character:FindFirstChild("HumanoidRootPart"))
+        end
+    end)
+
+    -- ===================== UI =====================
+    local Section = ctx.tabs.Combat:Section({
+        Title = "Dash Parry",
+        Desc = "Auto parry dash (M2) killer",
+        Box = true,
+        BoxBorder = true,
+        Opened = true,
+    })
+    Section:Slider({
+        Title = "Dash Parry Distance",
+        Desc = "Jarak deteksi dash (M2) killer",
+        Step = 1,
+        Value = { Min = 5, Max = 60, Default = 30 },
+        Callback = function(value)
+            if value and value >= 5 then
+                dashDistance = value
+            end
+        end,
+    })
+end
+    end)()
+
+    __VD_MODULES["Combat/AutoDogdeAbbys.lua"] = (function()
+-- ============================================================
+-- Combat/AutoDogdeAbbys.lua | Auto Dodge Abysswalker
+-- Jongkok (Ctrl) otomatis pas Abysswalker pake skill.
+-- Wallcheck + persistent window biar skill dari balik tembok tetep kedeteksi.
+-- ============================================================
+return function(ctx)
+    local VirtualInputManager = ctx.VirtualInputManager
+
+    local autoDodgeEnabled = false
+    local dodgeDistance = 25         -- jarak deteksi skill Abysswalker
+    local crouchHoldTime = 1.0       -- lama tahan jongkok (Ctrl)
+    local dodgeTriggerDelay = 0.1    -- delay sebelum jongkok
+    local dodgeSkillWindow = 2.0     -- lama skill dianggap aktif
+    local dodgeCheckInterval = 0.1   -- interval re-check wallcheck
+    local ABYSS_SKILL_ID = "80411309607666" -- anim skill Abysswalker
+    local isDodging = false
+    local dodgeSkillPending = false
+
+    local function doCrouch()
+        if isDodging then return end
+        isDodging = true
+        VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.LeftControl, false, game)
+        task.delay(crouchHoldTime, function()
+            VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.LeftControl, false, game)
+            isDodging = false
+        end)
+    end
+
+    local function triggerDodge()
+        if not autoDodgeEnabled or isDodging then return end
+        if ctx.getKillerDistance() <= dodgeDistance and ctx.hasLineOfSight() then
+            task.delay(dodgeTriggerDelay, function()
+                if not isDodging and not dodgeSkillPending and ctx.getKillerDistance() <= dodgeDistance and ctx.hasLineOfSight() then
+                    doCrouch()
+                end
+            end)
+            return
+        end
+        if dodgeSkillPending then return end
+        dodgeSkillPending = true
+        task.spawn(function()
+            local elapsed = 0
+            while elapsed < dodgeSkillWindow do
+                task.wait(dodgeCheckInterval)
+                elapsed = elapsed + dodgeCheckInterval
+                if not autoDodgeEnabled or isDodging then break end
+                if ctx.getKillerDistance() <= dodgeDistance and ctx.hasLineOfSight() then
+                    task.delay(dodgeTriggerDelay, function()
+                        if not isDodging and not dodgeSkillPending and ctx.getKillerDistance() <= dodgeDistance and ctx.hasLineOfSight() then
+                            doCrouch()
+                        end
+                    end)
+                    break
+                end
+            end
+            dodgeSkillPending = false
+        end)
+    end
+
+    ctx.onKillerAnim(function(plr, idRaw, animId)
+        if idRaw and tostring(idRaw):find(ABYSS_SKILL_ID) then
+            triggerDodge()
+        end
+    end)
+
+    -- ===================== UI =====================
+    local Section = ctx.tabs.Combat:Section({
+        Title = "Auto Dodge",
+        Desc = "Auto jongkok lawan Abysswalker",
+        Box = true,
+        BoxBorder = true,
+        Opened = true,
+    })
+    Section:Toggle({
+        Title = "Auto Dodge Abysswalker",
+        Desc = "Auto jongkok pas Abysswalker pake skill",
+        Value = autoDodgeEnabled,
+        Callback = function(state)
+            autoDodgeEnabled = state
+        end,
+    })
+    Section:Slider({
+        Title = "Dodge Distance",
+        Desc = "Jarak deteksi skill Abysswalker",
+        Step = 1,
+        Value = { Min = 5, Max = 60, Default = 25 },
+        Callback = function(value)
+            if value and value >= 5 then
+                dodgeDistance = value
+            end
+        end,
+    })
+end
+    end)()
+
+    __VD_MODULES["Combat/SkillCheck.lua"] = (function()
+-- ============================================================
+-- Combat/SkillCheck.lua | Auto Perfect Skillcheck
+-- Monitor Check.Visible; pencet Space pas diff (Line-Goal)%360 masuk zona sukses.
+-- Zona: Great [102,116], Good (116,159]. Game client routing remote sendiri.
+-- ============================================================
+return function(ctx)
+    local RunService = ctx.RunService
+    local VirtualInputManager = ctx.VirtualInputManager
+    local LocalPlayer = ctx.LocalPlayer
+
+    local autoSkillCheckEnabled = false
+    local scFireLow = 104    -- jangan < 102 (early fail/meledak)
+    local scFireHigh = 150   -- batas atas aman (sebelum 159 = kelewat)
+    local scRetrySec = 0.35  -- retry kalo press gagal & Goal ga ganti
+    local scPressed = false
+    local scLastGoal = nil
+    local scPressedAt = 0
+
+    local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+    -- Ref di-RESOLVE ULANG (GUI di-recreate tiap ganti match).
+    local SkillCheckFrame, SkillCheckLine, SkillCheckGoal = nil, nil, nil
+    local function resolveSkillCheckRefs()
+        local gui = PlayerGui:FindFirstChild("SkillCheckPromptGui")
+        local check = gui and gui:FindFirstChild("Check")
+        if not check then
+            SkillCheckFrame, SkillCheckLine, SkillCheckGoal = nil, nil, nil
+            return false
+        end
+        SkillCheckFrame = check
+        SkillCheckLine = check:FindFirstChild("Line")
+        SkillCheckGoal = check:FindFirstChild("Goal")
+        return (SkillCheckLine ~= nil and SkillCheckGoal ~= nil)
+    end
+    resolveSkillCheckRefs()
+
+    RunService.Heartbeat:Connect(function()
+        if not autoSkillCheckEnabled then return end
+        if not SkillCheckFrame or not SkillCheckFrame.Parent or not SkillCheckLine or not SkillCheckGoal then
+            resolveSkillCheckRefs()
+        end
+        if SkillCheckFrame and SkillCheckFrame.Parent and SkillCheckFrame.Visible then
+            local goal = SkillCheckGoal.Rotation % 360
+            local line = SkillCheckLine.Rotation % 360
+            local diff = (line - goal) % 360
+            if scLastGoal == nil or math.abs(goal - scLastGoal) > 0.5 then
+                scLastGoal = goal
+                scPressed = false
+            end
+            if scPressed and (os.clock() - scPressedAt) > scRetrySec then
+                scPressed = false
+            end
+            if not scPressed and diff >= scFireLow and diff <= scFireHigh then
+                scPressed = true
+                scPressedAt = os.clock()
+                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
+                task.delay(0.04, function()
+                    VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+                end)
+            end
+        else
+            scPressed = false
+            scLastGoal = nil
+        end
+    end)
+
+    -- ===================== UI =====================
+    local Section = ctx.tabs.Combat:Section({
+        Title = "Auto Skillcheck",
+        Desc = "Auto skillcheck (generator & healing)",
+        Box = true,
+        BoxBorder = true,
+        Opened = true,
+    })
+    Section:Toggle({
+        Title = "Auto Skillcheck",
+        Desc = "Auto success skillcheck (generator & healing)",
+        Value = autoSkillCheckEnabled,
+        Callback = function(state)
+            autoSkillCheckEnabled = state
+        end,
+    })
+end
+    end)()
+
+    __VD_MODULES["Visual/Esp.lua"] = (function()
+-- ============================================================
+-- Visual/Esp.lua | ESP (highlight + nametag + jarak)
+-- ============================================================
+return function(ctx)
+    local Players = ctx.Players
+    local LocalPlayer = ctx.LocalPlayer
+
+    local espEnabled = false
+    local activeConnections = {}
+    local activeHighlights = {}
+
+    local function getPlayerColor(player)
+        if player.Team and (player.Team.Name:lower():find("killer") or player.Team.Name:lower():find("hunter")) then
+            return Color3.fromRGB(255, 0, 0)
+        elseif player:GetAttribute("Role") == "Killer" or player:GetAttribute("Killer") then
+            return Color3.fromRGB(255, 0, 0)
+        end
+        return Color3.fromRGB(0, 255, 0)
+    end
+
+    local function cleanupModel(model)
+        pcall(function()
+            if activeHighlights[model] then
+                for _, obj in ipairs(activeHighlights[model]) do
+                    obj:Destroy()
+                end
+                activeHighlights[model] = nil
+            end
+        end)
+    end
+
+    local function cleanupPlayer(player)
+        pcall(function()
+            if activeConnections[player] then
+                for _, conn in ipairs(activeConnections[player]) do
+                    conn:Disconnect()
+                end
+                activeConnections[player] = nil
+            end
+            if player.Character then cleanupModel(player.Character) end
+        end)
+    end
+
+    local function updateESPColor(player, hl, nameLabel)
+        pcall(function()
+            local color = getPlayerColor(player)
+            if hl and hl.Parent then
+                hl.FillColor = color
+                hl.OutlineColor = color
+            end
+            if nameLabel and nameLabel.Parent then
+                nameLabel.TextColor3 = color
+            end
+        end)
+    end
+
+    local function applyESP(model, defaultColor, nameText)
+        cleanupModel(model)
+        if not espEnabled then return end
+
+        local hl = Instance.new("Highlight")
+        hl.FillColor = defaultColor
+        hl.OutlineColor = defaultColor
+        hl.FillTransparency = 0.6
+        hl.OutlineTransparency = 0
+        hl.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+        hl.Parent = model
+
+        local created = {hl}
+
+        local root = model:FindFirstChild("HumanoidRootPart") or model:FindFirstChild("Head")
+        if root then
+            local bill = Instance.new("BillboardGui")
+            bill.Size = UDim2.new(0, 200, 0, 45)
+            bill.StudsOffset = Vector3.new(0, 2.5, 0)
+            bill.AlwaysOnTop = true
+            bill.LightInfluence = 0
+            bill.MaxDistance = 2000
+            bill.Name = "ESP_NameTag"
+            bill.Adornee = root
+            bill.Parent = root
+            table.insert(created, bill)
+
+            local container = Instance.new("Frame")
+            container.Size = UDim2.new(1, 0, 1, 0)
+            container.BackgroundTransparency = 1
+            container.Parent = bill
+
+            local nameLabel = Instance.new("TextLabel")
+            nameLabel.Size = UDim2.new(1, 0, 0.6, 0)
+            nameLabel.BackgroundTransparency = 1
+            nameLabel.TextSize = 14
+            nameLabel.Font = Enum.Font.SourceSansBold
+            nameLabel.TextColor3 = defaultColor
+            nameLabel.Text = nameText
+            nameLabel.TextStrokeTransparency = 0
+            nameLabel.TextStrokeColor3 = Color3.new(0, 0, 0)
+            nameLabel.Parent = container
+
+            local distLabel = Instance.new("TextLabel")
+            distLabel.Size = UDim2.new(1, 0, 0.4, 0)
+            distLabel.Position = UDim2.new(0, 0, 0.6, 0)
+            distLabel.BackgroundTransparency = 1
+            distLabel.TextSize = 11
+            distLabel.Font = Enum.Font.SourceSans
+            distLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+            distLabel.Text = ""
+            distLabel.TextStrokeTransparency = 0
+            distLabel.TextStrokeColor3 = Color3.new(0, 0, 0)
+            distLabel.Parent = container
+
+            local player = Players:GetPlayerFromCharacter(model)
+            if player then
+                updateESPColor(player, hl, nameLabel)
+            end
+
+            task.spawn(function()
+                while bill and bill.Parent and espEnabled do
+                    pcall(function()
+                        local charRoot = model:FindFirstChild("HumanoidRootPart")
+                        local localRoot = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+                        if charRoot and localRoot then
+                            distLabel.Text = "[" .. tostring(math.floor((charRoot.Position - localRoot.Position).Magnitude)) .. "m]"
+                        else
+                            distLabel.Text = ""
+                        end
+                    end)
+                    task.wait(0.3)
+                end
+            end)
+        end
+
+        activeHighlights[model] = created
+    end
+
+    local function setupPlayer(player)
+        if player == LocalPlayer then return end
+        cleanupPlayer(player)
+        activeConnections[player] = {}
+
+        local function onCharacter(char)
+            task.wait(0.5)
+            pcall(function()
+                if not espEnabled then return end
+                applyESP(char, getPlayerColor(player), player.Name)
+                local hl = char:FindFirstChildOfClass("Highlight")
+                local root = char:FindFirstChild("HumanoidRootPart") or char:FindFirstChild("Head")
+                local bill = root and root:FindFirstChild("ESP_NameTag")
+                local nameLabel = bill and bill:FindFirstChildOfClass("Frame") and bill:FindFirstChildOfClass("Frame"):FindFirstChildOfClass("TextLabel")
+                if hl and nameLabel then
+                    table.insert(activeConnections[player], player:GetPropertyChangedSignal("Team"):Connect(function()
+                        updateESPColor(player, hl, nameLabel)
+                    end))
+                end
+            end)
+        end
+
+        if player.Character then task.spawn(onCharacter, player.Character) end
+        table.insert(activeConnections[player], player.CharacterAdded:Connect(onCharacter))
+    end
+
+    local function startESP()
+        for _, p in ipairs(Players:GetPlayers()) do setupPlayer(p) end
+    end
+
+    local function stopESP()
+        for _, p in ipairs(Players:GetPlayers()) do cleanupPlayer(p) end
+        for model in pairs(activeHighlights) do cleanupModel(model) end
+    end
+
+    Players.PlayerAdded:Connect(setupPlayer)
+    Players.PlayerRemoving:Connect(cleanupPlayer)
+
+    -- ===================== UI =====================
+    ctx.tabs.Visual:Toggle({
+        Title = "ESP",
+        Desc = "Lihat posisi pemain tembus pandang.",
+        Value = false,
+        Callback = function(state)
+            espEnabled = state
+            if state then
+                startESP()
+            else
+                stopESP()
+            end
+        end,
+    })
+end
+    end)()
+
+    __VD_MODULES["Aim/AimTwistOfFate.lua"] = (function()
+-- ============================================================
+-- Aim/AimTwistOfFate.lua | Gun Aimbot (peluru 'Twist of Fate')
+-- Silent Aim + Aim Lock. Physics: speed 200, no drop (gravity 0).
+-- Remote: Remotes.Items[*].Fire(Tool, Direction) (di-hook via ctx.onNamecall).
+-- ============================================================
+return function(ctx)
+    local Workspace = ctx.Workspace
+    local Teams = ctx.Teams
+    local UserInputService = ctx.UserInputService
+    local RunService = ctx.RunService
+    local Players = ctx.Players
+    local LocalPlayer = ctx.LocalPlayer
+    local silentSupported = ctx.silentSupported
+
+    local aimTargetMode = "Killer"          -- "Killer" / "Survivor"
+    local silentAimEnabled = false
+    local aimLockEnabled = false
+    local magicBullet = false               -- abaikan FOV, auto-lock target terdeket
+    local aimWallcheck = true               -- cuma target yg keliatan (LOS)
+    local enableLead = true                 -- prediksi gerak target
+    local fovRadius = 120
+    local fovFollowMouse = true
+    local AIM_TARGET_PART = "HumanoidRootPart"
+    local AIM_BULLET_SPEED = 200
+    local AIM_MUZZLE_OFFSET = Vector3.new(-1.41, -1.10, -5.44) -- cam object-space (R,U,F)
+    local AIM_LEAD_MULT = 1.0
+    local AIM_SMOOTH = 0.25
+
+    local AimCamera = Workspace.CurrentCamera
+    local aimSilentDir = nil                -- arah peluru ke target (dibaca hook)
+    local aimTargetVel = nil
+    local aimVelSampleName, aimVelSamplePos, aimVelSampleT = nil, nil, 0
+    local aimShowFov = true
+
+    local function aimGetTeam()
+        if aimTargetMode == "Survivor" then
+            return Teams:FindFirstChild("Survivors")
+        end
+        return Teams:FindFirstChild("Killer")
+    end
+
+    local function aimGetFovCenter()
+        if fovFollowMouse then
+            local m = UserInputService:GetMouseLocation()
+            return Vector2.new(m.X, m.Y)
+        end
+        local vp = AimCamera.ViewportSize
+        return Vector2.new(vp.X / 2, vp.Y / 2)
+    end
+
+    local function aimGetPart(plr)
+        return plr and plr.Character and plr.Character:FindFirstChild(AIM_TARGET_PART)
+    end
+
+    -- Wallcheck: LOS dari kamera ke target. Exclude semua karakter player -> cuma tembok yg block.
+    local function aimHasLOS(part)
+        if not part or not part.Parent then return false end
+        local origin = AimCamera.CFrame.Position
+        local rp = RaycastParams.new()
+        rp.FilterType = Enum.RaycastFilterType.Exclude
+        rp.IgnoreWater = true
+        local ignore = {}
+        for _, plr in ipairs(Players:GetPlayers()) do
+            if plr.Character then table.insert(ignore, plr.Character) end
+        end
+        rp.FilterDescendantsInstances = ignore
+        local char = part.Parent
+        local points = { part.Position }
+        local head = char and char:FindFirstChild("Head")
+        if head then table.insert(points, head.Position) end
+        table.insert(points, part.Position + Vector3.new(0, 2.5, 0))
+        table.insert(points, part.Position - Vector3.new(0, 2.5, 0))
+        for _, p in ipairs(points) do
+            if Workspace:Raycast(origin, p - origin, rp) == nil then
+                return true
+            end
+        end
+        return false
+    end
+
+    -- target terdeket ke pusat FOV (magic bullet: abaikan radius FOV)
+    local function aimGetTarget()
+        local team = aimGetTeam()
+        if not team then return nil end
+        local center = aimGetFovCenter()
+        local best, bestDist = nil, (magicBullet and math.huge or fovRadius)
+        for _, plr in ipairs(team:GetPlayers()) do
+            if plr ~= LocalPlayer then
+                local part = aimGetPart(plr)
+                if part then
+                    local sp, onScreen = AimCamera:WorldToViewportPoint(part.Position)
+                    if onScreen then
+                        local d = (Vector2.new(sp.X, sp.Y) - center).Magnitude
+                        if d <= bestDist then
+                            if (not aimWallcheck) or aimHasLOS(part) then
+                                best, bestDist = plr, d
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        return best
+    end
+
+    -- arah muzzle -> target (+ lead). NO drop (gravity 0).
+    local function aimComputeDir(part, targetVel)
+        local muzzle = AimCamera.CFrame:PointToWorldSpace(AIM_MUZZLE_OFFSET)
+        local tp = part.Position
+        local aimPoint = tp
+        if enableLead and targetVel then
+            local tvel = targetVel * AIM_LEAD_MULT
+            local tof = (tp - muzzle).Magnitude / AIM_BULLET_SPEED
+            for _ = 1, 2 do
+                local predicted = tp + tvel * tof
+                tof = (predicted - muzzle).Magnitude / AIM_BULLET_SPEED
+            end
+            aimPoint = tp + tvel * tof
+        end
+        local dir = (aimPoint - muzzle)
+        if dir.Magnitude < 0.01 then return nil end
+        return dir.Unit
+    end
+
+    -- FOV circle (visual feedback)
+    local aimFovCircle = nil
+    if Drawing then
+        aimFovCircle = Drawing.new("Circle")
+        aimFovCircle.Thickness = 2
+        aimFovCircle.NumSides = 64
+        aimFovCircle.Radius = fovRadius
+        aimFovCircle.Filled = false
+        aimFovCircle.Visible = false
+        aimFovCircle.Color = Color3.fromRGB(255, 255, 255)
+    end
+
+    -- LOOP: hitung target + arah
+    local aimRenderConn = RunService.RenderStepped:Connect(function()
+        AimCamera = Workspace.CurrentCamera
+        if not (silentAimEnabled or aimLockEnabled) then
+            aimSilentDir = nil
+            if aimFovCircle then aimFovCircle.Visible = false end
+            return
+        end
+        if aimFovCircle then
+            aimFovCircle.Visible = aimShowFov
+            aimFovCircle.Radius = fovRadius
+            aimFovCircle.Position = aimGetFovCenter()
+        end
+        local target = aimGetTarget()
+        if target then
+            local part = aimGetPart(target)
+            if part then
+                local pos = part.Position
+                local now = tick()
+                if aimVelSampleName == target.Name and aimVelSamplePos then
+                    local dt = now - aimVelSampleT
+                    if dt >= 0.04 then
+                        local instVel = (pos - aimVelSamplePos) / dt
+                        aimTargetVel = aimTargetVel and aimTargetVel:Lerp(instVel, 0.5) or instVel
+                        aimVelSamplePos = pos
+                        aimVelSampleT = now
+                    end
+                else
+                    aimVelSampleName = target.Name
+                    aimVelSamplePos = pos
+                    aimVelSampleT = now
+                    aimTargetVel = Vector3.zero
+                end
+                local dir = aimComputeDir(part, aimTargetVel)
+                aimSilentDir = (silentAimEnabled and dir) or nil
+                if aimFovCircle then aimFovCircle.Color = Color3.fromRGB(255, 0, 0) end
+                if aimLockEnabled and dir and UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton2) then
+                    local cf = AimCamera.CFrame
+                    local goal = CFrame.new(cf.Position, cf.Position + dir)
+                    AimCamera.CFrame = cf:Lerp(goal, AIM_SMOOTH)
+                end
+            else
+                aimSilentDir = nil
+                aimVelSampleName = nil
+                if aimFovCircle then aimFovCircle.Color = Color3.fromRGB(255, 255, 255) end
+            end
+        else
+            aimSilentDir = nil
+            aimVelSampleName = nil
+            if aimFovCircle then aimFovCircle.Color = Color3.fromRGB(255, 255, 255) end
+        end
+    end)
+
+    -- HOOK silent aim: timpa arg Direction pas FireServer 'Fire'
+    ctx.onNamecall(function(self, method, ...)
+        if method == "FireServer" and silentAimEnabled and aimSilentDir and self.Name == "Fire" then
+            local p = self.Parent
+            if p and p.Parent and p.Parent.Name == "Items" then
+                local args = { ... }
+                if typeof(args[2]) == "Vector3" then
+                    args[2] = aimSilentDir
+                    return true, ctx.callOriginal(self, unpack(args))
+                end
+                for i, v in ipairs(args) do
+                    if typeof(v) == "Vector3" then
+                        args[i] = aimSilentDir
+                        return true, ctx.callOriginal(self, unpack(args))
+                    end
+                end
+            end
+        end
+        return false
+    end)
+
+    -- cleanup loop + circle lama pas re-execute
+    if getgenv then
+        local g = getgenv()
+        if g.__tomaAimRender then pcall(function() g.__tomaAimRender:Disconnect() end) end
+        g.__tomaAimRender = aimRenderConn
+        if g.__tomaFov then pcall(function() g.__tomaFov:Remove() end) end
+        g.__tomaFov = aimFovCircle
+    end
+
+    -- ===================== UI =====================
+    local AimGunSection = ctx.tabs.Aim:Section({
+        Title = "Auto Aim Gun",
+        Desc = "Silent Aim & Aim Lock (peluru Twist of Fate)",
+        Box = true,
+        BoxBorder = true,
+        Opened = true,
+    })
+
+    AimGunSection:Dropdown({
+        Title = "Aim Target",
+        Desc = "Killer / Survivor",
+        Values = { "Killer", "Survivor" },
+        Value = "Killer",
+        Callback = function(option)
+            if option == "Killer" or option == "Survivor" then
+                aimTargetMode = option
+            end
+        end,
+    })
+
+    local SilentToggle = AimGunSection:Toggle({
+        Title = silentSupported and "Silent Aim" or "Silent Aim (Unsupported Executor)",
+        Desc = silentSupported and "Timpa arah peluru ke target (kamera ga gerak)" or "Executor lo ga support metatable hook. Pake Aim Lock aja.",
+        Locked = not silentSupported,
+        Value = silentAimEnabled,
+        Callback = function(state)
+            if not silentSupported then return end
+            silentAimEnabled = state
+        end,
+    })
+    if (not silentSupported) and SilentToggle then
+        pcall(function() SilentToggle:Lock("Unsupported Executor") end)
+    end
+
+    AimGunSection:Toggle({
+        Title = "Aim Lock",
+        Desc = "Hold klik kanan -> kamera lock ke target",
+        Value = aimLockEnabled,
+        Callback = function(state)
+            aimLockEnabled = state
+        end,
+    })
+
+    AimGunSection:Toggle({
+        Title = "Wallcheck",
+        Desc = "Cuma aim target yg keliatan (ga nembus tembok)",
+        Value = aimWallcheck,
+        Callback = function(state)
+            aimWallcheck = state
+        end,
+    })
+
+    AimGunSection:Toggle({
+        Title = "Lead Prediction",
+        Desc = "Prediksi gerak target (penting, peluru ga instan)",
+        Value = enableLead,
+        Callback = function(state)
+            enableLead = state
+        end,
+    })
+
+    AimGunSection:Slider({
+        Title = "Lead Strength",
+        Desc = "Pengali offset prediksi (1.0 = fisika pas)",
+        Step = 0.1,
+        Value = { Min = 0, Max = 3, Default = 1 },
+        Callback = function(value)
+            if value then AIM_LEAD_MULT = value end
+        end,
+    })
+
+    AimGunSection:Toggle({
+        Title = "POV Circle",
+        Desc = "Tampilin/sembunyiin lingkaran visual POV (tracking tetep jalan)",
+        Value = aimShowFov,
+        Callback = function(state)
+            aimShowFov = state
+        end,
+    })
+
+    AimGunSection:Slider({
+        Title = "FOV Radius",
+        Desc = "Radius lingkaran FOV (pixel)",
+        Step = 5,
+        Value = { Min = 40, Max = 400, Default = 120 },
+        Callback = function(value)
+            if value and value >= 40 then
+                fovRadius = value
+            end
+        end,
+    })
+end
+    end)()
+
+    __VD_MODULES["Aim/AimVeil.lua"] = (function()
+-- ============================================================
+-- Aim/AimVeil.lua | Veil Aimbot (lempar tombak, killer first-person)
+-- Hook Spearthrow(direction, speed, origin) -> timpa 'direction' pake
+-- ballistic arc solver + lead per-jarak. Tombak NEMBUS TEMBOK -> NO wallcheck.
+-- Gravity efektif 98.1 (arc). Aim lock cuma aktif pas attribute spearmode=true.
+-- ============================================================
+return function(ctx)
+    local Workspace = ctx.Workspace
+    local Teams = ctx.Teams
+    local UserInputService = ctx.UserInputService
+    local RunService = ctx.RunService
+    local LocalPlayer = ctx.LocalPlayer
+    local silentSupported = ctx.silentSupported
+
+    local veilEnabled = false
+    local veilEnableLead = true
+    local veilFovRadius = 150
+    local veilFovFollowMouse = true
+    local veilAimLock = false        -- kamera ngunci ke target pas hold klik kiri (stance lempar)
+    local veilShowFov = true
+    local VEIL_TARGET_PART = "HumanoidRootPart"
+    local VEIL_GRAVITY = 98.1
+    local VEIL_AIM_SMOOTH = 0.35
+    local VEIL_AIM_LOCK_SPEED = 165  -- full charge = 165, jarak max
+
+    -- Offset lead per jarak (mult). Hook cari bracket jarak TERDEKAT ke jarak target.
+    local veilOffsets = {
+        { dist = 40, offset = 1.9 },
+        { dist = 60, offset = 1.4 },
+        { dist = 80, offset = 1.0 },
+    }
+    local function veilOffsetForDist(dist)
+        local best, bestDiff = 1.0, math.huge
+        for _, e in ipairs(veilOffsets) do
+            local diff = math.abs(dist - e.dist)
+            if diff < bestDiff then bestDiff = diff; best = e.offset end
+        end
+        return best
+    end
+
+    -- state Veil (di-update loop, dibaca hook)
+    local veilTargetPos, veilTargetVel, veilTargetName = nil, nil, nil
+    local veilSampleName, veilSamplePos, veilSampleT = nil, nil, 0
+    local veilLockedPlayer = nil     -- target yg dikunci selama hold
+    local veilLockGraceUntil = 0     -- pertahanin target sebentar abis lepas (buat throw)
+
+    local function veilGetFovCenter()
+        if veilFovFollowMouse then
+            local m = UserInputService:GetMouseLocation()
+            return Vector2.new(m.X, m.Y)
+        end
+        local vp = Workspace.CurrentCamera.ViewportSize
+        return Vector2.new(vp.X / 2, vp.Y / 2)
+    end
+
+    local function veilGetPart(plr)
+        return plr and plr.Character and plr.Character:FindFirstChild(VEIL_TARGET_PART)
+    end
+
+    -- Cek target masih dalem JANGKAUAN lempar (speed max = full charge 165). root>=0 = reachable.
+    local function veilInRange(origin, targetPos, speed, g)
+        local disp = targetPos - origin
+        local dy = disp.Y
+        local flatX, flatZ = disp.X, disp.Z
+        local dx = math.sqrt(flatX * flatX + flatZ * flatZ)
+        if dx < 0.001 then return true end
+        local v2 = speed * speed
+        local root = v2 * v2 - g * (g * dx * dx + 2 * dy * v2)
+        return root >= 0
+    end
+
+    local function veilGetTarget()
+        local team = Teams:FindFirstChild("Survivors")
+        if not team then return nil end
+        local cam = Workspace.CurrentCamera
+        local origin = cam.CFrame.Position
+        local center = veilGetFovCenter()
+        local best, bestDist = nil, veilFovRadius
+        for _, plr in ipairs(team:GetPlayers()) do
+            if plr ~= LocalPlayer then
+                local part = veilGetPart(plr)
+                if part then
+                    local sp, onScreen = cam:WorldToViewportPoint(part.Position)
+                    if onScreen then
+                        local d = (Vector2.new(sp.X, sp.Y) - center).Magnitude
+                        -- WAJIB dalem jangkauan lempar. NO wallcheck (tombak nembus tembok).
+                        if d <= bestDist and veilInRange(origin, part.Position, VEIL_AIM_LOCK_SPEED, VEIL_GRAVITY) then
+                            best, bestDist = plr, d
+                        end
+                    end
+                end
+            end
+        end
+        return best
+    end
+
+    -- ballistic arc solver (math murni -> aman dipanggil di hook)
+    local function veilSolveBallistic(origin, target, speed, g)
+        local disp = target - origin
+        local dy = disp.Y
+        local flatX, flatZ = disp.X, disp.Z
+        local dx = math.sqrt(flatX * flatX + flatZ * flatZ)
+        if dx < 0.001 then
+            return (disp.Magnitude > 0) and disp.Unit or nil, 0
+        end
+        local v2 = speed * speed
+        local root = v2 * v2 - g * (g * dx * dx + 2 * dy * v2)
+        local tanTheta
+        if root < 0 then
+            tanTheta = 1  -- di luar jangkauan fisik -> 45deg best-effort
+        else
+            local sq = math.sqrt(root)
+            tanTheta = (v2 - sq) / (g * dx)
+        end
+        local horiz = Vector3.new(flatX / dx, 0, flatZ / dx)
+        local dir = (horiz + Vector3.new(0, tanTheta, 0))
+        if dir.Magnitude < 0.001 then return nil end
+        dir = dir.Unit
+        local cosTheta = math.sqrt(dir.X * dir.X + dir.Z * dir.Z)
+        local tof = (speed * cosTheta > 0.001) and (dx / (speed * cosTheta)) or 0
+        return dir, tof
+    end
+
+    local function veilSolveLead(origin, targetPos, targetVel, speed, g)
+        local pred = targetPos
+        local dist = (targetPos - origin).Magnitude
+        local applyLead = veilEnableLead and targetVel
+        local mult = applyLead and veilOffsetForDist(dist) or 0
+        local dir, tof
+        for _ = 1, 3 do
+            dir, tof = veilSolveBallistic(origin, pred, speed, g)
+            if not dir then return nil end
+            if applyLead then
+                pred = targetPos + targetVel * (tof * mult)
+            end
+        end
+        return dir, tof
+    end
+
+    -- FOV circle Veil
+    local veilFovCircle = nil
+    if Drawing then
+        veilFovCircle = Drawing.new("Circle")
+        veilFovCircle.Thickness = 2
+        veilFovCircle.NumSides = 64
+        veilFovCircle.Radius = veilFovRadius
+        veilFovCircle.Filled = false
+        veilFovCircle.Visible = false
+        veilFovCircle.Color = Color3.fromRGB(255, 255, 255)
+    end
+
+    -- LOOP Veil: track target + velocity manual (pos delta) + circle
+    local veilRenderConn = RunService.RenderStepped:Connect(function()
+        if not (veilEnabled or veilAimLock) then
+            veilTargetPos, veilTargetVel, veilTargetName = nil, nil, nil
+            veilSampleName = nil
+            veilLockedPlayer = nil
+            if veilFovCircle then veilFovCircle.Visible = false end
+            return
+        end
+        if veilFovCircle then
+            veilFovCircle.Visible = veilShowFov
+            veilFovCircle.Radius = veilFovRadius
+            veilFovCircle.Position = veilGetFovCenter()
+        end
+        -- HOLD klik kiri PAS DI STANCE LEMPAR (spearmode) -> kunci target POV; ga ganti sampe lepas.
+        local stanceChar = LocalPlayer.Character
+        local inThrowStance = stanceChar and stanceChar:GetAttribute("spearmode") == true
+        local holding = inThrowStance and UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1)
+        local target
+        if holding then
+            if not veilLockedPlayer then
+                veilLockedPlayer = veilGetTarget()  -- capture target pas mulai hold
+            end
+            if not (veilLockedPlayer and veilLockedPlayer.Parent and veilGetPart(veilLockedPlayer)) then
+                veilLockedPlayer = veilGetTarget()  -- locked target ilang/mati -> ambil baru
+            end
+            target = veilLockedPlayer
+            veilLockGraceUntil = tick() + 0.3
+        elseif veilLockedPlayer and tick() < veilLockGraceUntil
+            and veilLockedPlayer.Parent and veilGetPart(veilLockedPlayer) then
+            target = veilLockedPlayer       -- grace: pertahanin buat throw yg fire pas lepas hold
+        else
+            veilLockedPlayer = nil
+            target = veilGetTarget()        -- ga hold -> preview bebas
+        end
+        if target then
+            local part = veilGetPart(target)
+            if part then
+                local pos = part.Position
+                local now = tick()
+                if veilSampleName == target.Name and veilSamplePos then
+                    local dt = now - veilSampleT
+                    if dt >= 0.04 then
+                        local instVel = (pos - veilSamplePos) / dt
+                        veilTargetVel = veilTargetVel and veilTargetVel:Lerp(instVel, 0.5) or instVel
+                        veilSamplePos = pos
+                        veilSampleT = now
+                    end
+                else
+                    veilSampleName = target.Name
+                    veilSamplePos = pos
+                    veilSampleT = now
+                    veilTargetVel = Vector3.zero
+                end
+                veilTargetPos = pos
+                veilTargetName = target.Name
+                if veilFovCircle then veilFovCircle.Color = Color3.fromRGB(255, 0, 0) end
+                -- AIM LOCK: arahin kamera ke ARAH LEMPAR (ballistic arc), bukan flat ke target.
+                if veilAimLock and holding then
+                    local cam = Workspace.CurrentCamera
+                    local origin = cam.CFrame.Position
+                    local dir = veilSolveLead(origin, pos, veilTargetVel, VEIL_AIM_LOCK_SPEED, VEIL_GRAVITY)
+                    if dir then
+                        local goal = CFrame.new(origin, origin + dir)
+                        cam.CFrame = cam.CFrame:Lerp(goal, VEIL_AIM_SMOOTH)
+                    end
+                end
+            else
+                veilTargetPos, veilTargetVel = nil, nil
+                veilSampleName = nil
+            end
+        else
+            veilTargetPos, veilTargetVel = nil, nil
+            veilSampleName = nil
+            if veilFovCircle then veilFovCircle.Color = Color3.fromRGB(255, 255, 255) end
+        end
+    end)
+
+    -- HOOK silent aim Veil: timpa arah Spearthrow
+    ctx.onNamecall(function(self, method, ...)
+        if method == "FireServer" and veilEnabled and veilTargetPos and self.Name == "Spearthrow" then
+            local p = self.Parent
+            if p and p.Name == "Veil" then
+                local args = { ... }
+                local dirArg, speedArg, originArg = args[1], args[2], args[3]
+                if typeof(dirArg) == "Vector3" and type(speedArg) == "number" and typeof(originArg) == "Vector3" then
+                    local newDir = veilSolveLead(originArg, veilTargetPos, veilTargetVel, speedArg, VEIL_GRAVITY)
+                    if newDir then
+                        args[1] = newDir
+                        return true, ctx.callOriginal(self, unpack(args))
+                    end
+                end
+            end
+        end
+        return false
+    end)
+
+    -- cleanup loop + circle lama pas re-execute
+    if getgenv then
+        local g = getgenv()
+        if g.__tomaVeilRender then pcall(function() g.__tomaVeilRender:Disconnect() end) end
+        g.__tomaVeilRender = veilRenderConn
+        if g.__tomaVeilFov then pcall(function() g.__tomaVeilFov:Remove() end) end
+        g.__tomaVeilFov = veilFovCircle
+    end
+
+    -- ===================== UI =====================
+    local VeilSection = ctx.tabs.Aim:Section({
+        Title = "Veil Aim",
+        Desc = "Aimbot lempar tombak Veil (offset lead per jarak)",
+        Box = true,
+        BoxBorder = true,
+        Opened = true,
+    })
+
+    local VeilToggle = VeilSection:Toggle({
+        Title = silentSupported and "Veil Aim" or "Veil Aim (Unsupported Executor)",
+        Desc = silentSupported and "Auto-arah tombak ke survivor di FOV (nembus tembok)" or "Executor lo ga support metatable hook.",
+        Locked = not silentSupported,
+        Value = veilEnabled,
+        Callback = function(state)
+            if not silentSupported then return end
+            veilEnabled = state
+        end,
+    })
+    if (not silentSupported) and VeilToggle then
+        pcall(function() VeilToggle:Lock("Unsupported Executor") end)
+    end
+
+    VeilSection:Toggle({
+        Title = "Aim Lock (hold klik kiri)",
+        Desc = "Pas stance lempar (spearmode), hold klik kiri -> kamera ngunci ke target. Lepas buat ganti target.",
+        Value = veilAimLock,
+        Callback = function(state)
+            veilAimLock = state
+        end,
+    })
+
+    VeilSection:Toggle({
+        Title = "Lead Prediction",
+        Desc = "Prediksi gerak survivor (offset ke arah lari)",
+        Value = veilEnableLead,
+        Callback = function(state)
+            veilEnableLead = state
+        end,
+    })
+
+    VeilSection:Toggle({
+        Title = "POV Circle",
+        Desc = "Tampilin/sembunyiin lingkaran visual POV (tracking tetep jalan)",
+        Value = veilShowFov,
+        Callback = function(state)
+            veilShowFov = state
+        end,
+    })
+
+    VeilSection:Slider({
+        Title = "FOV Radius",
+        Desc = "Radius lingkaran FOV Veil (pixel)",
+        Step = 5,
+        Value = { Min = 40, Max = 400, Default = 150 },
+        Callback = function(value)
+            if value and value >= 40 then veilFovRadius = value end
+        end,
+    })
+
+    -- Offset lead per jarak: Distance = Input keyboard, Offset = Slider.
+    VeilSection:Paragraph({
+        Title = "Offset per Jarak",
+        Desc = "Ketik jarak (studs) di Input, atur offset-nya pake slider. Tombol + buat nambah.",
+    })
+
+    local veilOffsetCount = 0
+    local function veilAddOffsetUI(entry)
+        veilOffsetCount = veilOffsetCount + 1
+        local n = veilOffsetCount
+        VeilSection:Input({
+            Title = "Jarak #" .. n .. " (studs)",
+            Desc = "Ketik jarak buat bracket ini",
+            Value = tostring(entry.dist),
+            Type = "Input",
+            Placeholder = "contoh: 40",
+            Callback = function(input)
+                local num = tonumber(input)
+                if num then entry.dist = num end
+            end,
+        })
+        VeilSection:Slider({
+            Title = "Offset #" .. n,
+            Desc = "Lead multiplier pas jarak segini",
+            Step = 0.1,
+            Value = { Min = 0, Max = 5, Default = entry.offset },
+            Callback = function(value)
+                if value then entry.offset = value end
+            end,
+        })
+    end
+
+    for _, e in ipairs(veilOffsets) do
+        veilAddOffsetUI(e)
+    end
+
+    VeilSection:Button({
+        Title = "+ Tambah Setingan Jarak",
+        Desc = "Tambah bracket jarak -> offset baru",
+        Callback = function()
+            local newEntry = { dist = 100, offset = 2.0 }
+            table.insert(veilOffsets, newEntry)
+            veilAddOffsetUI(newEntry)
+        end,
+    })
+end
+    end)()
+
+    local function loadModule(path)
+        local ret = __VD_MODULES[path]
+        if ret == nil then
+            warn("[TomHub/VD] module ga ada di bundle: " .. path)
+            return nil
+        end
+        return ret
+    end
+
+    local function runModule(path)
+        local init = loadModule(path)
+        if type(init) == "function" then
+            local ok, err = pcall(init, ctx)
+            if not ok then warn("[TomHub/VD] init error " .. path .. ": " .. tostring(err)) end
+        elseif init ~= nil then
+            warn("[TomHub/VD] module tidak return function: " .. path)
+        end
+    end
+
+    runModule("Combat/AutoParry.lua")
+    runModule("Combat/AutoParryDashHidden.lua")
+    runModule("Combat/AutoDogdeAbbys.lua")
+    runModule("Combat/SkillCheck.lua")
+    runModule("Visual/Esp.lua")
+    runModule("Aim/AimTwistOfFate.lua")
+    runModule("Aim/AimVeil.lua")
+
+    -- ============================================================
+    -- [START HOOKS] setelah semua handler kedaftar
+    -- ============================================================
+    installNamecallHook()
+    if KillerTeam then
+        hookKillerAnimators()
+        KillerTeam.PlayerAdded:Connect(hookKillerAnimators)
+        KillerTeam.PlayerRemoved:Connect(hookKillerAnimators)
+    end
+
+    WindUI:Notify({
+        Title = "TomHub",
+        Content = "Violence District loaded! Press H to toggle UI.",
+        Duration = 5,
+    })
+end
