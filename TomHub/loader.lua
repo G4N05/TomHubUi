@@ -11,7 +11,7 @@
 
 -- ====== CONFIG REPO ======
 local GITHUB_USER     = "G4N05"
-local GITHUB_REPO     = "Violence-District"
+local GITHUB_REPO     = "TomHubUi"
 local GITHUB_BRANCH   = "main"
 local GITHUB_BASEPATH = "TomHub"          -- subfolder repo. Kosongin "" kalo di root
 -- =========================
