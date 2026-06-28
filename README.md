@@ -1,2 +1,0 @@
-# TomHubUi
-ThisBetaTestScript
