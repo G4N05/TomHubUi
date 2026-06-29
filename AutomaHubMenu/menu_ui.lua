@@ -1,15 +1,16 @@
 -- ============================================================
--- AutomaHub | MAIN MENU SHELL (custom sidebar rail)
+-- AutomaHub | MAIN MENU (Kinetic Precision / industrial)
 -- ------------------------------------------------------------
--- Niru gambar referensi (yang KIRI / collapsed icon-rail):
---   - slot LOGO kosong di atas (reserved, isi sendiri nanti)
---   - LANGSUNG menu (tanpa Search/Notif/Settings group)
---   - TANPA theme toggle
---   - paling bawah = foto avatar Roblox kita
---   - icon menu diambil dari WindUI Icons lib (lucide) via GetIcon()
--- Tabs: Combat, Player, Visual, Settings, Aim
+-- Niru referensi screen.png (dashboard monokrom industrial):
+--   - SIDEBAR kiri full-height: LOGO atas -> icon menu (tabs)
+--   - HEADER: judul gede kiri = NAMA MENU yang kepilih
+--             + profil kanan-atas = AVATAR + NAMA akun Roblox kita
+--   - CONTENT: panel grid, isi menu (toggle/slider/input/dropdown)
+--   - TANPA gear/settings di bawah sidebar
 --
--- Standalone: paste di executor buat tes tampilan menu.
+-- Logo di-load dari raw GitHub via writefile + getcustomasset
+-- (ImageLabel Roblox ga bisa load URL langsung).
+-- Standalone: paste di executor buat tes tampilan.
 -- ============================================================
 
 local Players          = game:GetService("Players")
@@ -17,8 +18,9 @@ local TweenService     = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
 local LocalPlayer      = Players.LocalPlayer
 
+local LOGO_URL = "https://raw.githubusercontent.com/G4N05/TomHubUi/main/Icon/AutomaHubLogo.png"
+
 -- ====== LOAD ICONS LIB (Footagesus/Icons) ======
--- GetIcon(name) balikin string "rbxassetid://..." (default set: lucide)
 local function multiFetch(urls)
     for _, url in ipairs(urls) do
         local ok, content = pcall(function() return game:HttpGet(url) end)
@@ -46,7 +48,6 @@ do
     end
 end
 
--- terapin icon ke ImageLabel; return true kalo dapet image
 local function applyIcon(img, name)
     local asset
     pcall(function()
@@ -66,23 +67,40 @@ local function applyIcon(img, name)
     return false
 end
 
--- ====== PALETTE ======
+-- ====== LOAD LOGO (download -> writefile -> getcustomasset) ======
+local function loadLogo()
+    local ok, asset = pcall(function()
+        local data = game:HttpGet(LOGO_URL)
+        local fname = "AutomaHubLogo.png"
+        local writer = writefile or (syn and syn.write_file)
+        if writer then writer(fname, data) end
+        local getter = getcustomasset or getsynasset or (syn and syn.getcustomasset)
+        if getter then return getter(fname) end
+        return nil
+    end)
+    if ok and type(asset) == "string" and asset ~= "" then return asset end
+    return nil
+end
+
+-- ====== PALETTE (Kinetic Precision, monokrom, no biru) ======
 local COL = {
-    panel    = Color3.fromRGB(20, 20, 23),
-    rail     = Color3.fromRGB(14, 14, 17),
-    stroke   = Color3.fromRGB(255, 255, 255),
-    iconIdle = Color3.fromRGB(140, 140, 150),
-    iconActv = Color3.fromRGB(245, 245, 250),
-    hi       = Color3.fromRGB(255, 255, 255),
-    text     = Color3.fromRGB(235, 235, 240),
-    subtext  = Color3.fromRGB(150, 150, 160),
-    card     = Color3.fromRGB(28, 28, 33),
-    row      = Color3.fromRGB(38, 38, 44),
-    toggleOff= Color3.fromRGB(60, 60, 68),
-    toggleOn = Color3.fromRGB(245, 245, 250),
-    knobOn   = Color3.fromRGB(24, 24, 28),
-    field    = Color3.fromRGB(22, 22, 26),
-    knob     = Color3.fromRGB(245, 245, 250),
+    bg        = Color3.fromRGB(15, 15, 15),
+    sidebar   = Color3.fromRGB(27, 28, 27),
+    card      = Color3.fromRGB(31, 32, 31),
+    border    = Color3.fromRGB(68, 71, 72),
+    borderHi  = Color3.fromRGB(120, 123, 124),
+    text      = Color3.fromRGB(228, 226, 224),
+    subtext   = Color3.fromRGB(142, 145, 146),
+    iconIdle  = Color3.fromRGB(120, 122, 122),
+    iconActv  = Color3.fromRGB(240, 240, 238),
+    hi        = Color3.fromRGB(255, 255, 255),
+    -- dipakai builders (jangan ganti nama key)
+    row       = Color3.fromRGB(42, 43, 42),
+    field     = Color3.fromRGB(20, 21, 20),
+    toggleOff = Color3.fromRGB(62, 62, 62),
+    toggleOn  = Color3.fromRGB(245, 245, 245),
+    knob      = Color3.fromRGB(245, 245, 245),
+    knobOn    = Color3.fromRGB(26, 26, 26),
 }
 
 -- ====== TABS ======
@@ -159,86 +177,65 @@ local Panel = Instance.new("Frame")
 Panel.Name = "Panel"
 Panel.AnchorPoint = Vector2.new(0.5, 0.5)
 Panel.Position = UDim2.fromScale(0.5, 0.5)
-Panel.Size = UDim2.fromOffset(560, 380)
-Panel.BackgroundColor3 = COL.panel
+Panel.Size = UDim2.fromOffset(660, 460)
+Panel.BackgroundColor3 = COL.bg
 Panel.BorderSizePixel = 0
 Panel.Parent = ScreenGui
+local panelCorner = Instance.new("UICorner"); panelCorner.CornerRadius = UDim.new(0, 12); panelCorner.Parent = Panel
+local panelStroke = Instance.new("UIStroke"); panelStroke.Color = COL.border; panelStroke.Thickness = 1; panelStroke.Parent = Panel
+local panelPad = Instance.new("UIPadding")
+panelPad.PaddingTop = UDim.new(0, 14); panelPad.PaddingBottom = UDim.new(0, 14)
+panelPad.PaddingLeft = UDim.new(0, 14); panelPad.PaddingRight = UDim.new(0, 14)
+panelPad.Parent = Panel
 
-local panelCorner = Instance.new("UICorner")
-panelCorner.CornerRadius = UDim.new(0, 16)
-panelCorner.Parent = Panel
+-- ====== SIDEBAR ======
+local Sidebar = Instance.new("Frame")
+Sidebar.Name = "Sidebar"
+Sidebar.Position = UDim2.fromOffset(0, 0)
+Sidebar.Size = UDim2.new(0, 60, 1, 0)
+Sidebar.BackgroundColor3 = COL.sidebar
+Sidebar.BorderSizePixel = 0
+Sidebar.Parent = Panel
+local sbCorner = Instance.new("UICorner"); sbCorner.CornerRadius = UDim.new(0, 10); sbCorner.Parent = Sidebar
+local sbStroke = Instance.new("UIStroke"); sbStroke.Color = COL.border; sbStroke.Thickness = 1; sbStroke.Transparency = 0.4; sbStroke.Parent = Sidebar
 
-local panelStroke = Instance.new("UIStroke")
-panelStroke.Color = COL.stroke
-panelStroke.Transparency = 0.9
-panelStroke.Thickness = 1
-panelStroke.Parent = Panel
+-- logo
+local LogoHolder = Instance.new("Frame")
+LogoHolder.Name = "LogoHolder"
+LogoHolder.AnchorPoint = Vector2.new(0.5, 0)
+LogoHolder.Position = UDim2.new(0.5, 0, 0, 12)
+LogoHolder.Size = UDim2.fromOffset(36, 36)
+LogoHolder.BackgroundTransparency = 1
+LogoHolder.Parent = Sidebar
 
--- ====== RAIL (sidebar collapsed) ======
-local Rail = Instance.new("Frame")
-Rail.Name = "Rail"
-Rail.Size = UDim2.new(0, 64, 1, 0)
-Rail.BackgroundColor3 = COL.rail
-Rail.BorderSizePixel = 0
-Rail.Parent = Panel
+local LogoImg = Instance.new("ImageLabel")
+LogoImg.Name = "LogoImg"
+LogoImg.Size = UDim2.fromScale(1, 1)
+LogoImg.BackgroundTransparency = 1
+LogoImg.ScaleType = Enum.ScaleType.Fit
+LogoImg.Image = ""
+LogoImg.Parent = LogoHolder
 
-local railCorner = Instance.new("UICorner")
-railCorner.CornerRadius = UDim.new(0, 16)
-railCorner.Parent = Rail
+local LogoFallback = Instance.new("TextLabel")
+LogoFallback.Size = UDim2.fromScale(1, 1)
+LogoFallback.BackgroundTransparency = 1
+LogoFallback.Font = Enum.Font.GothamBold
+LogoFallback.Text = "A"
+LogoFallback.TextColor3 = COL.hi
+LogoFallback.TextSize = 22
+LogoFallback.Visible = false
+LogoFallback.Parent = LogoHolder
 
--- nutupin sudut kanan rail biar nyambung ke panel (bukan rounded)
-local railPatch = Instance.new("Frame")
-railPatch.Size = UDim2.new(0, 16, 1, 0)
-railPatch.Position = UDim2.new(1, -16, 0, 0)
-railPatch.BackgroundColor3 = COL.rail
-railPatch.BorderSizePixel = 0
-railPatch.Parent = Rail
-
--- ---- LOGO SLOT (kosong, reserved) ----
-local LogoSlot = Instance.new("Frame")
-LogoSlot.Name = "LogoSlot"
-LogoSlot.AnchorPoint = Vector2.new(0.5, 0)
-LogoSlot.Position = UDim2.new(0.5, 0, 0, 16)
-LogoSlot.Size = UDim2.fromOffset(40, 40)
-LogoSlot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-LogoSlot.BackgroundTransparency = 0.94
-LogoSlot.Parent = Rail
-
-local logoCorner = Instance.new("UICorner")
-logoCorner.CornerRadius = UDim.new(0, 10)
-logoCorner.Parent = LogoSlot
-
-local logoStroke = Instance.new("UIStroke")
-logoStroke.Color = COL.stroke
-logoStroke.Transparency = 0.82
-logoStroke.Thickness = 1
-logoStroke.Parent = LogoSlot
-
--- tempat naro logo nanti: bikin ImageLabel di sini & set .Image
--- contoh:
--- local Logo = Instance.new("ImageLabel"); Logo.Size = UDim2.fromScale(1,1)
--- Logo.BackgroundTransparency = 1; Logo.Image = "rbxassetid://XXXX"; Logo.Parent = LogoSlot
-
--- divider tipis di bawah logo
-local Divider = Instance.new("Frame")
-Divider.Name = "Divider"
-Divider.AnchorPoint = Vector2.new(0.5, 0)
-Divider.Position = UDim2.new(0.5, 0, 0, 68)
-Divider.Size = UDim2.fromOffset(32, 1)
-Divider.BackgroundColor3 = COL.stroke
-Divider.BackgroundTransparency = 0.85
-Divider.BorderSizePixel = 0
-Divider.Parent = Rail
-
--- ---- NAV CONTAINER ----
+-- nav container
 local Nav = Instance.new("Frame")
 Nav.Name = "Nav"
-Nav.AnchorPoint = Vector2.new(0.5, 0)
-Nav.Position = UDim2.new(0.5, 0, 0, 82)
-Nav.Size = UDim2.new(1, 0, 1, -150)
+Nav.Position = UDim2.new(0, 0, 0, 60)
+Nav.Size = UDim2.new(1, 0, 1, -68)
 Nav.BackgroundTransparency = 1
-Nav.Parent = Rail
-
+Nav.Parent = Sidebar
+local navPad = Instance.new("UIPadding")
+navPad.PaddingLeft = UDim.new(0, 8); navPad.PaddingRight = UDim.new(0, 8); navPad.PaddingTop = UDim.new(0, 6)
+navPad.Parent = Nav
 local navLayout = Instance.new("UIListLayout")
 navLayout.FillDirection = Enum.FillDirection.Vertical
 navLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -246,85 +243,145 @@ navLayout.SortOrder = Enum.SortOrder.LayoutOrder
 navLayout.Padding = UDim.new(0, 8)
 navLayout.Parent = Nav
 
--- ====== HEADER BAR (atas, manjang sampe ujung kanan GUI) ======
-local GAP = 10
-local RIGHT_X = 64 + GAP
-local RIGHT_W = 560 - RIGHT_X - GAP
-local HEAD_H = 44
+-- ====== MAIN AREA ======
+local Main = Instance.new("Frame")
+Main.Name = "Main"
+Main.Position = UDim2.new(0, 72, 0, 0)
+Main.Size = UDim2.new(1, -72, 1, 0)
+Main.BackgroundTransparency = 1
+Main.Parent = Panel
 
+-- header
 local Header = Instance.new("Frame")
 Header.Name = "Header"
-Header.Position = UDim2.new(0, RIGHT_X, 0, GAP)
-Header.Size = UDim2.new(0, RIGHT_W, 0, HEAD_H)
-Header.BackgroundColor3 = COL.card
-Header.BorderSizePixel = 0
-Header.Parent = Panel
+Header.Position = UDim2.fromOffset(0, 0)
+Header.Size = UDim2.new(1, 0, 0, 46)
+Header.BackgroundTransparency = 1
+Header.Parent = Main
 
-local headCorner = Instance.new("UICorner")
-headCorner.CornerRadius = UDim.new(0, 12)
-headCorner.Parent = Header
-
-local headStroke = Instance.new("UIStroke")
-headStroke.Color = COL.stroke
-headStroke.Transparency = 0.9
-headStroke.Thickness = 1
-headStroke.Parent = Header
-
+-- judul = nama menu kepilih (ganti "Overview")
 local Title = Instance.new("TextLabel")
 Title.Name = "Title"
 Title.AnchorPoint = Vector2.new(0, 0.5)
-Title.Position = UDim2.new(0, 16, 0.5, 0)
-Title.Size = UDim2.new(1, -32, 1, 0)
+Title.Position = UDim2.new(0, 2, 0.5, 0)
+Title.Size = UDim2.new(0.5, 0, 1, 0)
 Title.BackgroundTransparency = 1
 Title.Font = Enum.Font.GothamBold
-Title.Text = "Combat"
+Title.Text = "Overview"
 Title.TextColor3 = COL.text
-Title.TextSize = 18
+Title.TextSize = 26
 Title.TextXAlignment = Enum.TextXAlignment.Left
 Title.Parent = Header
 
--- ====== CONTENT PANEL (bawah header, buat toggle-toggle) ======
-local ContentCard = Instance.new("Frame")
-ContentCard.Name = "Content"
-ContentCard.Position = UDim2.new(0, RIGHT_X, 0, GAP + HEAD_H + GAP)
-ContentCard.Size = UDim2.new(0, RIGHT_W, 1, -(GAP + HEAD_H + GAP + GAP))
-ContentCard.BackgroundColor3 = COL.card
-ContentCard.BorderSizePixel = 0
-ContentCard.Parent = Panel
+-- profil user (avatar + nama akun) kanan-atas
+local Profile = Instance.new("Frame")
+Profile.Name = "Profile"
+Profile.AnchorPoint = Vector2.new(1, 0.5)
+Profile.Position = UDim2.new(1, 0, 0.5, 0)
+Profile.Size = UDim2.fromOffset(172, 38)
+Profile.BackgroundColor3 = COL.hi
+Profile.BackgroundTransparency = 0.94
+Profile.BorderSizePixel = 0
+Profile.Parent = Header
+local profCorner = Instance.new("UICorner"); profCorner.CornerRadius = UDim.new(1, 0); profCorner.Parent = Profile
+local profStroke = Instance.new("UIStroke"); profStroke.Color = COL.border; profStroke.Thickness = 1; profStroke.Transparency = 0.3; profStroke.Parent = Profile
 
-local contentCorner = Instance.new("UICorner")
-contentCorner.CornerRadius = UDim.new(0, 12)
-contentCorner.Parent = ContentCard
+local AvatarHolder = Instance.new("Frame")
+AvatarHolder.AnchorPoint = Vector2.new(0, 0.5)
+AvatarHolder.Position = UDim2.new(0, 5, 0.5, 0)
+AvatarHolder.Size = UDim2.fromOffset(28, 28)
+AvatarHolder.BackgroundColor3 = COL.field
+AvatarHolder.BorderSizePixel = 0
+AvatarHolder.Parent = Profile
+local avCorner = Instance.new("UICorner"); avCorner.CornerRadius = UDim.new(1, 0); avCorner.Parent = AvatarHolder
+local avStroke = Instance.new("UIStroke"); avStroke.Color = COL.hi; avStroke.Thickness = 1; avStroke.Transparency = 0.7; avStroke.Parent = AvatarHolder
 
-local contentStroke = Instance.new("UIStroke")
-contentStroke.Color = COL.stroke
-contentStroke.Transparency = 0.9
-contentStroke.Thickness = 1
-contentStroke.Parent = ContentCard
+local AvatarImg = Instance.new("ImageLabel")
+AvatarImg.Size = UDim2.fromScale(1, 1)
+AvatarImg.BackgroundTransparency = 1
+AvatarImg.Image = ""
+AvatarImg.Parent = AvatarHolder
+local avImgCorner = Instance.new("UICorner"); avImgCorner.CornerRadius = UDim.new(1, 0); avImgCorner.Parent = AvatarImg
 
-local Scroll = Instance.new("ScrollingFrame")
-Scroll.Name = "Scroll"
-Scroll.Size = UDim2.fromScale(1, 1)
-Scroll.BackgroundTransparency = 1
-Scroll.BorderSizePixel = 0
-Scroll.ScrollBarThickness = 4
-Scroll.ScrollBarImageColor3 = COL.iconIdle
-Scroll.CanvasSize = UDim2.new()
-Scroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
-Scroll.Parent = ContentCard
+local NameLabel = Instance.new("TextLabel")
+NameLabel.AnchorPoint = Vector2.new(0, 0)
+NameLabel.Position = UDim2.new(0, 40, 0, 5)
+NameLabel.Size = UDim2.new(1, -50, 0, 15)
+NameLabel.BackgroundTransparency = 1
+NameLabel.Font = Enum.Font.GothamBold
+NameLabel.Text = LocalPlayer and LocalPlayer.DisplayName or "Player"
+NameLabel.TextColor3 = COL.text
+NameLabel.TextSize = 13
+NameLabel.TextXAlignment = Enum.TextXAlignment.Left
+NameLabel.TextTruncate = Enum.TextTruncate.AtEnd
+NameLabel.Parent = Profile
 
-local scrollPad = Instance.new("UIPadding")
-scrollPad.PaddingTop = UDim.new(0, 12)
-scrollPad.PaddingBottom = UDim.new(0, 12)
-scrollPad.PaddingLeft = UDim.new(0, 14)
-scrollPad.PaddingRight = UDim.new(0, 14)
-scrollPad.Parent = Scroll
+local UserLabel = Instance.new("TextLabel")
+UserLabel.AnchorPoint = Vector2.new(0, 0)
+UserLabel.Position = UDim2.new(0, 40, 0, 20)
+UserLabel.Size = UDim2.new(1, -50, 0, 13)
+UserLabel.BackgroundTransparency = 1
+UserLabel.Font = Enum.Font.Gotham
+UserLabel.Text = "@" .. (LocalPlayer and LocalPlayer.Name or "username")
+UserLabel.TextColor3 = COL.subtext
+UserLabel.TextSize = 11
+UserLabel.TextXAlignment = Enum.TextXAlignment.Left
+UserLabel.TextTruncate = Enum.TextTruncate.AtEnd
+UserLabel.Parent = Profile
 
-local scrollLayout = Instance.new("UIListLayout")
-scrollLayout.FillDirection = Enum.FillDirection.Vertical
-scrollLayout.SortOrder = Enum.SortOrder.LayoutOrder
-scrollLayout.Padding = UDim.new(0, 8)
-scrollLayout.Parent = Scroll
+-- content card
+local Content = Instance.new("Frame")
+Content.Name = "Content"
+Content.Position = UDim2.new(0, 0, 0, 54)
+Content.Size = UDim2.new(1, 0, 1, -54)
+Content.BackgroundColor3 = COL.card
+Content.BackgroundTransparency = 0.25
+Content.BorderSizePixel = 0
+Content.ClipsDescendants = true
+Content.Parent = Main
+local contentCorner = Instance.new("UICorner"); contentCorner.CornerRadius = UDim.new(0, 12); contentCorner.Parent = Content
+local contentStroke = Instance.new("UIStroke"); contentStroke.Color = COL.border; contentStroke.Thickness = 1; contentStroke.Transparency = 0.3; contentStroke.Parent = Content
+
+-- grid background (faint, industrial)
+local GridBG = Instance.new("Frame")
+GridBG.Name = "GridBG"
+GridBG.Size = UDim2.fromScale(1, 1)
+GridBG.BackgroundTransparency = 1
+GridBG.ClipsDescendants = true
+GridBG.ZIndex = 0
+GridBG.Parent = Content
+local GRID_V, GRID_H = 14, 9
+for i = 1, GRID_V - 1 do
+    local ln = Instance.new("Frame")
+    ln.Size = UDim2.new(0, 1, 1, 0)
+    ln.Position = UDim2.fromScale(i / GRID_V, 0)
+    ln.BackgroundColor3 = COL.hi
+    ln.BackgroundTransparency = 0.94
+    ln.BorderSizePixel = 0
+    ln.ZIndex = 0
+    ln.Parent = GridBG
+end
+for i = 1, GRID_H - 1 do
+    local ln = Instance.new("Frame")
+    ln.Size = UDim2.new(1, 0, 0, 1)
+    ln.Position = UDim2.fromScale(0, i / GRID_H)
+    ln.BackgroundColor3 = COL.hi
+    ln.BackgroundTransparency = 0.94
+    ln.BorderSizePixel = 0
+    ln.ZIndex = 0
+    ln.Parent = GridBG
+end
+
+-- viewport (clip; scroll manual DIMATIIN -> navigasi pake tab doang)
+local Viewport = Instance.new("Frame")
+Viewport.Name = "Viewport"
+Viewport.Position = UDim2.fromOffset(0, 0)
+Viewport.Size = UDim2.fromScale(1, 1)
+Viewport.BackgroundTransparency = 1
+Viewport.BorderSizePixel = 0
+Viewport.ClipsDescendants = true
+Viewport.ZIndex = 1
+Viewport.Parent = Content
 
 -- ---- toggle builder (UI layer doang, callback no-op) ----
 local function makeToggle(name)
@@ -647,10 +704,32 @@ local function makeDropdown(name, options)
     return row
 end
 
-local function populate(id)
-    for _, ch in ipairs(Scroll:GetChildren()) do
-        if ch:IsA("Frame") then ch:Destroy() end
-    end
+-- ====== PAGES + SELECT (animasi ganti tab directional) ======
+local tabIndex = {}
+for i, t in ipairs(TABS) do tabIndex[t.id] = i end
+
+-- bikin 1 "page" full berisi item-item tab (punya padding+layout sendiri)
+local function buildPage(id)
+    local page = Instance.new("Frame")
+    page.Name = "Page_" .. id
+    page.Size = UDim2.fromScale(1, 1)
+    page.Position = UDim2.fromScale(0, 0)
+    page.BackgroundTransparency = 1
+    page.BorderSizePixel = 0
+    page.ZIndex = 1
+    page.Parent = Viewport
+
+    local pad = Instance.new("UIPadding")
+    pad.PaddingTop = UDim.new(0, 14); pad.PaddingBottom = UDim.new(0, 14)
+    pad.PaddingLeft = UDim.new(0, 14); pad.PaddingRight = UDim.new(0, 14)
+    pad.Parent = page
+
+    local lay = Instance.new("UIListLayout")
+    lay.FillDirection = Enum.FillDirection.Vertical
+    lay.SortOrder = Enum.SortOrder.LayoutOrder
+    lay.Padding = UDim.new(0, 8)
+    lay.Parent = page
+
     for _, t in ipairs(TABS) do
         if t.id == id then
             for i, item in ipairs(t.items) do
@@ -666,46 +745,115 @@ local function populate(id)
                 end
                 if el then
                     el.LayoutOrder = i
-                    el.Parent = Scroll
+                    el.Parent = page
                 end
             end
         end
     end
+    return page
 end
 
--- ====== AVATAR (paling bawah rail) ======
-local AvatarHolder = Instance.new("Frame")
-AvatarHolder.Name = "AvatarHolder"
-AvatarHolder.AnchorPoint = Vector2.new(0.5, 1)
-AvatarHolder.Position = UDim2.new(0.5, 0, 1, -14)
-AvatarHolder.Size = UDim2.fromOffset(40, 40)
-AvatarHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-AvatarHolder.BackgroundTransparency = 0.9
-AvatarHolder.Parent = Rail
+local navButtons = {}
+local activeId = nil
+local currentPage = nil
+local animating = false
 
-local avhCorner = Instance.new("UICorner")
-avhCorner.CornerRadius = UDim.new(1, 0)
-avhCorner.Parent = AvatarHolder
+local function selectTab(id)
+    if id == activeId or animating then return end
+    local oldId = activeId
+    activeId = id
+    Title.Text = id  -- header = nama menu kepilih
 
-local avhStroke = Instance.new("UIStroke")
-avhStroke.Color = COL.stroke
-avhStroke.Transparency = 0.55
-avhStroke.Thickness = 1.5
-avhStroke.Parent = AvatarHolder
+    -- highlight nav
+    for tid, n in pairs(navButtons) do
+        local on = (tid == id)
+        TweenService:Create(n.btn, TweenInfo.new(0.15), {
+            BackgroundTransparency = on and 0.88 or 1,
+        }):Play()
+        local c = on and COL.iconActv or COL.iconIdle
+        if n.icon then n.icon.ImageColor3 = c end
+        if n.letter then n.letter.TextColor3 = c end
+    end
 
-local Avatar = Instance.new("ImageLabel")
-Avatar.Name = "Avatar"
-Avatar.AnchorPoint = Vector2.new(0.5, 0.5)
-Avatar.Position = UDim2.fromScale(0.5, 0.5)
-Avatar.Size = UDim2.fromOffset(34, 34)
-Avatar.BackgroundTransparency = 1
-Avatar.Parent = AvatarHolder
+    local newPage = buildPage(id)
 
-local avCorner = Instance.new("UICorner")
-avCorner.CornerRadius = UDim.new(1, 0)
-avCorner.Parent = Avatar
+    -- pertama kali render: langsung tampil, ga ada animasi
+    if not currentPage then
+        newPage.Position = UDim2.fromScale(0, 0)
+        currentPage = newPage
+        return
+    end
 
+    -- arah: buka tab di BAWAH (index lebih gede) -> konten lama NAIK ke atas,
+    -- konten baru masuk dari BAWAH. Pindah ke tab ATAS -> kebalikannya.
+    local goingDown = (tabIndex[id] or 0) > (tabIndex[oldId] or 0)
+    local enterFrom = goingDown and 1 or -1   -- baru masuk dari: bawah(+1) / atas(-1)
+    local exitTo    = goingDown and -1 or 1    -- lama keluar ke: atas(-1) / bawah(+1)
+
+    animating = true
+    local oldPage = currentPage
+    newPage.Position = UDim2.fromScale(0, enterFrom)
+    currentPage = newPage
+
+    local info = TweenInfo.new(0.28, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+    TweenService:Create(newPage, info, { Position = UDim2.fromScale(0, 0) }):Play()
+    local outTween = TweenService:Create(oldPage, info, { Position = UDim2.fromScale(0, exitTo) })
+    outTween:Play()
+    outTween.Completed:Connect(function()
+        if oldPage then oldPage:Destroy() end
+        animating = false
+    end)
+end
+
+-- bikin tombol nav (tabs)
+for order, tab in ipairs(TABS) do
+    local btn = Instance.new("TextButton")
+    btn.Name = tab.id
+    btn.Size = UDim2.new(0, 44, 0, 44)
+    btn.BackgroundColor3 = COL.hi
+    btn.BackgroundTransparency = 1
+    btn.AutoButtonColor = false
+    btn.Text = ""
+    btn.LayoutOrder = order
+    btn.Parent = Nav
+    local bc = Instance.new("UICorner"); bc.CornerRadius = UDim.new(0, 8); bc.Parent = btn
+
+    local icon = Instance.new("ImageLabel")
+    icon.AnchorPoint = Vector2.new(0.5, 0.5)
+    icon.Position = UDim2.fromScale(0.5, 0.5)
+    icon.Size = UDim2.fromOffset(22, 22)
+    icon.BackgroundTransparency = 1
+    icon.ImageColor3 = COL.iconIdle
+    icon.Parent = btn
+
+    local letter = nil
+    local got = applyIcon(icon, tab.icon)
+    if not got then
+        icon.Visible = false
+        letter = Instance.new("TextLabel")
+        letter.Size = UDim2.fromScale(1, 1)
+        letter.BackgroundTransparency = 1
+        letter.Font = Enum.Font.GothamBold
+        letter.Text = tab.fallback
+        letter.TextColor3 = COL.iconIdle
+        letter.TextSize = 16
+        letter.Parent = btn
+    end
+
+    navButtons[tab.id] = { btn = btn, icon = icon, letter = letter }
+
+    btn.MouseButton1Click:Connect(function() selectTab(tab.id) end)
+    btn.MouseEnter:Connect(function()
+        if activeId ~= tab.id then btn.BackgroundTransparency = 0.92 end
+    end)
+    btn.MouseLeave:Connect(function()
+        if activeId ~= tab.id then btn.BackgroundTransparency = 1 end
+    end)
+end
+
+-- ====== AVATAR + LOGO LOAD (async) ======
 task.spawn(function()
+    if not LocalPlayer then return end
     local ok, content = pcall(function()
         return Players:GetUserThumbnailAsync(
             LocalPlayer.UserId,
@@ -713,90 +861,20 @@ task.spawn(function()
             Enum.ThumbnailSize.Size420x420
         )
     end)
-    if ok and content then Avatar.Image = content end
+    if ok and content then AvatarImg.Image = content end
 end)
 
--- ============================================================
--- NAV ITEMS
--- ============================================================
-local buttons = {}
-local activeId = nil
-
-local function selectTab(id)
-    activeId = id
-    for _, b in pairs(buttons) do
-        local on = (b.id == id)
-        TweenService:Create(b.btn, TweenInfo.new(0.15), {
-            BackgroundTransparency = on and 0.88 or 1,
-        }):Play()
-        TweenService:Create(b.icon, TweenInfo.new(0.15), {
-            ImageColor3 = on and COL.iconActv or COL.iconIdle,
-        }):Play()
-        b.txt.TextColor3 = on and COL.iconActv or COL.iconIdle
-    end
-    Title.Text = id
-    populate(id)
-end
-
-for i, t in ipairs(TABS) do
-    local btn = Instance.new("TextButton")
-    btn.Name = t.id
-    btn.Size = UDim2.fromOffset(40, 40)
-    btn.BackgroundColor3 = COL.hi
-    btn.BackgroundTransparency = 1
-    btn.AutoButtonColor = false
-    btn.Text = ""
-    btn.LayoutOrder = i
-    btn.Parent = Nav
-
-    local c = Instance.new("UICorner")
-    c.CornerRadius = UDim.new(0, 10)
-    c.Parent = btn
-
-    -- fallback huruf (keliatan kalo icon WindUI gagal)
-    local txt = Instance.new("TextLabel")
-    txt.Size = UDim2.fromScale(1, 1)
-    txt.BackgroundTransparency = 1
-    txt.Font = Enum.Font.GothamBold
-    txt.Text = t.fallback
-    txt.TextColor3 = COL.iconIdle
-    txt.TextSize = 15
-    txt.Parent = btn
-
-    local icon = Instance.new("ImageLabel")
-    icon.AnchorPoint = Vector2.new(0.5, 0.5)
-    icon.Position = UDim2.fromScale(0.5, 0.5)
-    icon.Size = UDim2.fromOffset(20, 20)
-    icon.BackgroundTransparency = 1
-    icon.ImageColor3 = COL.iconIdle
-    icon.Parent = btn
-
-    if applyIcon(icon, t.icon) then
-        txt.Visible = false
+task.spawn(function()
+    local asset = loadLogo()
+    if asset then
+        LogoImg.Image = asset
     else
-        icon.Visible = false
+        LogoImg.Visible = false
+        LogoFallback.Visible = true
     end
+end)
 
-    btn.MouseEnter:Connect(function()
-        if activeId ~= t.id then
-            TweenService:Create(btn, TweenInfo.new(0.12), { BackgroundTransparency = 0.94 }):Play()
-        end
-    end)
-    btn.MouseLeave:Connect(function()
-        if activeId ~= t.id then
-            TweenService:Create(btn, TweenInfo.new(0.12), { BackgroundTransparency = 1 }):Play()
-        end
-    end)
-    btn.MouseButton1Click:Connect(function()
-        selectTab(t.id)
-    end)
-
-    buttons[i] = { id = t.id, btn = btn, icon = icon, txt = txt }
-end
-
-selectTab("Combat")
-
--- ====== DRAG (lewat logo slot area / rail atas) ======
+-- ====== DRAG (lewat header / logo) ======
 local dragging, dragStart, startPos
 local function beginDrag(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
@@ -808,8 +886,8 @@ local function beginDrag(input)
         end)
     end
 end
-LogoSlot.InputBegan:Connect(beginDrag)
 Header.InputBegan:Connect(beginDrag)
+LogoHolder.InputBegan:Connect(beginDrag)
 UserInputService.InputChanged:Connect(function(input)
     if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
         local delta = input.Position - dragStart
@@ -817,6 +895,7 @@ UserInputService.InputChanged:Connect(function(input)
     end
 end)
 
--- ====== INTRO ANIM ======
+-- ====== INTRO ANIM + DEFAULT TAB ======
 Panel.BackgroundTransparency = 1
 TweenService:Create(Panel, TweenInfo.new(0.25), { BackgroundTransparency = 0 }):Play()
+selectTab(TABS[1].id)
