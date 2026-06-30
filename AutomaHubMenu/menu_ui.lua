@@ -372,16 +372,28 @@ for i = 1, GRID_H - 1 do
     ln.Parent = GridBG
 end
 
--- viewport (clip; scroll manual DIMATIIN -> navigasi pake tab doang)
-local Viewport = Instance.new("Frame")
-Viewport.Name = "Viewport"
-Viewport.Position = UDim2.fromOffset(0, 0)
-Viewport.Size = UDim2.fromScale(1, 1)
-Viewport.BackgroundTransparency = 1
-Viewport.BorderSizePixel = 0
-Viewport.ClipsDescendants = true
-Viewport.ZIndex = 1
-Viewport.Parent = Content
+-- scroll area
+local Scroll = Instance.new("ScrollingFrame")
+Scroll.Name = "Scroll"
+Scroll.Position = UDim2.fromOffset(0, 0)
+Scroll.Size = UDim2.fromScale(1, 1)
+Scroll.BackgroundTransparency = 1
+Scroll.BorderSizePixel = 0
+Scroll.ScrollBarThickness = 0
+Scroll.ScrollingEnabled = false  -- scroll manual dimatiin; navigasi pake tab
+Scroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+Scroll.CanvasSize = UDim2.new(0, 0, 0, 0)
+Scroll.ZIndex = 1
+Scroll.Parent = Content
+local scrollPad = Instance.new("UIPadding")
+scrollPad.PaddingTop = UDim.new(0, 14); scrollPad.PaddingBottom = UDim.new(0, 14)
+scrollPad.PaddingLeft = UDim.new(0, 14); scrollPad.PaddingRight = UDim.new(0, 14)
+scrollPad.Parent = Scroll
+local scrollLayout = Instance.new("UIListLayout")
+scrollLayout.FillDirection = Enum.FillDirection.Vertical
+scrollLayout.SortOrder = Enum.SortOrder.LayoutOrder
+scrollLayout.Padding = UDim.new(0, 8)
+scrollLayout.Parent = Scroll
 
 -- ---- toggle builder (UI layer doang, callback no-op) ----
 local function makeToggle(name)
@@ -704,32 +716,11 @@ local function makeDropdown(name, options)
     return row
 end
 
--- ====== PAGES + SELECT (animasi ganti tab directional) ======
-local tabIndex = {}
-for i, t in ipairs(TABS) do tabIndex[t.id] = i end
-
--- bikin 1 "page" full berisi item-item tab (punya padding+layout sendiri)
-local function buildPage(id)
-    local page = Instance.new("Frame")
-    page.Name = "Page_" .. id
-    page.Size = UDim2.fromScale(1, 1)
-    page.Position = UDim2.fromScale(0, 0)
-    page.BackgroundTransparency = 1
-    page.BorderSizePixel = 0
-    page.ZIndex = 1
-    page.Parent = Viewport
-
-    local pad = Instance.new("UIPadding")
-    pad.PaddingTop = UDim.new(0, 14); pad.PaddingBottom = UDim.new(0, 14)
-    pad.PaddingLeft = UDim.new(0, 14); pad.PaddingRight = UDim.new(0, 14)
-    pad.Parent = page
-
-    local lay = Instance.new("UIListLayout")
-    lay.FillDirection = Enum.FillDirection.Vertical
-    lay.SortOrder = Enum.SortOrder.LayoutOrder
-    lay.Padding = UDim.new(0, 8)
-    lay.Parent = page
-
+-- ====== POPULATE + SELECT ======
+local function populate(id)
+    for _, ch in ipairs(Scroll:GetChildren()) do
+        if ch:IsA("Frame") then ch:Destroy() end
+    end
     for _, t in ipairs(TABS) do
         if t.id == id then
             for i, item in ipairs(t.items) do
@@ -745,26 +736,19 @@ local function buildPage(id)
                 end
                 if el then
                     el.LayoutOrder = i
-                    el.Parent = page
+                    el.Parent = Scroll
                 end
             end
         end
     end
-    return page
 end
 
 local navButtons = {}
 local activeId = nil
-local currentPage = nil
-local animating = false
 
 local function selectTab(id)
-    if id == activeId or animating then return end
-    local oldId = activeId
     activeId = id
     Title.Text = id  -- header = nama menu kepilih
-
-    -- highlight nav
     for tid, n in pairs(navButtons) do
         local on = (tid == id)
         TweenService:Create(n.btn, TweenInfo.new(0.15), {
@@ -774,35 +758,12 @@ local function selectTab(id)
         if n.icon then n.icon.ImageColor3 = c end
         if n.letter then n.letter.TextColor3 = c end
     end
-
-    local newPage = buildPage(id)
-
-    -- pertama kali render: langsung tampil, ga ada animasi
-    if not currentPage then
-        newPage.Position = UDim2.fromScale(0, 0)
-        currentPage = newPage
-        return
-    end
-
-    -- arah: buka tab di BAWAH (index lebih gede) -> konten lama NAIK ke atas,
-    -- konten baru masuk dari BAWAH. Pindah ke tab ATAS -> kebalikannya.
-    local goingDown = (tabIndex[id] or 0) > (tabIndex[oldId] or 0)
-    local enterFrom = goingDown and 1 or -1   -- baru masuk dari: bawah(+1) / atas(-1)
-    local exitTo    = goingDown and -1 or 1    -- lama keluar ke: atas(-1) / bawah(+1)
-
-    animating = true
-    local oldPage = currentPage
-    newPage.Position = UDim2.fromScale(0, enterFrom)
-    currentPage = newPage
-
-    local info = TweenInfo.new(0.28, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
-    TweenService:Create(newPage, info, { Position = UDim2.fromScale(0, 0) }):Play()
-    local outTween = TweenService:Create(oldPage, info, { Position = UDim2.fromScale(0, exitTo) })
-    outTween:Play()
-    outTween.Completed:Connect(function()
-        if oldPage then oldPage:Destroy() end
-        animating = false
-    end)
+    populate(id)
+    -- animasi ganti tab: konten turun dari atas (kaya scroll ke bawah)
+    Scroll.Position = UDim2.fromOffset(0, -22)
+    TweenService:Create(Scroll, TweenInfo.new(0.22, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+        Position = UDim2.fromOffset(0, 0),
+    }):Play()
 end
 
 -- bikin tombol nav (tabs)
@@ -896,6 +857,26 @@ UserInputService.InputChanged:Connect(function(input)
 end)
 
 -- ====== INTRO ANIM + DEFAULT TAB ======
-Panel.BackgroundTransparency = 1
-TweenService:Create(Panel, TweenInfo.new(0.25), { BackgroundTransparency = 0 }):Play()
+-- Mode hidden: kalo loader minta (getgenv().AutomaHubStartHidden), menu di-BUILD
+-- tapi disembunyiin dulu (Panel.Visible=false). Nanti Animate.lua yg munculin
+-- lewat getgenv().AutomaHubRevealMenu(). Layout/AbsolutePosition tetep keitung
+-- walau Visible=false, jadi logo intro tetep bisa mendarat pas di LogoHolder.
+local startHidden = (getgenv and getgenv().AutomaHubStartHidden) and true or false
+if startHidden then Panel.Visible = false end
+
 selectTab(TABS[1].id)
+
+local function revealPanel()
+    Panel.Visible = true
+    Panel.BackgroundTransparency = 1
+    TweenService:Create(Panel, TweenInfo.new(0.25), { BackgroundTransparency = 0 }):Play()
+end
+
+if startHidden then
+    if getgenv then
+        getgenv().AutomaHubStartHidden = nil
+        getgenv().AutomaHubRevealMenu = revealPanel
+    end
+else
+    revealPanel()
+end

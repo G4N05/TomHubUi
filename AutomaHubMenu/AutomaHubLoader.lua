@@ -63,18 +63,25 @@ local function onGranted(key)
     end
     if L then L:setStatus("Connecting to AutomaHub...") end
 
-    -- [2] prefetch resource sambil progress jalan
-    if L then L:setProgress(0.2) end
+    -- [2] ambil source-nya
+    if L then L:setProgress(0.15) end
     local menuSrc = httpGet(MENU_URL)
-    if L then L:setProgress(0.55) end
+    if L then L:setStatus("Loading interface..."); L:setProgress(0.4) end
     local animSrc = httpGet(ANIM_URL)
-    if L then L:setProgress(0.85) end
+    if L then L:setProgress(0.6) end
 
-    -- simpen menu source -> Animate.lua bakal pakai ini (ga fetch ulang)
-    if getgenv and menuSrc then getgenv().AutomaHubMenuSource = menuSrc end
+    -- BUILD menu BENERAN pas loading, tapi HIDDEN (ga dimunculin dulu).
+    -- jadi loading ini real ngeload GUI, bukan gimmick. Animate.lua nanti
+    -- tinggal munculin + animasi.
+    if menuSrc then
+        if getgenv then getgenv().AutomaHubStartHidden = true end
+        runSource(menuSrc)
+    end
+    if L then L:setProgress(0.9) end
 
     local function startIntro()
-        -- Animate.lua urus: logo intro + blur + load & reveal menu
+        -- menu udah ke-build (hidden). Animate.lua: logo muncul + animasi + reveal.
+        -- (kalo somehow menu belum ada, Animate build sendiri sbg fallback)
         if animSrc then
             runSource(animSrc)
         else
@@ -84,7 +91,7 @@ local function onGranted(key)
 
     -- [3] kelarin loading -> jalanin intro
     if L then
-        L:setStatus("Starting interface...")
+        L:setStatus("Ready")
         L:setProgress(1)
         L:finish(function()
             startIntro()

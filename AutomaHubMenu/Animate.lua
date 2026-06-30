@@ -122,17 +122,20 @@ task.spawn(function()
 
     task.wait(0.7)
 
-    -- Phase 2: load GUI menu dari GitHub (build di belakang overlay)
-    pcall(function()
-        -- pakai source yang udah di-prefetch loader (kalo ada), biar ga fetch dobel
-        local src = (getgenv and getgenv().AutomaHubMenuSource) or game:HttpGet(MENU_URL)
-        if getgenv then getgenv().AutomaHubMenuSource = nil end
-        local loader = loadstring or load
-        if loader then
-            local fn = loader(src)
-            if fn then fn() end
-        end
-    end)
+    -- Phase 2: menu HARUSNYA udah ke-build (hidden) pas loading.
+    -- Cuma build sendiri kalo Animate dijalanin standalone (menu belum ada).
+    if not parentGui:FindFirstChild("AutomaHubMenu") then
+        pcall(function()
+            if getgenv then getgenv().AutomaHubStartHidden = true end
+            local src = (getgenv and getgenv().AutomaHubMenuSource) or game:HttpGet(MENU_URL)
+            if getgenv then getgenv().AutomaHubMenuSource = nil end
+            local loader = loadstring or load
+            if loader then
+                local fn = loader(src)
+                if fn then fn() end
+            end
+        end)
+    end
 
     -- cari logo asli di menu (AutomaHubMenu -> Panel -> Sidebar -> LogoHolder)
     local realHolder, realImg, realFallback
@@ -189,8 +192,12 @@ task.spawn(function()
             Size = UDim2.fromOffset(sz.X, sz.Y),
         }):Play()
 
-        -- reveal: blur & gelap ilang sambil logo terbang
+        -- reveal: blur & gelap ilang sambil logo terbang + MUNCULIN menu
         task.wait(0.18)
+        if getgenv and type(getgenv().AutomaHubRevealMenu) == "function" then
+            pcall(getgenv().AutomaHubRevealMenu)
+            getgenv().AutomaHubRevealMenu = nil
+        end
         TweenService:Create(Blur, TweenInfo.new(0.6), { Size = 0 }):Play()
         TweenService:Create(Dark, TweenInfo.new(0.6), { BackgroundTransparency = 1 }):Play()
         task.wait(0.62)
