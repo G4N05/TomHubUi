@@ -103,13 +103,15 @@ local COL = {
 -- API TABLE (config-driven)
 -- ============================================================
 local AutomaHub = {}
-local TABS = {}
+AutomaHub.TABS = {}   -- simpan TABS di dalam AutomaHub table biar bisa diakses dari luar
 local itemStates = {}   -- [tabId][itemIdx] = { getState, setState }
 local itemRefs = {}     -- [tabId][itemIdx] = widget reference
+local TABS = AutomaHub.TABS   -- alias lokal biar kode lain ga perlu diubah
 
 -- Ambil config dari getgenv atau pakai API
 if getgenv and getgenv().AutomaHubConfig and type(getgenv().AutomaHubConfig.tabs) == "table" then
     TABS = getgenv().AutomaHubConfig.tabs
+    AutomaHub.TABS = TABS
 end
 
 -- API: addTab({ id=, icon=, fallback= })
@@ -1016,12 +1018,13 @@ _MENU_BUILT = true
 -- API: rebuild (kalo config ditambahin setelah menu di-build)
 -- ============================================================
 function AutomaHub.rebuild()
-    print("[AutomaHub] rebuild() called, TABS count:", #TABS)
-    for i, t in ipairs(TABS) do print("  tab", i, t.id, "items:", #t.items) end
-    if #TABS > 0 then
+    local tabs = AutomaHub.TABS or TABS
+    print("[AutomaHub] rebuild() called, TABS count:", #tabs)
+    for i, t in ipairs(tabs) do print("  tab", i, t.id, "items:", #t.items) end
+    if #tabs > 0 then
         buildNav()
         print("[AutomaHub] buildNav done")
-        selectTab(TABS[1].id)
+        selectTab(tabs[1].id)
         print("[AutomaHub] selectTab done")
     else
         showUnsupported()

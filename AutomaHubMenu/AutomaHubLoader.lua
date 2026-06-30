@@ -41,15 +41,18 @@ local function httpGet(url)
     return nil
 end
 
-local function runSource(src)
+local function runSource(src, label)
     if not src then return nil end
     local loader = loadstring or load
     if not loader then return nil end
     local fn = loader(src)
-    if not fn then return nil end
+    if not fn then
+        warn("[AutomaHub] " .. (label or "source") .. " failed to compile")
+        return nil
+    end
     local ok, ret = pcall(fn)
     if not ok then
-        warn("[AutomaHub] run error: " .. tostring(ret))
+        warn("[AutomaHub] " .. (label or "source") .. " run error: " .. tostring(ret))
         return nil
     end
     return ret
@@ -119,7 +122,7 @@ local function onGranted(key)
     end
 
     -- [1] loading screen (Load.lua return Loader table)
-    local Loader = runSource(httpGet(LOAD_URL))
+    local Loader = runSource(httpGet(LOAD_URL), "Load.lua")
     local L
     if type(Loader) == "table" and type(Loader.new) == "function" then
         local ok, inst = pcall(Loader.new)
@@ -139,7 +142,7 @@ local function onGranted(key)
     -- tampilin "Unsupported Experience" kalo config kosong.
     if menuSrc then
         if getgenv then getgenv().AutomaHubStartHidden = true end
-        runSource(menuSrc)
+        runSource(menuSrc, "menu_ui.lua")
         -- kalo mapConfig adalah function (API mode), panggil sekarang
         -- (menu udah ke-build, API getgenv().AutomaHub udah ada)
         if getgenv and type(getgenv().AutomaHubMapFn) == "function" then
@@ -168,9 +171,9 @@ local function onGranted(key)
 
     local function startIntro()
         if animSrc then
-            runSource(animSrc)
+            runSource(animSrc, "Animate.lua")
         else
-            runSource(httpGet(ANIM_URL))
+            runSource(httpGet(ANIM_URL), "Animate.lua")
         end
     end
 
@@ -193,7 +196,7 @@ if getgenv then getgenv().AutomaHubOnGranted = onGranted end
 -- ============================================================
 local keySrc = httpGet(KEY_URL)
 if keySrc then
-    runSource(keySrc)
+    runSource(keySrc, "KeySystem")
 else
     warn("[AutomaHub] gagal load Key UI dari " .. KEY_URL)
 end
