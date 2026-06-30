@@ -157,12 +157,20 @@ task.spawn(function()
         for _ = 1, 3 do RunService.RenderStepped:Wait() end
     end
 
-    -- pasang logo preloaded ke logo asli biar ga flash pas reveal
+    -- KOSONGIN dulu slot logo GUI. gambar di-preload tapi disembunyiin
+    -- (transparency = 1), nanti baru di-fade-in pas animasi mendarat.
+    local realMark, realTransProp
     if realImg and logoAsset then
         realImg.Image = logoAsset
         realImg.Visible = true
+        realMark, realTransProp = realImg, "ImageTransparency"
         if realFallback then realFallback.Visible = false end
+    elseif realFallback then
+        realFallback.Visible = true
+        realMark, realTransProp = realFallback, "TextTransparency"
+        if realImg then realImg.Visible = false end
     end
+    if realMark then realMark[realTransProp] = 1 end  -- kosong dulu
 
     if realHolder and realHolder.AbsoluteSize.X > 0 then
         -- target = tengah LogoHolder, dikonversi ke koordinat LOKAL overlay Intro.
@@ -187,9 +195,13 @@ task.spawn(function()
         TweenService:Create(Dark, TweenInfo.new(0.6), { BackgroundTransparency = 1 }):Play()
         task.wait(0.62)
 
-        -- handoff: logo intro fade out (logo GUI asli udah pas di bawahnya)
-        TweenService:Create(Mark, TweenInfo.new(0.18), { [transProp] = 1 }):Play()
-        task.wait(0.2)
+        -- handoff: pas animasi mendarat, logo GUI baru KEISI (fade-in)
+        -- barengan logo intro fade-out -> keliatan kaya "nyatu" ke slot GUI.
+        if realMark then
+            TweenService:Create(realMark, TweenInfo.new(0.28), { [realTransProp] = 0 }):Play()
+        end
+        TweenService:Create(Mark, TweenInfo.new(0.2), { [transProp] = 1 }):Play()
+        task.wait(0.3)
     else
         -- fallback kalo menu ga ketemu: fade out semua aja
         TweenService:Create(Blur, TweenInfo.new(0.5), { Size = 0 }):Play()
