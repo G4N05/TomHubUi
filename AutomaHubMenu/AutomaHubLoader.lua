@@ -24,8 +24,11 @@ local KEY_URL  = REPO .. "AutomaKeyUi/KeySystemAutomaHub.lua"
 local LOAD_URL = REPO .. "AutomaHubMenu/Load.lua"
 local ANIM_URL = REPO .. "AutomaHubMenu/Animate.lua"
 local MENU_URL = REPO .. "AutomaHubMenu/menu_ui.lua"
--- Folder module per-map
-local MAPS_URL = REPO .. "AutomaHubMenu/maps/"
+-- =========================
+-- Per-map routing: PlaceId -> URL loader luaegis (1 script luaegis per map)
+local MAP_LOADERS = {
+    [93978595733734] = "https://luaegis.net/scripts/v4/loaders/de7b144b-8eab-4ee2-853c-09a339415493.lua",
+}
 -- =========================
 
 -- guard biar ga jalan dobel
@@ -63,39 +66,40 @@ end
 -- ============================================================
 local function loadMapConfig()
     local placeId = game.PlaceId
-    -- coba fetch module per-map: maps/<placeId>.lua
-    local mapUrl = MAPS_URL .. tostring(placeId) .. ".lua"
-    local mapSrc = httpGet(mapUrl)
-    if not mapSrc then
-        -- ga ada module buat PlaceId ini
-        print("[AutomaHub] No script module for PlaceId " .. tostring(placeId))
+    -- cari loader luaegis buat PlaceId ini
+    local loaderUrl = MAP_LOADERS[placeId]
+    if not loaderUrl then
+        print("[AutomaHub] No script for PlaceId " .. tostring(placeId))
         return nil
     end
 
-    -- module harus return table dengan field .tabs
-    -- contoh: return { tabs = { { id="Combat", icon="swords", ... } } }
-    local fn = loadstring or load
-    if not fn then return nil end
-    local module = fn(mapSrc)
-    if not module then return nil end
-    local ok, config = pcall(module)
-    if not ok then
-        warn("[AutomaHub] Map module error: " .. tostring(config))
+    -- reset dulu biar ga kebawa sisa run sebelumnya
+    if getgenv then
+        getgenv().AutomaHubMapFn = nil
+        getgenv().AutomaHubConfig = nil
+    end
+
+    -- jalanin loader luaegis. Script asli yang di-protect WAJIB daftar sendiri:
+    --   getgenv().AutomaHubMapFn = function(AutomaHub, services) ... end
+    -- (luaegis ga jamin return value tembus, jadi kita baca dari getgenv)
+    local src = httpGet(loaderUrl)
+    if not src then
+        warn("[AutomaHub] Gagal fetch luaegis loader buat PlaceId " .. tostring(placeId))
         return nil
     end
+    runSource(src, "luaegis:" .. tostring(placeId))
 
-    -- support 2 format:
-    --   1) return { tabs = {...} }         (langsung config table)
-    --   2) return function(AutomaHub, services) ... end  (API mode)
-    if type(config) == "table" and type(config.tabs) == "table" then
-        return config
-    elseif type(config) == "function" then
-        -- config adalah function AutomaHub(api, services) -> setup tabs via API
-        -- jalankan setelah menu_ui di-build (di onGranted)
-        return config
+    -- baca balik hasil yang didaftarin script map
+    if getgenv then
+        if type(getgenv().AutomaHubConfig) == "table" then
+            return getgenv().AutomaHubConfig
+        end
+        if type(getgenv().AutomaHubMapFn) == "function" then
+            return getgenv().AutomaHubMapFn
+        end
     end
 
-    warn("[AutomaHub] Map module has no .tabs or function: " .. tostring(placeId))
+    warn("[AutomaHub] Script map ga daftarin AutomaHubMapFn/AutomaHubConfig: " .. tostring(placeId))
     return nil
 end
 
