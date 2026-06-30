@@ -65,6 +65,12 @@ end
 -- PER-MAP ROUTING
 -- ============================================================
 local function loadMapConfig()
+    -- udah ke-load pas validasi key (AutomaHubValidateKey)? pakai itu, jangan dobel-load.
+    if getgenv then
+        if type(getgenv().AutomaHubConfig) == "table" then return getgenv().AutomaHubConfig end
+        if type(getgenv().AutomaHubMapFn) == "function" then return getgenv().AutomaHubMapFn end
+    end
+
     local placeId = game.PlaceId
     -- cari loader luaegis buat PlaceId ini
     local loaderUrl = MAP_LOADERS[placeId]
@@ -72,11 +78,11 @@ local function loadMapConfig()
         print("[AutomaHub] No script for PlaceId " .. tostring(placeId))
         return nil
     end
+    print("[AutomaHub] >> LOADER BARU aktif. Fetch map dari luaegis: " .. loaderUrl)
 
-    -- reset dulu biar ga kebawa sisa run sebelumnya
-    if getgenv then
-        getgenv().AutomaHubMapFn = nil
-        getgenv().AutomaHubConfig = nil
+    -- jembatani key AutomaHub -> script_key luaegis (Jalan A)
+    if getgenv and type(getgenv().SCRIPT_KEY) == "string" then
+        getgenv().script_key = getgenv().SCRIPT_KEY
     end
 
     -- jalanin loader luaegis. Script asli yang di-protect WAJIB daftar sendiri:
@@ -196,8 +202,45 @@ local function onGranted(key)
     end
 end
 
+-- ============================================================
+-- VALIDASI KEY via luaegis (Jalan A: luaegis = key system tunggal)
+-- KeySystemAutomaHub.lua otomatis pakai hook ini kalau ada.
+-- ============================================================
+local function validateKeyViaLuaegis(key)
+    if not key or key == "" then return "INVALID" end
+    local placeId = game.PlaceId
+    local loaderUrl = MAP_LOADERS[placeId]
+    -- map ga didukung -> tetep ijinin masuk (nanti menu "Unsupported Experience")
+    if not loaderUrl then return "VALID" end
+
+    -- set key buat luaegis, reset penanda map
+    if getgenv then
+        getgenv().script_key = key
+        getgenv().AutomaHubMapFn = nil
+        getgenv().AutomaHubConfig = nil
+    end
+
+    -- jalanin loader luaegis = sekaligus validasi key + load map
+    local src = httpGet(loaderUrl)
+    if not src then return "INVALID" end
+    pcall(function() runSource(src, "luaegis-validate") end)
+
+    -- tunggu bentar kalau luaegis async, cek penanda map kedaftar
+    local deadline = os.clock() + 4
+    while os.clock() < deadline do
+        if getgenv and (type(getgenv().AutomaHubMapFn) == "function" or type(getgenv().AutomaHubConfig) == "table") then
+            return "VALID"
+        end
+        task.wait(0.1)
+    end
+    return "INVALID"
+end
+
 -- daftarin hook SEBELUM key UI dibuka
-if getgenv then getgenv().AutomaHubOnGranted = onGranted end
+if getgenv then
+    getgenv().AutomaHubOnGranted = onGranted
+    getgenv().AutomaHubValidateKey = validateKeyViaLuaegis
+end
 
 -- ============================================================
 -- buka Key UI (dia yang manggil onGranted pas valid)
