@@ -25,7 +25,7 @@ local Lighting         = game:GetService("Lighting")
 
 -- ====== PALETTE (monokrom, no biru) ======
 local COL = {
-    overlay = Color3.fromRGB(8, 8, 10),
+    overlay = Color3.fromRGB(10, 8, 18),
     gear1   = Color3.fromRGB(96, 96, 102),   -- main  (three.js 0x444444)
     gear2   = Color3.fromRGB(134, 134, 140),  -- small (0x666666)
     gear3   = Color3.fromRGB(114, 114, 120),  -- med   (0x555555)
@@ -128,7 +128,7 @@ function Loader.new()
     blur.Size = 0
     blur.Parent = Lighting
     self._blur = blur
-    TweenService:Create(blur, TweenInfo.new(0.35), { Size = 24 }):Play()
+    TweenService:Create(blur, TweenInfo.new(0.35), { Size = 18 }):Play()
 
     -- screengui
     local gui = Instance.new("ScreenGui")
@@ -149,7 +149,7 @@ function Loader.new()
     overlay.BorderSizePixel = 0
     overlay.Parent = gui
     self._overlay = overlay
-    TweenService:Create(overlay, TweenInfo.new(0.3), { BackgroundTransparency = 0.25 }):Play()
+    TweenService:Create(overlay, TweenInfo.new(0.3), { BackgroundTransparency = 0.35 }):Play()
 
     -- stage (titik tengah buat naro gear), size 0 -> anchor = center point
     local stage = Instance.new("Frame")

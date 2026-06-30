@@ -57,8 +57,8 @@ Intro.Parent = parentGui
 local Dark = Instance.new("Frame")
 Dark.Name = "Dark"
 Dark.Size = UDim2.fromScale(1, 1)
-Dark.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
-Dark.BackgroundTransparency = 0.22
+Dark.BackgroundColor3 = Color3.fromRGB(10, 8, 18)
+Dark.BackgroundTransparency = 0.35
 Dark.BorderSizePixel = 0
 Dark.ZIndex = 1
 Dark.Parent = Intro
@@ -114,7 +114,7 @@ Blur.Parent = Lighting
 task.spawn(function()
     -- Phase 1: blur masuk + logo fade-in & settle (dari gede dikit -> normal)
     Mark.Size = UDim2.fromOffset(280, 280)
-    TweenService:Create(Blur, TweenInfo.new(0.5), { Size = 24 }):Play()
+    TweenService:Create(Blur, TweenInfo.new(0.5), { Size = 18 }):Play()
     TweenService:Create(Mark, TweenInfo.new(0.6, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
         Size = UDim2.fromOffset(200, 200),
     }):Play()
