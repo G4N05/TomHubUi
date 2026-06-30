@@ -76,18 +76,18 @@ local function loadMapConfig()
     local module = fn(mapSrc)
     if not module then return nil end
     local ok, config = pcall(module)
-    if not ok or type(config) ~= "table" then
-        warn("[AutomaHub] Map module returned invalid config: " .. tostring(config))
+    if not ok then
+        warn("[AutomaHub] Map module error: " .. tostring(config))
         return nil
     end
 
     -- support 2 format:
-    --   1) return { tabs = {...} }         (langsung)
-    --   2) return function(AutomaHub) ... end  (via API)
-    if type(config.tabs) == "table" then
+    --   1) return { tabs = {...} }         (langsung config table)
+    --   2) return function(AutomaHub, services) ... end  (API mode)
+    if type(config) == "table" and type(config.tabs) == "table" then
         return config
     elseif type(config) == "function" then
-        -- config adalah function AutomaHub(api) -> setup tabs via API
+        -- config adalah function AutomaHub(api, services) -> setup tabs via API
         -- jalankan setelah menu_ui di-build (di onGranted)
         return config
     end
@@ -145,7 +145,18 @@ local function onGranted(key)
         if getgenv and type(getgenv().AutomaHubMapFn) == "function" then
             local api = getgenv().AutomaHub
             if api then
-                pcall(getgenv().AutomaHubMapFn, api)
+                local services = {
+                    Players = game:GetService("Players"),
+                    ReplicatedStorage = game:GetService("ReplicatedStorage"),
+                    CollectionService = game:GetService("CollectionService"),
+                    RunService = game:GetService("RunService"),
+                    UserInputService = game:GetService("UserInputService"),
+                    Teams = game:GetService("Teams"),
+                    VirtualInputManager = game:GetService("VirtualInputManager"),
+                    Workspace = game:GetService("Workspace"),
+                    LocalPlayer = game:GetService("Players").LocalPlayer,
+                }
+                pcall(getgenv().AutomaHubMapFn, api, services)
                 if type(api.rebuild) == "function" then
                     pcall(api.rebuild)
                 end
