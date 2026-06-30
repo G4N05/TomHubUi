@@ -23,6 +23,9 @@ local RunService      = game:GetService("RunService")
 local LOGO_URL = "https://raw.githubusercontent.com/G4N05/TomHubUi/main/Icon/AutomaHubLogo.png"
 local MENU_URL = "https://raw.githubusercontent.com/G4N05/TomHubUi/main/AutomaHubMenu/menu_ui.lua"
 
+-- nudge mendarat logo (px). + = turun ke bawah, - = naik ke atas
+local LAND_Y_OFFSET = 6
+
 -- ====== LOAD LOGO (download -> writefile -> getcustomasset) ======
 local function loadLogo()
     local ok, asset = pcall(function()
@@ -166,7 +169,7 @@ task.spawn(function()
         local pos = realHolder.AbsolutePosition
         local sz = realHolder.AbsoluteSize
         local cx = pos.X + sz.X / 2
-        local cy = pos.Y + sz.Y / 2
+        local cy = pos.Y + sz.Y / 2 + LAND_Y_OFFSET
 
         local moveInfo = TweenInfo.new(0.78, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut)
         TweenService:Create(Mark, moveInfo, {
