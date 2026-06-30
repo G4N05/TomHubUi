@@ -631,9 +631,7 @@ return function(ctx)
         aimFovCircle.Filled = false aimFovCircle.Visible = false aimFovCircle.Color = Color3.fromRGB(255, 255, 255)
     end
 
-    local AIM_RENDER_BIND = "AutomaHubAimRender"
-    pcall(function() RunService:UnbindFromRenderStep(AIM_RENDER_BIND) end)
-    RunService:BindToRenderStep(AIM_RENDER_BIND, Enum.RenderPriority.Camera.Value + 1, function()
+    local aimRenderConn = RunService.RenderStepped:Connect(function()
         AimCamera = Workspace.CurrentCamera
         if not (silentAimEnabled or aimLockEnabled) then aimSilentDir = nil if aimFovCircle then aimFovCircle.Visible = false end return end
         if aimFovCircle then aimFovCircle.Visible = aimShowFov aimFovCircle.Radius = fovRadius aimFovCircle.Position = aimGetFovCenter() end
@@ -675,8 +673,8 @@ return function(ctx)
 
     if getgenv then
         local g = getgenv()
-        if g.__tomaAimBind and g.__tomaAimBind ~= AIM_RENDER_BIND then pcall(function() RunService:UnbindFromRenderStep(g.__tomaAimBind) end) end
-        g.__tomaAimBind = AIM_RENDER_BIND
+        if g.__tomaAimRender then pcall(function() g.__tomaAimRender:Disconnect() end) end
+        g.__tomaAimRender = aimRenderConn
         if g.__tomaFov then pcall(function() g.__tomaFov:Remove() end) end
         g.__tomaFov = aimFovCircle
     end
@@ -798,9 +796,7 @@ return function(ctx)
         veilFovCircle.Filled = false veilFovCircle.Visible = false veilFovCircle.Color = Color3.fromRGB(255, 255, 255)
     end
 
-    local VEIL_RENDER_BIND = "AutomaHubVeilRender"
-    pcall(function() RunService:UnbindFromRenderStep(VEIL_RENDER_BIND) end)
-    RunService:BindToRenderStep(VEIL_RENDER_BIND, Enum.RenderPriority.Camera.Value + 1, function()
+    local veilRenderConn = RunService.RenderStepped:Connect(function()
         if not (veilEnabled or veilAimLock) then
             veilTargetPos, veilTargetVel, veilTargetName = nil, nil, nil
             veilSampleName = nil veilLockedPlayer = nil
@@ -866,8 +862,8 @@ return function(ctx)
 
     if getgenv then
         local g = getgenv()
-        if g.__tomaVeilBind and g.__tomaVeilBind ~= VEIL_RENDER_BIND then pcall(function() RunService:UnbindFromRenderStep(g.__tomaVeilBind) end) end
-        g.__tomaVeilBind = VEIL_RENDER_BIND
+        if g.__tomaVeilRender then pcall(function() g.__tomaVeilRender:Disconnect() end) end
+        g.__tomaVeilRender = veilRenderConn
         if g.__tomaVeilFov then pcall(function() g.__tomaVeilFov:Remove() end) end
         g.__tomaVeilFov = veilFovCircle
     end
