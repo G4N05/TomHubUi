@@ -23,8 +23,8 @@ local RunService      = game:GetService("RunService")
 local LOGO_URL = "https://raw.githubusercontent.com/G4N05/TomHubUi/main/Icon/AutomaHubLogo.png"
 local MENU_URL = "https://raw.githubusercontent.com/G4N05/TomHubUi/main/AutomaHubMenu/menu_ui.lua"
 
--- nudge mendarat logo (px). + = turun ke bawah, - = naik ke atas
-local LAND_Y_OFFSET = 6
+-- nudge mendarat logo (px). + = turun ke bawah, - = naik ke atas (fine-tune doang)
+local LAND_Y_OFFSET = 0
 
 -- ====== LOAD LOGO (download -> writefile -> getcustomasset) ======
 local function loadLogo()
@@ -165,11 +165,15 @@ task.spawn(function()
     end
 
     if realHolder and realHolder.AbsoluteSize.X > 0 then
-        -- target = tengah LogoHolder (px layar)
+        -- target = tengah LogoHolder, dikonversi ke koordinat LOKAL overlay Intro.
+        -- origin = posisi absolut container Intro (Dark full-screen). Ngurangin ini
+        -- otomatis ngoreksi beda GuiInset/origin antara ScreenGui menu vs Intro,
+        -- jadi logo mendarat PAS walaupun inset-nya beda.
+        local origin = Dark.AbsolutePosition
         local pos = realHolder.AbsolutePosition
         local sz = realHolder.AbsoluteSize
-        local cx = pos.X + sz.X / 2
-        local cy = pos.Y + sz.Y / 2 + LAND_Y_OFFSET
+        local cx = pos.X + sz.X / 2 - origin.X
+        local cy = pos.Y + sz.Y / 2 - origin.Y + LAND_Y_OFFSET
 
         local moveInfo = TweenInfo.new(0.78, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut)
         TweenService:Create(Mark, moveInfo, {
