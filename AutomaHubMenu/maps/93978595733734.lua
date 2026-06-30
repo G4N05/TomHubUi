@@ -521,7 +521,25 @@ return function(ctx)
     end
 
     local function startESP() for _, p in ipairs(Players:GetPlayers()) do setupPlayer(p) end end
-    local function stopESP() for _, p in ipairs(Players:GetPlayers()) do cleanupPlayer(p) end for model in pairs(activeHighlights) do cleanupModel(model) end end
+    local function stopESP()
+        for _, p in ipairs(Players:GetPlayers()) do cleanupPlayer(p) end
+        for model in pairs(activeHighlights) do cleanupModel(model) end
+        activeHighlights = {}
+        activeConnections = {}
+        -- Brute-force: sapu bersih sisa ESP yang ga ke-track (respawn, billboard nyangkut, dll)
+        pcall(function()
+            for _, p in ipairs(Players:GetPlayers()) do
+                local char = p.Character
+                if char then
+                    for _, obj in ipairs(char:GetDescendants()) do
+                        if obj:IsA("Highlight") or (obj:IsA("BillboardGui") and obj.Name == "ESP_NameTag") then
+                            obj:Destroy()
+                        end
+                    end
+                end
+            end
+        end)
+    end
     Players.PlayerAdded:Connect(setupPlayer)
     Players.PlayerRemoving:Connect(cleanupPlayer)
 
