@@ -115,15 +115,19 @@ if getgenv and getgenv().AutomaHubConfig and type(getgenv().AutomaHubConfig.tabs
 end
 
 -- API: addTab({ id=, icon=, fallback= })
-function AutomaHub.addTab(cfg)
-    if not cfg or not cfg.id then return end
-    table.insert(TABS, {
+-- Handle BOTH colon (AutomaHub:addTab) dan dot (AutomaHub.addTab) call.
+-- Colon call kirim AutomaHub sebagai arg pertama (self), jadi cfg geser ke arg ke-2.
+function AutomaHub.addTab(a, b)
+    local cfg = a
+    if type(a) == "table" and a.addTab ~= nil then cfg = b end  -- a = self (colon call)
+    if not cfg or not cfg.id then return AutomaHub end
+    table.insert(AutomaHub.TABS, {
         id = cfg.id,
         icon = cfg.icon or "circle",
         fallback = cfg.fallback or string.sub(cfg.id, 1, 1):upper(),
         items = {},
     })
-    print("[AutomaHub] addTab: " .. cfg.id .. " | TABS count now: " .. #TABS .. " | AutomaHub.TABS count: " .. #(AutomaHub.TABS or {}))
+    print("[AutomaHub] addTab: " .. cfg.id .. " | TABS count now: " .. #AutomaHub.TABS)
     return AutomaHub
 end
 
@@ -132,11 +136,14 @@ end
 --          { t="slider", name=, min=, max=, default=, onChange=function(v) end }
 --          { t="input",  name=, default=, onChange=function(text) end }
 --          { t="dropdown", name=, options={...}, onChange=function(opt) end }
-function AutomaHub.addItem(tabId, itemCfg)
-    for _, tab in ipairs(TABS) do
+function AutomaHub.addItem(a, b, c)
+    -- Handle BOTH colon (AutomaHub:addItem(tabId, cfg)) dan dot call.
+    local tabId, itemCfg = a, b
+    if type(a) == "table" and a.addItem ~= nil then tabId, itemCfg = b, c end  -- a = self
+    if not tabId or not itemCfg then return AutomaHub end
+    for _, tab in ipairs(AutomaHub.TABS) do
         if tab.id == tabId then
             table.insert(tab.items, itemCfg)
-            -- TODO: rebuild nav + content if menu sudah di-build
             if _MENU_BUILT then _REBUILD_NEEDED = true end
             return AutomaHub
         end
