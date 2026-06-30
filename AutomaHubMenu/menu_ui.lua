@@ -1137,14 +1137,33 @@ local function miniCenter()
     return Vector2.new(p.X + s.X / 2, p.Y + s.Y / 2)
 end
 
--- Paksa mouse unlock selama GUI kebuka; balikin ke default game pas ketutup
+-- Paksa mouse unlock selama GUI kebuka; pas ketutup balikin sesuai state game:
+--   in-match -> LockCenter (combat), lobby -> Default. (metode UICore source)
 local mouseConn
-local savedMouseBehavior, savedMouseIcon
+local function getMatchChecker()
+    local g = getgenv and getgenv()
+    return g and g.AutomaHubMatchChecker
+end
+local function applyClosedMouse()
+    local checker = getMatchChecker()
+    local inMatch = false
+    if type(checker) == "function" then
+        local ok, res = pcall(checker)
+        inMatch = ok and res == true
+    end
+    if inMatch then
+        -- lagi in-match: kunci ke tengah biar kamera combat normal
+        UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
+        UserInputService.MouseIconEnabled = false
+    else
+        -- di lobby: bebas
+        UserInputService.MouseBehavior = Enum.MouseBehavior.Default
+        UserInputService.MouseIconEnabled = true
+    end
+end
 local function setMouseFree(active)
     if active then
         if not mouseConn then
-            savedMouseBehavior = UserInputService.MouseBehavior
-            savedMouseIcon = UserInputService.MouseIconEnabled
             mouseConn = RunService.RenderStepped:Connect(function()
                 UserInputService.MouseBehavior = Enum.MouseBehavior.Default
                 UserInputService.MouseIconEnabled = true
@@ -1152,9 +1171,7 @@ local function setMouseFree(active)
         end
     else
         if mouseConn then mouseConn:Disconnect(); mouseConn = nil end
-        -- balikin ke perilaku default game
-        if savedMouseBehavior ~= nil then UserInputService.MouseBehavior = savedMouseBehavior end
-        if savedMouseIcon ~= nil then UserInputService.MouseIconEnabled = savedMouseIcon end
+        applyClosedMouse()
     end
 end
 

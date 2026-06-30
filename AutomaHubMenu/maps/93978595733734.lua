@@ -14,6 +14,15 @@ return function(AutomaHub, services)
     AutomaHub:addTab({ id = "Visual",  icon = "eye",    fallback = "V" })
     AutomaHub:addTab({ id = "Aim",     icon = "crosshair", fallback = "A" })
 
+    -- daftarin pengecek in-match buat UICore (nentuin mouse pas GUI ditutup:
+    -- in-match -> LockCenter, lobby -> Default). Metode sama kayak source.
+    if getgenv then
+        getgenv().AutomaHubMatchChecker = function()
+            local team = LocalPlayer.Team
+            return team ~= nil and (team.Name == "Killer" or team.Name == "Survivors")
+        end
+    end
+
     local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
     local Humanoid = Character:WaitForChild("Humanoid")
     local RootPart = Character:WaitForChild("HumanoidRootPart")
