@@ -1,3 +1,17 @@
+-- ============================================================
+-- AutomaHub | MAIN MENU (Kinetic Precision / industrial)
+-- ------------------------------------------------------------
+-- Niru referensi screen.png (dashboard monokrom industrial):
+--   - SIDEBAR kiri full-height: LOGO atas -> icon menu (tabs)
+--   - HEADER: judul gede kiri = NAMA MENU yang kepilih
+--             + profil kanan-atas = AVATAR + NAMA akun Roblox kita
+--   - CONTENT: panel grid, isi menu (toggle/slider/input/dropdown)
+--   - TANPA gear/settings di bawah sidebar
+--
+-- Logo di-load dari raw GitHub via writefile + getcustomasset
+-- (ImageLabel Roblox ga bisa load URL langsung).
+-- Standalone: paste di executor buat tes tampilan.
+-- ============================================================
 
 local Players          = game:GetService("Players")
 local TweenService     = game:GetService("TweenService")

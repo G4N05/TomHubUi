@@ -1,3 +1,16 @@
+--[[
+    AutomaHub - Animate.lua
+    Animasi intro (logo + blur) yang TERPISAH dari GUI.
+    Flow:
+      1. Logo AutomaHub muncul gede di tengah layar + blur (kaya animasi segitiga di referensi)
+      2. Nahan sebentar
+      3. Load GUI menu dari GitHub (loadstring(HttpGet))
+      4. Logo mengecil & terbang NGEPASIN ke posisi logo di sidebar GUI
+      5. Blur ilang, layar ke-reveal, logo intro fade -> handoff ke logo GUI asli
+
+    Cara pake (di executor / loader):
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/G4N05/TomHubUi/main/AutomaHubMenu/Animate.lua"))()
+--]]
 
 if getgenv and getgenv().AutomaHubIntroRan then return end
 if getgenv then getgenv().AutomaHubIntroRan = true end
@@ -88,21 +101,6 @@ end
 local Mark = usingFallback and LogoFallback or Logo
 local transProp = usingFallback and "TextTransparency" or "ImageTransparency"
 
--- status text mono (vibe industrial)
-local Status = Instance.new("TextLabel")
-Status.Name = "Status"
-Status.AnchorPoint = Vector2.new(0.5, 0)
-Status.Position = UDim2.new(0.5, 0, 0.5, 132)
-Status.Size = UDim2.fromOffset(360, 16)
-Status.BackgroundTransparency = 1
-Status.Font = Enum.Font.Code
-Status.Text = "INITIALIZING"
-Status.TextColor3 = Color3.fromRGB(140, 140, 140)
-Status.TextSize = 12
-Status.TextTransparency = 1
-Status.ZIndex = 3
-Status.Parent = Intro
-
 -- blur (di game world)
 local Blur = Instance.new("BlurEffect")
 Blur.Name = "AutomaHubIntroBlur"
@@ -118,14 +116,14 @@ task.spawn(function()
         Size = UDim2.fromOffset(200, 200),
     }):Play()
     TweenService:Create(Mark, TweenInfo.new(0.45), { [transProp] = 0 }):Play()
-    TweenService:Create(Status, TweenInfo.new(0.45), { TextTransparency = 0.15 }):Play()
 
     task.wait(0.7)
-    Status.Text = "LOADING INTERFACE"
 
     -- Phase 2: load GUI menu dari GitHub (build di belakang overlay)
     pcall(function()
-        local src = game:HttpGet(MENU_URL)
+        -- pakai source yang udah di-prefetch loader (kalo ada), biar ga fetch dobel
+        local src = (getgenv and getgenv().AutomaHubMenuSource) or game:HttpGet(MENU_URL)
+        if getgenv then getgenv().AutomaHubMenuSource = nil end
         local loader = loadstring or load
         if loader then
             local fn = loader(src)
@@ -147,9 +145,14 @@ task.spawn(function()
                 realFallback = realHolder:FindFirstChildWhichIsA("TextLabel")
             end
         end
-        if realHolder and realHolder.AbsoluteSize.X > 0 then break end
+        if realHolder and realHolder.AbsoluteSize.X > 0 and realHolder.AbsolutePosition.Y > 0 then break end
         RunService.RenderStepped:Wait()
     until (os.clock() - t0) > 4
+
+    -- biar layout bener-bener final dulu sebelum baca posisi (anti meleset)
+    if realHolder then
+        for _ = 1, 3 do RunService.RenderStepped:Wait() end
+    end
 
     -- pasang logo preloaded ke logo asli biar ga flash pas reveal
     if realImg and logoAsset then
@@ -157,8 +160,6 @@ task.spawn(function()
         realImg.Visible = true
         if realFallback then realFallback.Visible = false end
     end
-
-    Status.Text = "READY"
 
     if realHolder and realHolder.AbsoluteSize.X > 0 then
         -- target = tengah LogoHolder (px layar)
@@ -172,7 +173,6 @@ task.spawn(function()
             Position = UDim2.fromOffset(cx, cy),
             Size = UDim2.fromOffset(sz.X, sz.Y),
         }):Play()
-        TweenService:Create(Status, TweenInfo.new(0.3), { TextTransparency = 1 }):Play()
 
         -- reveal: blur & gelap ilang sambil logo terbang
         task.wait(0.18)

@@ -35,11 +35,11 @@ local function copyToClipboard(text)
 end
 
 local ERROR_MSG = {
-    INVALID          = "Key salah / ga ketemu.",
-    KEY_EXPIRED      = "Key udah expired.",
-    HWID_MISMATCH    = "HWID ga cocok.",
-    HWID_BANNED      = "HWID kamu kena ban.",
-    SERVICE_MISMATCH = "Key buat service lain.",
+    INVALID          = "Invalid key / not found.",
+    KEY_EXPIRED      = "This key has expired.",
+    HWID_MISMATCH    = "HWID mismatch.",
+    HWID_BANNED      = "Your HWID is banned.",
+    SERVICE_MISMATCH = "Key is for another service.",
 }
 
 local function validateKey(key)
@@ -63,7 +63,10 @@ end
 local function onValid(key)
     if getgenv then getgenv().SCRIPT_KEY = key end
     print("[AutomaHub] ACCESS GRANTED. key = " .. tostring(key))
-    -- TODO: di sini load script game (UICore/WindUI menu).
+    -- hook ke loader: Load.lua (loading) -> Animate.lua (intro) -> menu
+    if getgenv and type(getgenv().AutomaHubOnGranted) == "function" then
+        task.spawn(getgenv().AutomaHubOnGranted, key)
+    end
 end
 
 -- ============================================================
@@ -336,16 +339,16 @@ end
 GetKeyBtn.MouseButton1Click:Connect(function()
     pulse(GetKeyBtn)
     if copyToClipboard(PREVIEW_KEY) then
-        setStatus("Key valid kecopy ke clipboard, paste di atas.", false)
+        setStatus("Valid key copied to clipboard. Paste it above.", false)
     else
-        setStatus("Gagal akses clipboard.", true)
+        setStatus("Failed to access clipboard.", true)
     end
 end)
 
 CommBtn.MouseButton1Click:Connect(function()
     pulse(CommBtn)
     if copyToClipboard(DISCORD_LINK) then
-        setStatus("Link Discord kecopy ke clipboard.", false)
+        setStatus("Discord link copied to clipboard.", false)
     else
         setStatus(DISCORD_LINK, false)
     end
@@ -374,7 +377,7 @@ CheckBtn.MouseButton1Click:Connect(function()
     end
 
     CheckBtn.Text = "CHECKING..."
-    setStatus("Lagi ngecek key...", false)
+    setStatus("Checking key...", false)
 
     task.spawn(function()
         task.wait(0.35)
