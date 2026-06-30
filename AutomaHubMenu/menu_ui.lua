@@ -128,7 +128,6 @@ function AutomaHub.addTab(a, b)
         fallback = cfg.fallback or string.sub(cfg.id, 1, 1):upper(),
         items = {},
     })
-    print("[AutomaHub] addTab: " .. cfg.id .. " | TABS count now: " .. #AutomaHub.TABS)
     return AutomaHub
 end
 
@@ -1060,16 +1059,11 @@ _MENU_BUILT = true
 -- ============================================================
 function AutomaHub.rebuild()
     local tabs = AutomaHub.TABS or TABS
-    print("[AutomaHub] rebuild() called, TABS count:", #tabs)
-    for i, t in ipairs(tabs) do print("  tab", i, t.id, "items:", #t.items) end
     if #tabs > 0 then
         buildNav()
-        print("[AutomaHub] buildNav done")
         selectTab(tabs[1].id)
-        print("[AutomaHub] selectTab done")
     else
         showUnsupported()
-        print("[AutomaHub] showUnsupported (no tabs)")
     end
 end
 

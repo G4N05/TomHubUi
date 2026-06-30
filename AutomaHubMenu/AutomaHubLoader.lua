@@ -75,10 +75,8 @@ local function loadMapConfig()
     -- cari loader luaegis buat PlaceId ini
     local loaderUrl = MAP_LOADERS[placeId]
     if not loaderUrl then
-        print("[AutomaHub] No script for PlaceId " .. tostring(placeId))
         return nil
     end
-    print("[AutomaHub] >> LOADER BARU aktif. Fetch map dari luaegis: " .. loaderUrl)
 
     -- jembatani key AutomaHub -> script_key luaegis (Jalan A)
     if getgenv and type(getgenv().SCRIPT_KEY) == "string" then

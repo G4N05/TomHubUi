@@ -307,9 +307,7 @@ if not (getgenv and getgenv().AutomaHubLoaderModule) then
             task.wait(0.06)
         end
         L:setStatus("Done!")
-        L:finish(function()
-            print("[AutomaHub] loading selesai (demo)")
-        end)
+        L:finish(function() end)
     end)
 end
 

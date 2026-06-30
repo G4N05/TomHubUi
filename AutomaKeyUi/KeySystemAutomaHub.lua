@@ -62,7 +62,6 @@ end
 -- onValid: dipanggil pas key valid. Ganti isinya buat load menu script.
 local function onValid(key)
     if getgenv then getgenv().SCRIPT_KEY = key end
-    print("[AutomaHub] ACCESS GRANTED. key = " .. tostring(key))
     -- hook ke loader: Load.lua (loading) -> Animate.lua (intro) -> menu
     if getgenv and type(getgenv().AutomaHubOnGranted) == "function" then
         task.spawn(getgenv().AutomaHubOnGranted, key)
