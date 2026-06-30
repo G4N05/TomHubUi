@@ -180,12 +180,42 @@ Panel.Size = UDim2.fromOffset(660, 460)
 Panel.BackgroundColor3 = COL.bg
 Panel.BorderSizePixel = 0
 Panel.Parent = ScreenGui
+Panel.ClipsDescendants = true
 local panelCorner = Instance.new("UICorner"); panelCorner.CornerRadius = UDim.new(0, 12); panelCorner.Parent = Panel
 local panelStroke = Instance.new("UIStroke"); panelStroke.Color = COL.border; panelStroke.Thickness = 1; panelStroke.Parent = Panel
 local panelPad = Instance.new("UIPadding")
 panelPad.PaddingTop = UDim.new(0, 14); panelPad.PaddingBottom = UDim.new(0, 14)
 panelPad.PaddingLeft = UDim.new(0, 14); panelPad.PaddingRight = UDim.new(0, 14)
 panelPad.Parent = Panel
+
+-- ====== FLOATING MINI LOGO (tombol buka saat GUI di-minimize) ======
+local MiniLogo = Instance.new("ImageButton")
+MiniLogo.Name = "MiniLogo"
+MiniLogo.AnchorPoint = Vector2.new(0.5, 0.5)
+MiniLogo.Position = UDim2.new(0, 50, 1, -50)
+MiniLogo.Size = UDim2.fromOffset(46, 46)
+MiniLogo.BackgroundColor3 = COL.sidebar
+MiniLogo.AutoButtonColor = false
+MiniLogo.Image = ""
+MiniLogo.ScaleType = Enum.ScaleType.Fit
+MiniLogo.Visible = false
+MiniLogo.ZIndex = 50
+MiniLogo.Parent = ScreenGui
+local mlCorner = Instance.new("UICorner"); mlCorner.CornerRadius = UDim.new(1, 0); mlCorner.Parent = MiniLogo
+local mlStroke = Instance.new("UIStroke"); mlStroke.Color = COL.border; mlStroke.Thickness = 1; mlStroke.Parent = MiniLogo
+local mlPad = Instance.new("UIPadding")
+mlPad.PaddingTop = UDim.new(0, 7); mlPad.PaddingBottom = UDim.new(0, 7)
+mlPad.PaddingLeft = UDim.new(0, 7); mlPad.PaddingRight = UDim.new(0, 7)
+mlPad.Parent = MiniLogo
+local MiniFallback = Instance.new("TextLabel")
+MiniFallback.Size = UDim2.fromScale(1, 1)
+MiniFallback.BackgroundTransparency = 1
+MiniFallback.Font = Enum.Font.GothamBold
+MiniFallback.Text = "A"
+MiniFallback.TextColor3 = COL.hi
+MiniFallback.TextSize = 22
+MiniFallback.ZIndex = 51
+MiniFallback.Parent = MiniLogo
 
 -- ====== SIDEBAR ======
 local Sidebar = Instance.new("Frame")
@@ -1080,11 +1110,82 @@ task.spawn(function()
     local asset = loadLogo()
     if asset then
         LogoImg.Image = asset
+        MiniLogo.Image = asset
+        MiniFallback.Visible = false
     else
         LogoImg.Visible = false
         LogoFallback.Visible = true
     end
 end)
+
+-- ============================================================
+-- GENIE EFFECT (minimize ke logo / restore dari logo)
+-- ============================================================
+local OPEN_SIZE   = UDim2.fromOffset(660, 460)
+local lastOpenPos = Panel.Position
+local minimized   = false
+local genieBusy   = false
+local GENIE_IN  = TweenInfo.new(0.30, Enum.EasingStyle.Quart, Enum.EasingDirection.In)
+local GENIE_OUT = TweenInfo.new(0.34, Enum.EasingStyle.Back,  Enum.EasingDirection.Out)
+local POP_IN    = TweenInfo.new(0.18, Enum.EasingStyle.Back,  Enum.EasingDirection.Out)
+local POP_OUT   = TweenInfo.new(0.14, Enum.EasingStyle.Quad,  Enum.EasingDirection.In)
+
+local function miniCenter()
+    local p = MiniLogo.AbsolutePosition
+    local s = MiniLogo.AbsoluteSize
+    return Vector2.new(p.X + s.X / 2, p.Y + s.Y / 2)
+end
+
+local function minimizeGenie()
+    if genieBusy or minimized then return end
+    genieBusy = true
+    lastOpenPos = Panel.Position
+    local mc = miniCenter()
+    local t = TweenService:Create(Panel, GENIE_IN, {
+        Position = UDim2.fromOffset(mc.X, mc.Y),
+        Size = UDim2.fromOffset(0, 0),
+        BackgroundTransparency = 1,
+    })
+    t:Play()
+    t.Completed:Connect(function()
+        Panel.Visible = false
+        minimized = true
+        MiniLogo.Size = UDim2.fromOffset(0, 0)
+        MiniLogo.Visible = true
+        TweenService:Create(MiniLogo, POP_IN, { Size = UDim2.fromOffset(46, 46) }):Play()
+        genieBusy = false
+    end)
+end
+
+local function restoreGenie()
+    if genieBusy or not minimized then return end
+    genieBusy = true
+    local mc = miniCenter()
+    local pop = TweenService:Create(MiniLogo, POP_OUT, { Size = UDim2.fromOffset(0, 0) })
+    pop:Play()
+    pop.Completed:Connect(function() MiniLogo.Visible = false end)
+    -- panel mulai dari titik logo lalu membesar (genie balik)
+    Panel.Position = UDim2.fromOffset(mc.X, mc.Y)
+    Panel.Size = UDim2.fromOffset(0, 0)
+    Panel.BackgroundTransparency = 1
+    Panel.Visible = true
+    local t = TweenService:Create(Panel, GENIE_OUT, {
+        Position = lastOpenPos,
+        Size = OPEN_SIZE,
+        BackgroundTransparency = 0,
+    })
+    t:Play()
+    t.Completed:Connect(function()
+        minimized = false
+        genieBusy = false
+    end)
+end
+
+MiniLogo.MouseButton1Click:Connect(restoreGenie)
+if getgenv then
+    getgenv().AutomaHubMinimize = minimizeGenie
+    getgenv().AutomaHubRestore = restoreGenie
+end
 
 -- ============================================================
 -- DRAG (lewat header / logo)
@@ -1101,10 +1202,27 @@ local function beginDrag(input)
     end
 end
 Header.InputBegan:Connect(beginDrag)
-LogoHolder.InputBegan:Connect(beginDrag)
+
+-- Logo: bedakan TAP (minimize genie) vs DRAG (geser panel)
+local logoDown, logoMoved = false, false
+LogoHolder.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        logoDown = true
+        logoMoved = false
+        beginDrag(input)
+    end
+end)
+LogoHolder.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        if logoDown and not logoMoved then minimizeGenie() end
+        logoDown = false
+    end
+end)
+
 UserInputService.InputChanged:Connect(function(input)
     if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
         local delta = input.Position - dragStart
+        if logoDown and delta.Magnitude > 6 then logoMoved = true end
         Panel.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
     end
 end)
