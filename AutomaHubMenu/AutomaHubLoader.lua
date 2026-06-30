@@ -15,7 +15,8 @@
 -- Per-map routing:
 --   - Deteksi game.PlaceId -> cari module di maps/<placeId>.lua
 --   - Module return config table { tabs = {...} } -> set getgenv().AutomaHubConfig
---   - Kalo PlaceId ga kekenal -> config kosong -> menu tampilin "Unsupported Experience"
+--   - Module return function(AutomaHub, services) -> set getgenv().AutomaHubMapFn (API mode)
+--   - Kalo PlaceId ga dikenal -> config kosong -> menu tampilin "Unsupported Experience"
 -- ============================================================
 
 -- ====== CONFIG REPO ======
@@ -60,35 +61,29 @@ end
 -- ============================================================
 local function loadMapConfig()
     local placeId = game.PlaceId
-    -- coba fetch module per-map: maps/<placeId>.lua
     local mapUrl = MAPS_URL .. tostring(placeId) .. ".lua"
     local mapSrc = httpGet(mapUrl)
     if not mapSrc then
-        -- ga ada module buat PlaceId ini
         print("[AutomaHub] No script module for PlaceId " .. tostring(placeId))
         return nil
     end
 
-    -- module harus return table dengan field .tabs
-    -- contoh: return { tabs = { { id="Combat", icon="swords", ... } } }
     local fn = loadstring or load
     if not fn then return nil end
     local module = fn(mapSrc)
     if not module then return nil end
     local ok, config = pcall(module)
-    if not ok or type(config) ~= "table" then
-        warn("[AutomaHub] Map module returned invalid config: " .. tostring(config))
+    if not ok then
+        warn("[AutomaHub] Map module error: " .. tostring(config))
         return nil
     end
 
     -- support 2 format:
-    --   1) return { tabs = {...} }         (langsung)
-    --   2) return function(AutomaHub) ... end  (via API)
-    if type(config.tabs) == "table" then
+    --   1) return { tabs = {...} }         (langsung config table)
+    --   2) return function(AutomaHub, services) ... end  (API mode)
+    if type(config) == "table" and type(config.tabs) == "table" then
         return config
     elseif type(config) == "function" then
-        -- config adalah function AutomaHub(api) -> setup tabs via API
-        -- jalankan setelah menu_ui di-build (di onGranted)
         return config
     end
 
@@ -100,10 +95,8 @@ end
 -- dipanggil pas key VALID (hook dari KeySystemAutomaHub.lua onValid)
 -- ============================================================
 local function onGranted(key)
-    -- [0] cek per-map config (sebelum loading screen)
     local mapConfig = loadMapConfig()
 
-    -- set config ke getgenv supaya menu_ui bisa baca
     if getgenv then
         if type(mapConfig) == "table" then
             getgenv().AutomaHubConfig = mapConfig
@@ -112,13 +105,11 @@ local function onGranted(key)
             getgenv().AutomaHubConfig = nil
             getgenv().AutomaHubMapFn = mapConfig
         else
-            -- ga ada config -> Unsupported Experience placeholder
             getgenv().AutomaHubConfig = nil
             getgenv().AutomaHubMapFn = nil
         end
     end
 
-    -- [1] loading screen (Load.lua return Loader table)
     local Loader = runSource(httpGet(LOAD_URL))
     local L
     if type(Loader) == "table" and type(Loader.new) == "function" then
@@ -127,25 +118,31 @@ local function onGranted(key)
     end
     if L then L:setStatus("Connecting to AutomaHub...") end
 
-    -- [2] ambil source-nya
     if L then L:setProgress(0.15) end
     local menuSrc = httpGet(MENU_URL)
     if L then L:setStatus("Loading interface..."); L:setProgress(0.4) end
     local animSrc = httpGet(ANIM_URL)
     if L then L:setProgress(0.6) end
 
-    -- BUILD menu BENERAN pas loading, tapi HIDDEN (ga dimunculin dulu).
-    -- menu_ui akan baca getgenv().AutomaHubConfig (table config) atau
-    -- tampilin "Unsupported Experience" kalo config kosong.
     if menuSrc then
         if getgenv then getgenv().AutomaHubStartHidden = true end
         runSource(menuSrc)
         -- kalo mapConfig adalah function (API mode), panggil sekarang
-        -- (menu udah ke-build, API getgenv().AutomaHub udah ada)
         if getgenv and type(getgenv().AutomaHubMapFn) == "function" then
             local api = getgenv().AutomaHub
             if api then
-                pcall(getgenv().AutomaHubMapFn, api)
+                local services = {
+                    Players = game:GetService("Players"),
+                    ReplicatedStorage = game:GetService("ReplicatedStorage"),
+                    CollectionService = game:GetService("CollectionService"),
+                    RunService = game:GetService("RunService"),
+                    UserInputService = game:GetService("UserInputService"),
+                    Teams = game:GetService("Teams"),
+                    VirtualInputManager = game:GetService("VirtualInputManager"),
+                    Workspace = game:GetService("Workspace"),
+                    LocalPlayer = game:GetService("Players").LocalPlayer,
+                }
+                pcall(getgenv().AutomaHubMapFn, api, services)
                 if type(api.rebuild) == "function" then
                     pcall(api.rebuild)
                 end
@@ -174,12 +171,8 @@ local function onGranted(key)
     end
 end
 
--- daftarin hook SEBELUM key UI dibuka
 if getgenv then getgenv().AutomaHubOnGranted = onGranted end
 
--- ============================================================
--- buka Key UI (dia yang manggil onGranted pas valid)
--- ============================================================
 local keySrc = httpGet(KEY_URL)
 if keySrc then
     runSource(keySrc)
