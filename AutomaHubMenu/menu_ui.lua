@@ -12,6 +12,7 @@
 local Players          = game:GetService("Players")
 local TweenService    = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
+local RunService       = game:GetService("RunService")
 local LocalPlayer      = Players.LocalPlayer
 
 local LOGO_URL = "https://raw.githubusercontent.com/G4N05/TomHubUi/main/Icon/AutomaHubLogo.png"
@@ -1136,6 +1137,27 @@ local function miniCenter()
     return Vector2.new(p.X + s.X / 2, p.Y + s.Y / 2)
 end
 
+-- Paksa mouse unlock selama GUI kebuka; balikin ke default game pas ketutup
+local mouseConn
+local savedMouseBehavior, savedMouseIcon
+local function setMouseFree(active)
+    if active then
+        if not mouseConn then
+            savedMouseBehavior = UserInputService.MouseBehavior
+            savedMouseIcon = UserInputService.MouseIconEnabled
+            mouseConn = RunService.RenderStepped:Connect(function()
+                UserInputService.MouseBehavior = Enum.MouseBehavior.Default
+                UserInputService.MouseIconEnabled = true
+            end)
+        end
+    else
+        if mouseConn then mouseConn:Disconnect(); mouseConn = nil end
+        -- balikin ke perilaku default game
+        if savedMouseBehavior ~= nil then UserInputService.MouseBehavior = savedMouseBehavior end
+        if savedMouseIcon ~= nil then UserInputService.MouseIconEnabled = savedMouseIcon end
+    end
+end
+
 local function minimizeGenie()
     if genieBusy or minimized then return end
     genieBusy = true
@@ -1150,6 +1172,7 @@ local function minimizeGenie()
     t.Completed:Connect(function()
         Panel.Visible = false
         minimized = true
+        setMouseFree(false)
         MiniLogo.Size = UDim2.fromOffset(0, 0)
         MiniLogo.Visible = true
         TweenService:Create(MiniLogo, POP_IN, { Size = UDim2.fromOffset(46, 46) }):Play()
@@ -1169,6 +1192,7 @@ local function restoreGenie()
     Panel.Size = UDim2.fromOffset(0, 0)
     Panel.BackgroundTransparency = 1
     Panel.Visible = true
+    setMouseFree(true)
     local t = TweenService:Create(Panel, GENIE_OUT, {
         Position = lastOpenPos,
         Size = OPEN_SIZE,
@@ -1182,9 +1206,26 @@ local function restoreGenie()
 end
 
 MiniLogo.MouseButton1Click:Connect(restoreGenie)
+
+-- Toggle buka/tutup (dipakai shortcut Right Shift)
+local function toggleMenu()
+    if genieBusy then return end
+    -- jangan toggle kalau belum di-reveal (key system masih nahan)
+    if not Panel.Visible and not minimized then return end
+    if minimized then restoreGenie() else minimizeGenie() end
+end
+
+-- Shortcut PC: Right Shift buat buka/tutup (ga perlu pencet tombol)
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if input.KeyCode == Enum.KeyCode.RightShift then
+        toggleMenu()
+    end
+end)
+
 if getgenv then
     getgenv().AutomaHubMinimize = minimizeGenie
     getgenv().AutomaHubRestore = restoreGenie
+    getgenv().AutomaHubToggle = toggleMenu
 end
 
 -- ============================================================
@@ -1234,8 +1275,10 @@ local startHidden = (getgenv and getgenv().AutomaHubStartHidden) and true or fal
 if startHidden then Panel.Visible = false end
 
 local function revealPanel()
+    minimized = false
     Panel.Visible = true
     Panel.BackgroundTransparency = 1
+    setMouseFree(true)
     TweenService:Create(Panel, TweenInfo.new(0.25), { BackgroundTransparency = 0 }):Play()
 end
 
