@@ -1016,8 +1016,7 @@ _MENU_BUILT = true
 -- API: rebuild (kalo config ditambahin setelah menu di-build)
 -- ============================================================
 function AutomaHub.rebuild()
-    hasConfig = #TABS > 0
-    if hasConfig then
+    if #TABS > 0 then
         buildNav()
         selectTab(TABS[1].id)
     else
