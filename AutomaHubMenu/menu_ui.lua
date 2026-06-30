@@ -1,20 +1,16 @@
 -- ============================================================
 -- AutomaHub | MAIN MENU (Kinetic Precision / industrial)
 -- ------------------------------------------------------------
--- Niru referensi screen.png (dashboard monokrom industrial):
---   - SIDEBAR kiri full-height: LOGO atas -> icon menu (tabs)
---   - HEADER: judul gede kiri = NAMA MENU yang kepilih
---             + profil kanan-atas = AVATAR + NAMA akun Roblox kita
---   - CONTENT: panel grid, isi menu (toggle/slider/input/dropdown)
---   - TANPA gear/settings di bawah sidebar
---
--- Logo di-load dari raw GitHub via writefile + getcustomasset
--- (ImageLabel Roblox ga bisa load URL langsung).
--- Standalone: paste di executor buat tes tampilan.
+-- CONFIG-DRIVEN, REUSABLE MULTI-MAP SHELL
+--   - Menu menerima config dari getgenv().AutomaHubConfig
+--     atau via API: getgenv().AutomaHub:addTab() :addToggle() dll
+--   - Tiap item support callback onChange + state getter/setter
+--   - Kalo config kosong / ga ada -> "Unsupported Experience" placeholder
+--   - Builder WIRE event UI -> onChange (bukan no-op lagi)
 -- ============================================================
 
 local Players          = game:GetService("Players")
-local TweenService     = game:GetService("TweenService")
+local TweenService    = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
 local LocalPlayer      = Players.LocalPlayer
 
@@ -74,7 +70,7 @@ local function loadLogo()
         local fname = "AutomaHubLogo.png"
         local writer = writefile or (syn and syn.write_file)
         if writer then writer(fname, data) end
-        local getter = getcustomasset or getsynasset or (syn and syn.getcustomasset)
+        local getter = getcustomasset or getsynasset or (syn and syn.get_customasset)
         if getter then return getter(fname) end
         return nil
     end)
@@ -103,62 +99,53 @@ local COL = {
     knobOn    = Color3.fromRGB(26, 26, 26),
 }
 
--- ====== TABS ======
-local TABS = {
-    {
-        id = "Combat", icon = "swords", fallback = "C",
-        items = {
-            { t = "toggle",   name = "Kill Aura" },
-            { t = "toggle",   name = "Auto Parry" },
-            { t = "slider",   name = "Hit Range", min = 1, max = 50, default = 12 },
-            { t = "input",    name = "Hit Delay (ms)", default = 100 },
-            { t = "dropdown", name = "Target", options = { "Closest", "Lowest HP", "Cursor", "Random" } },
-        },
-    },
-    {
-        id = "Player", icon = "user", fallback = "P",
-        items = {
-            { t = "toggle", name = "Infinite Jump" },
-            { t = "toggle", name = "Fly" },
-            { t = "slider", name = "Walk Speed", min = 16, max = 200, default = 16 },
-            { t = "slider", name = "Jump Power", min = 50, max = 300, default = 50 },
-            { t = "input",  name = "Fly Speed", default = 50 },
-        },
-    },
-    {
-        id = "Visual", icon = "eye", fallback = "V",
-        items = {
-            { t = "toggle",   name = "Player ESP" },
-            { t = "toggle",   name = "Name ESP" },
-            { t = "toggle",   name = "Tracers" },
-            { t = "dropdown", name = "ESP Mode", options = { "Box", "Highlight", "Corner" } },
-            { t = "slider",   name = "Text Size", min = 8, max = 24, default = 14 },
-        },
-    },
-    {
-        id = "Settings", icon = "settings", fallback = "S",
-        items = {
-            { t = "toggle",   name = "Anti AFK" },
-            { t = "toggle",   name = "Auto Rejoin" },
-            { t = "input",    name = "Rejoin Delay (s)", default = 5 },
-            { t = "dropdown", name = "UI Theme", options = { "Dark", "Darker", "Black" } },
-        },
-    },
-    {
-        id = "Aim", icon = "crosshair", fallback = "A",
-        items = {
-            { t = "toggle",   name = "Aimbot" },
-            { t = "toggle",   name = "Silent Aim" },
-            { t = "slider",   name = "FOV", min = 30, max = 500, default = 120 },
-            { t = "dropdown", name = "Aim Part", options = { "Head", "Torso", "Nearest" } },
-            { t = "dropdown", name = "Target Priority", options = { "Closest", "Lowest HP", "Crosshair" } },
-            { t = "input",    name = "Smoothness", default = 10 },
-        },
-    },
-}
+-- ============================================================
+-- API TABLE (config-driven)
+-- ============================================================
+local AutomaHub = {}
+local TABS = {}
+local itemStates = {}   -- [tabId][itemIdx] = { getState, setState }
+local itemRefs = {}     -- [tabId][itemIdx] = widget reference
+
+-- Ambil config dari getgenv atau pakai API
+if getgenv and getgenv().AutomaHubConfig and type(getgenv().AutomaHubConfig.tabs) == "table" then
+    TABS = getgenv().AutomaHubConfig.tabs
+end
+
+-- API: addTab({ id=, icon=, fallback= })
+function AutomaHub.addTab(cfg)
+    if not cfg or not cfg.id then return end
+    table.insert(TABS, {
+        id = cfg.id,
+        icon = cfg.icon or "circle",
+        fallback = cfg.fallback or string.sub(cfg.id, 1, 1):upper(),
+        items = {},
+    })
+    return AutomaHub
+end
+
+-- API: addItem(tabId, itemCfg)
+-- itemCfg: { t="toggle", name=, default=, onChange=function(on) end }
+--          { t="slider", name=, min=, max=, default=, onChange=function(v) end }
+--          { t="input",  name=, default=, onChange=function(text) end }
+--          { t="dropdown", name=, options={...}, onChange=function(opt) end }
+function AutomaHub.addItem(tabId, itemCfg)
+    for _, tab in ipairs(TABS) do
+        if tab.id == tabId then
+            table.insert(tab.items, itemCfg)
+            -- TODO: rebuild nav + content if menu sudah di-build
+            if _MENU_BUILT then _REBUILD_NEEDED = true end
+            return AutomaHub
+        end
+    end
+    return AutomaHub
+end
+
+-- Expose API ke getgenv supaya map module bisa panggil
+if getgenv then getgenv().AutomaHub = AutomaHub end
 
 -- ============================================================
--- BUILD
+-- BUILD GUI
 -- ============================================================
 local parentGui = (gethui and gethui()) or game:GetService("CoreGui")
 local old = parentGui:FindFirstChild("AutomaHubMenu")
@@ -380,7 +367,7 @@ Scroll.Size = UDim2.fromScale(1, 1)
 Scroll.BackgroundTransparency = 1
 Scroll.BorderSizePixel = 0
 Scroll.ScrollBarThickness = 0
-Scroll.ScrollingEnabled = false  -- scroll manual dimatiin; navigasi pake tab
+Scroll.ScrollingEnabled = false
 Scroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
 Scroll.CanvasSize = UDim2.new(0, 0, 0, 0)
 Scroll.ZIndex = 1
@@ -395,8 +382,14 @@ scrollLayout.SortOrder = Enum.SortOrder.LayoutOrder
 scrollLayout.Padding = UDim.new(0, 8)
 scrollLayout.Parent = Scroll
 
--- ---- toggle builder (UI layer doang, callback no-op) ----
-local function makeToggle(name)
+-- ============================================================
+-- BUILDERS (wired ke onChange callback)
+-- ============================================================
+
+-- ---- toggle builder ----
+local function makeToggle(item)
+    local name = item.name or "Toggle"
+    local state = item.default == true
     local row = Instance.new("Frame")
     row.Name = name
     row.Size = UDim2.new(1, 0, 0, 40)
@@ -445,7 +438,6 @@ local function makeToggle(name)
     kc.CornerRadius = UDim.new(1, 0)
     kc.Parent = knob
 
-    local state = false
     local function render()
         TweenService:Create(track, TweenInfo.new(0.15), {
             BackgroundColor3 = state and COL.toggleOn or COL.toggleOff,
@@ -455,18 +447,35 @@ local function makeToggle(name)
             BackgroundColor3 = state and COL.knobOn or COL.knob,
         }):Play()
     end
+
+    -- state getter/setter
+    local getter = function() return state end
+    local setter = function(v)
+        state = v == true
+        render()
+        if type(item.onChange) == "function" then
+            pcall(item.onChange, state)
+        end
+    end
+
     track.MouseButton1Click:Connect(function()
         state = not state
         render()
-        -- TODO: sambungin ke fitur game (UI layer doang)
+        if type(item.onChange) == "function" then
+            pcall(item.onChange, state)
+        end
     end)
 
-    return row
+    render()
+    return row, getter, setter
 end
 
 -- ---- slider builder ----
-local function makeSlider(name, minV, maxV, default)
-    local value = math.clamp(default, minV, maxV)
+local function makeSlider(item)
+    local name = item.name or "Slider"
+    local minV = item.min or 0
+    local maxV = item.max or 100
+    local value = math.clamp(item.default or minV, minV, maxV)
     local row = Instance.new("Frame")
     row.Name = name
     row.Size = UDim2.new(1, 0, 0, 54)
@@ -509,20 +518,20 @@ local function makeSlider(name, minV, maxV, default)
     local fill = Instance.new("Frame")
     fill.BackgroundColor3 = COL.knob
     fill.BorderSizePixel = 0
-    fill.Size = UDim2.fromScale((value - minV) / (maxV - minV), 1)
+    local _pct0 = (value - minV) / (maxV - minV)
+    fill.Size = UDim2.fromScale(_pct0, 1)
     fill.Parent = track
     local fcc = Instance.new("UICorner"); fcc.CornerRadius = UDim.new(1, 0); fcc.Parent = fill
 
     local knob = Instance.new("Frame")
     knob.AnchorPoint = Vector2.new(0.5, 0.5)
-    knob.Position = UDim2.new((value - minV) / (maxV - minV), 0, 0.5, 0)
+    knob.Position = UDim2.new(_pct0, 0, 0.5, 0)
     knob.Size = UDim2.fromOffset(16, 16)
     knob.BackgroundColor3 = COL.knob
     knob.BorderSizePixel = 0
     knob.Parent = track
     local kcc = Instance.new("UICorner"); kcc.CornerRadius = UDim.new(1, 0); kcc.Parent = knob
 
-    -- hit area transparan, gede biar gampang di-grab
     local hit = Instance.new("TextButton")
     hit.Name = "Hit"
     hit.BackgroundTransparency = 1
@@ -534,13 +543,24 @@ local function makeSlider(name, minV, maxV, default)
     hit.ZIndex = 5
     hit.Parent = row
 
-    local function setFromX(px)
-        local rel = math.clamp((px - track.AbsolutePosition.X) / math.max(track.AbsoluteSize.X, 1), 0, 1)
-        value = math.floor(minV + (maxV - minV) * rel + 0.5)
+    local function render()
         local pct = (value - minV) / (maxV - minV)
         fill.Size = UDim2.fromScale(pct, 1)
         knob.Position = UDim2.new(pct, 0, 0.5, 0)
         valLabel.Text = tostring(value)
+    end
+
+    local function setValue(v, fireCb)
+        value = math.clamp(math.floor(v + 0.5), minV, maxV)
+        render()
+        if fireCb and type(item.onChange) == "function" then
+            pcall(item.onChange, value)
+        end
+    end
+
+    local function setFromX(px)
+        local rel = math.clamp((px - track.AbsolutePosition.X) / math.max(track.AbsoluteSize.X, 1), 0, 1)
+        setValue(minV + (maxV - minV) * rel, true)
     end
 
     local dragging = false
@@ -561,11 +581,17 @@ local function makeSlider(name, minV, maxV, default)
         end
     end)
 
-    return row
+    -- getter/setter
+    local getter = function() return value end
+    local setter = function(v) setValue(v, true) end
+
+    return row, getter, setter
 end
 
--- ---- number input builder ----
-local function makeInput(name, default)
+-- ---- input builder ----
+local function makeInput(item)
+    local name = item.name or "Input"
+    local defaultText = tostring(item.default or "")
     local row = Instance.new("Frame")
     row.Name = name
     row.Size = UDim2.new(1, 0, 0, 40)
@@ -597,32 +623,47 @@ local function makeInput(name, default)
     box.TextColor3 = COL.text
     box.PlaceholderText = "0"
     box.PlaceholderColor3 = COL.subtext
-    box.Text = tostring(default)
+    box.Text = defaultText
     box.ClearTextOnFocus = false
     box.Parent = row
     local bcc = Instance.new("UICorner"); bcc.CornerRadius = UDim.new(0, 6); bcc.Parent = box
 
-    local lastValid = tostring(default)
+    local currentValue = defaultText
+
+    local getter = function() return currentValue end
+    local setter = function(v)
+        currentValue = tostring(v or "")
+        box.Text = currentValue
+        if type(item.onChange) == "function" then
+            pcall(item.onChange, currentValue)
+        end
+    end
+
     box.FocusLost:Connect(function()
-        local n = tonumber(box.Text)
-        if n then
-            lastValid = tostring(n)
-            box.Text = lastValid
-            -- TODO: pakai nilai n (UI layer doang)
-        else
-            box.Text = lastValid
+        local entered = box.Text
+        -- coba number dulu (kalo numeric input)
+        local n = tonumber(entered)
+        currentValue = n and tostring(n) or entered
+        box.Text = currentValue
+        if type(item.onChange) == "function" then
+            pcall(item.onChange, currentValue)
         end
     end)
 
-    return row
+    return row, getter, setter
 end
 
--- ---- dropdown builder (buat milih target dll) ----
-local function makeDropdown(name, options)
+-- ---- dropdown builder ----
+local function makeDropdown(item)
+    local name = item.name or "Dropdown"
+    local options = item.options or { "None" }
     local optH = 26
     local optGap = 4
     local holderH = 12 + #options * optH + math.max(#options - 1, 0) * optGap
     local selected = options[1]
+    if item.default and type(item.default) == "string" then
+        for _, o in ipairs(options) do if o == item.default then selected = item.default break end end
+    end
 
     local row = Instance.new("Frame")
     row.Name = name
@@ -676,6 +717,28 @@ local function makeDropdown(name, options)
 
     local open = false
     local optButtons = {}
+
+    local function fireChange()
+        if type(item.onChange) == "function" then
+            pcall(item.onChange, selected)
+        end
+    end
+
+    local getter = function() return selected end
+    local setter = function(v)
+        for _, o in ipairs(options) do
+            if o == v then
+                selected = o
+                valueBtn.Text = selected .. "   v"
+                for o2, b in pairs(optButtons) do
+                    b.TextColor3 = (o2 == selected) and COL.text or COL.subtext
+                end
+                fireChange()
+                return
+            end
+        end
+    end
+
     local function setOpen(v)
         open = v
         holder.Visible = v
@@ -707,48 +770,55 @@ local function makeDropdown(name, options)
                 b.TextColor3 = (o == selected) and COL.text or COL.subtext
             end
             setOpen(false)
-            -- TODO: pakai pilihan selected (UI layer doang)
+            fireChange()
         end)
     end
 
     valueBtn.MouseButton1Click:Connect(function() setOpen(not open) end)
 
-    return row
+    return row, getter, setter
 end
 
--- ====== POPULATE + SELECT ======
+-- ============================================================
+-- POPULATE + SELECT
+-- ============================================================
+local navButtons = {}
+local activeId = nil
+
 local function populate(id)
     for _, ch in ipairs(Scroll:GetChildren()) do
         if ch:IsA("Frame") then ch:Destroy() end
     end
+    -- reset state refs buat tab ini
+    itemStates[id] = {}
+    itemRefs[id] = {}
     for _, t in ipairs(TABS) do
         if t.id == id then
             for i, item in ipairs(t.items) do
-                local el
+                local el, getter, setter
                 if item.t == "toggle" then
-                    el = makeToggle(item.name)
+                    el, getter, setter = makeToggle(item)
                 elseif item.t == "slider" then
-                    el = makeSlider(item.name, item.min, item.max, item.default)
+                    el, getter, setter = makeSlider(item)
                 elseif item.t == "input" then
-                    el = makeInput(item.name, item.default)
+                    el, getter, setter = makeInput(item)
                 elseif item.t == "dropdown" then
-                    el = makeDropdown(item.name, item.options)
+                    el, getter, setter = makeDropdown(item)
                 end
                 if el then
                     el.LayoutOrder = i
                     el.Parent = Scroll
+                    itemStates[id][i] = { get = getter, set = setter }
+                    itemRefs[id][i] = el
                 end
             end
         end
     end
 end
 
-local navButtons = {}
-local activeId = nil
-
 local function selectTab(id)
     activeId = id
-    Title.Text = id  -- header = nama menu kepilih
+    Title.Text = id
     for tid, n in pairs(navButtons) do
         local on = (tid == id)
         TweenService:Create(n.btn, TweenInfo.new(0.15), {
@@ -759,60 +829,223 @@ local function selectTab(id)
         if n.letter then n.letter.TextColor3 = c end
     end
     populate(id)
-    -- animasi ganti tab: konten turun dari atas (kaya scroll ke bawah)
     Scroll.Position = UDim2.fromOffset(0, -22)
     TweenService:Create(Scroll, TweenInfo.new(0.22, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
         Position = UDim2.fromOffset(0, 0),
     }):Play()
 end
 
--- bikin tombol nav (tabs)
-for order, tab in ipairs(TABS) do
-    local btn = Instance.new("TextButton")
-    btn.Name = tab.id
-    btn.Size = UDim2.new(0, 44, 0, 44)
-    btn.BackgroundColor3 = COL.hi
-    btn.BackgroundTransparency = 1
-    btn.AutoButtonColor = false
-    btn.Text = ""
-    btn.LayoutOrder = order
-    btn.Parent = Nav
-    local bc = Instance.new("UICorner"); bc.CornerRadius = UDim.new(0, 8); bc.Parent = btn
+-- ============================================================
+-- UNSUPPORTED EXPERIENCE PLACEHOLDER
+-- ============================================================
+local function showUnsupported()
+    -- kosongin nav
+    for _, ch in ipairs(Nav:GetChildren()) do
+        if ch:IsA("TextButton") then ch:Destroy() end
+    end
+    navButtons = {}
 
-    local icon = Instance.new("ImageLabel")
-    icon.AnchorPoint = Vector2.new(0.5, 0.5)
-    icon.Position = UDim2.fromScale(0.5, 0.5)
-    icon.Size = UDim2.fromOffset(22, 22)
-    icon.BackgroundTransparency = 1
-    icon.ImageColor3 = COL.iconIdle
-    icon.Parent = btn
-
-    local letter = nil
-    local got = applyIcon(icon, tab.icon)
-    if not got then
-        icon.Visible = false
-        letter = Instance.new("TextLabel")
-        letter.Size = UDim2.fromScale(1, 1)
-        letter.BackgroundTransparency = 1
-        letter.Font = Enum.Font.GothamBold
-        letter.Text = tab.fallback
-        letter.TextColor3 = COL.iconIdle
-        letter.TextSize = 16
-        letter.Parent = btn
+    Title.Text = "Unsupported Experience"
+    for _, ch in ipairs(Scroll:GetChildren()) do
+        if ch:IsA("Frame") then ch:Destroy() end
     end
 
-    navButtons[tab.id] = { btn = btn, icon = icon, letter = letter }
+    -- center info card
+    local holder = Instance.new("Frame")
+    holder.Size = UDim2.fromScale(1, 1)
+    holder.BackgroundTransparency = 1
+    holder.Parent = Scroll
 
-    btn.MouseButton1Click:Connect(function() selectTab(tab.id) end)
-    btn.MouseEnter:Connect(function()
-        if activeId ~= tab.id then btn.BackgroundTransparency = 0.92 end
-    end)
-    btn.MouseLeave:Connect(function()
-        if activeId ~= tab.id then btn.BackgroundTransparency = 1 end
+    local centerLayout = Instance.new("UIListLayout")
+    centerLayout.FillDirection = Enum.FillDirection.Vertical
+    centerLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    centerLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+    centerLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    centerLayout.Padding = UDim.new(0, 8)
+    centerLayout.Parent = holder
+
+    -- icon placeholder
+    local iconFrame = Instance.new("Frame")
+    iconFrame.Size = UDim2.fromOffset(64, 64)
+    iconFrame.BackgroundTransparency = 1
+    iconFrame.LayoutOrder = 1
+    iconFrame.Parent = holder
+
+    local iconLbl = Instance.new("ImageLabel")
+    iconLbl.Size = UDim2.fromScale(1, 1)
+    iconLbl.BackgroundTransparency = 1
+    iconLbl.ImageColor3 = COL.subtext
+    iconLbl.Parent = iconFrame
+    local gotIcon = applyIcon(iconLbl, "alert-circle")
+    if not gotIcon then
+        local iconText = Instance.new("TextLabel")
+        iconText.Size = UDim2.fromScale(1, 1)
+        iconText.BackgroundTransparency = 1
+        iconText.Font = Enum.Font.GothamBold
+        iconText.Text = "!"
+        iconText.TextColor3 = COL.subtext
+        iconText.TextSize = 42
+        iconText.Parent = iconFrame
+    end
+
+    -- title text
+    local titleText = Instance.new("TextLabel")
+    titleText.Size = UDim2.new(0, 280, 0, 24)
+    titleText.BackgroundTransparency = 1
+    titleText.Font = Enum.Font.GothamBold
+    titleText.Text = "Unsupported Experience"
+    titleText.TextColor3 = COL.text
+    titleText.TextSize = 22
+    titleText.LayoutOrder = 2
+    titleText.Parent = holder
+
+    -- subtitle
+    local subText = Instance.new("TextLabel")
+    subText.Size = UDim2.new(0, 320, 0, 18)
+    subText.BackgroundTransparency = 1
+    subText.Font = Enum.Font.Gotham
+    subText.Text = "This game does not have a script module yet."
+    subText.TextColor3 = COL.subtext
+    subText.TextSize = 14
+    subText.LayoutOrder = 3
+    subText.Parent = holder
+
+    -- game info (PlaceId)
+    local placeIdLbl = Instance.new("TextLabel")
+    placeIdLbl.Size = UDim2.new(0, 320, 0, 16)
+    placeIdLbl.BackgroundTransparency = 1
+    placeIdLbl.Font = Enum.Font.Code
+    placeIdLbl.Text = "PlaceId: " .. tostring(game.PlaceId)
+    placeIdLbl.TextColor3 = COL.subtext
+    placeIdLbl.TextSize = 12
+    placeIdLbl.LayoutOrder = 4
+    placeIdLbl.Parent = holder
+
+    -- discord link
+    local discordBtn = Instance.new("TextButton")
+    discordBtn.Size = UDim2.fromOffset(140, 32)
+    discordBtn.BackgroundColor3 = COL.row
+    discordBtn.AutoButtonColor = false
+    discordBtn.Font = Enum.Font.GothamBold
+    discordBtn.Text = "Join Discord"
+    discordBtn.TextColor3 = COL.text
+    discordBtn.TextSize = 13
+    discordBtn.LayoutOrder = 5
+    discordBtn.Parent = holder
+    local dcc = Instance.new("UICorner"); dcc.CornerRadius = UDim.new(0, 8); dcc.Parent = discordBtn
+    discordBtn.MouseButton1Click:Connect(function()
+        pcall(function()
+            if setclipboard then setclipboard("https://discord.gg/DGjeCsPQR")
+            elseif toclipboard then toclipboard("https://discord.gg/DGjeCsPQR") end
+        end)
+        discordBtn.Text = "Copied!"
+        task.wait(1.5)
+        discordBtn.Text = "Join Discord"
     end)
 end
 
--- ====== AVATAR + LOGO LOAD (async) ======
+-- ============================================================
+-- BUILD NAV + INIT
+-- ============================================================
+local function buildNav()
+    for _, ch in ipairs(Nav:GetChildren()) do
+        if ch:IsA("TextButton") then ch:Destroy() end
+    end
+    navButtons = {}
+    for order, tab in ipairs(TABS) do
+        local btn = Instance.new("TextButton")
+        btn.Name = tab.id
+        btn.Size = UDim2.new(0, 44, 0, 44)
+        btn.BackgroundColor3 = COL.hi
+        btn.BackgroundTransparency = 1
+        btn.AutoButtonColor = false
+        btn.Text = ""
+        btn.LayoutOrder = order
+        btn.Parent = Nav
+        local bc = Instance.new("UICorner"); bc.CornerRadius = UDim.new(0, 8); bc.Parent = btn
+
+        local icon = Instance.new("ImageLabel")
+        icon.AnchorPoint = Vector2.new(0.5, 0.5)
+        icon.Position = UDim2.fromScale(0.5, 0.5)
+        icon.Size = UDim2.fromOffset(22, 22)
+        icon.BackgroundTransparency = 1
+        icon.ImageColor3 = COL.iconIdle
+        icon.Parent = btn
+
+        local letter = nil
+        local got = applyIcon(icon, tab.icon)
+        if not got then
+            icon.Visible = false
+            letter = Instance.new("TextLabel")
+            letter.Size = UDim2.fromScale(1, 1)
+            letter.BackgroundTransparency = 1
+            letter.Font = Enum.Font.GothamBold
+            letter.Text = tab.fallback
+            letter.TextColor3 = COL.iconIdle
+            letter.TextSize = 16
+            letter.Parent = btn
+        end
+
+        navButtons[tab.id] = { btn = btn, icon = icon, letter = letter }
+
+        btn.MouseButton1Click:Connect(function() selectTab(tab.id) end)
+        btn.MouseEnter:Connect(function()
+            if activeId ~= tab.id then btn.BackgroundTransparency = 0.92 end
+        end)
+        btn.MouseLeave:Connect(function()
+            if activeId ~= tab.id then btn.BackgroundTransparency = 1 end
+        end)
+    end
+end
+
+-- ============================================================
+-- INIT: ada config atau ga?
+-- ============================================================
+local hasConfig = #TABS > 0
+
+if hasConfig then
+    buildNav()
+    selectTab(TABS[1].id)
+else
+    showUnsupported()
+end
+
+_MENU_BUILT = true
+
+-- ============================================================
+-- API: rebuild (kalo config ditambahin setelah menu di-build)
+-- ============================================================
+function AutomaHub.rebuild()
+    hasConfig = #TABS > 0
+    if hasConfig then
+        buildNav()
+        selectTab(TABS[1].id)
+    else
+        showUnsupported()
+    end
+end
+
+-- ============================================================
+-- API: getState / setState (biar logic bisa update UI balik)
+-- AutomaHub:getState(tabId, itemIndex) -> value
+-- AutomaHub:setState(tabId, itemIndex, value)
+-- ============================================================
+function AutomaHub.getState(tabId, itemIdx)
+    local tab = itemStates[tabId]
+    if tab and tab[itemIdx] then return tab[itemIdx].get() end
+    return nil
+end
+
+function AutomaHub.setState(tabId, itemIdx, value)
+    local tab = itemStates[tabId]
+    if tab and tab[itemIdx] then tab[itemIdx].set(value) end
+end
+
+if getgenv then getgenv().AutomaHub = AutomaHub end
+
+-- ============================================================
+-- AVATAR + LOGO LOAD (async)
+-- ============================================================
 task.spawn(function()
     if not LocalPlayer then return end
     local ok, content = pcall(function()
@@ -835,7 +1068,9 @@ task.spawn(function()
     end
 end)
 
--- ====== DRAG (lewat header / logo) ======
+-- ============================================================
+-- DRAG (lewat header / logo)
+-- ============================================================
 local dragging, dragStart, startPos
 local function beginDrag(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
@@ -856,15 +1091,11 @@ UserInputService.InputChanged:Connect(function(input)
     end
 end)
 
--- ====== INTRO ANIM + DEFAULT TAB ======
--- Mode hidden: kalo loader minta (getgenv().AutomaHubStartHidden), menu di-BUILD
--- tapi disembunyiin dulu (Panel.Visible=false). Nanti Animate.lua yg munculin
--- lewat getgenv().AutomaHubRevealMenu(). Layout/AbsolutePosition tetep keitung
--- walau Visible=false, jadi logo intro tetep bisa mendarat pas di LogoHolder.
+-- ============================================================
+-- INTRO ANIM + DEFAULT TAB
+-- ============================================================
 local startHidden = (getgenv and getgenv().AutomaHubStartHidden) and true or false
 if startHidden then Panel.Visible = false end
-
-selectTab(TABS[1].id)
 
 local function revealPanel()
     Panel.Visible = true
