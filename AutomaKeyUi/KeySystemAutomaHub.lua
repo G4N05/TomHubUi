@@ -10,12 +10,11 @@
 -- Pas key valid -> card ilang -> onValid() (load menu script).
 --
 -- Standalone: bisa langsung paste di executor buat tes UI.
--- Key tes (pencet Get Key buat auto-copy): AUTOMAHUB-PREVIEW-2026
 -- ============================================================
 
 -- ====== CONFIG ======
 local DISCORD_LINK = "https://discord.gg/DGjeCsPQR"
-local PREVIEW_KEY  = "AUTOMAHUB-PREVIEW-2026"   -- key tes (sementara)
+-- Link get-key di-set loader via getgenv().AutomaHubGetKeyLink (kosong = fallback Discord)
 -- =====================
 
 local Players           = game:GetService("Players")
@@ -49,7 +48,6 @@ local function validateKey(key)
         return "INVALID"
     end
     if not key or key == "" then return "INVALID" end
-    if key == PREVIEW_KEY then return "VALID" end
     return "INVALID"
 end
 
@@ -337,10 +335,11 @@ end
 
 GetKeyBtn.MouseButton1Click:Connect(function()
     pulse(GetKeyBtn)
-    if copyToClipboard(PREVIEW_KEY) then
-        setStatus("Valid key copied to clipboard. Paste it above.", false)
+    local link = (getgenv and type(getgenv().AutomaHubGetKeyLink) == "string" and getgenv().AutomaHubGetKeyLink) or DISCORD_LINK
+    if copyToClipboard(link) then
+        setStatus("Key link copied. Get your key, then paste it above.", false)
     else
-        setStatus("Failed to access clipboard.", true)
+        setStatus(link, false)
     end
 end)
 

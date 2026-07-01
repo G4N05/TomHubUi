@@ -519,7 +519,26 @@ local function makeSlider(item)
     local name = item.name or "Slider"
     local minV = item.min or 0
     local maxV = item.max or 100
-    local value = math.clamp(item.default or minV, minV, maxV)
+    local step = item.step
+    local stepDecimals = 0
+    if step and step > 0 then
+        local frac = tostring(step):match("%.(%d+)")
+        if frac then stepDecimals = #frac end
+    end
+    local function fmtVal(v)
+        if stepDecimals > 0 then return string.format("%." .. stepDecimals .. "f", v) end
+        return tostring(v)
+    end
+    local function snapVal(v)
+        v = math.clamp(v, minV, maxV)
+        if step and step > 0 then
+            v = math.floor((v - minV) / step + 0.5) * step + minV
+            v = math.floor(v * 1e6 + 0.5) / 1e6
+            return math.clamp(v, minV, maxV)
+        end
+        return math.clamp(math.floor(v + 0.5), minV, maxV)
+    end
+    local value = snapVal(item.default or minV)
     local row = Instance.new("Frame")
     row.Name = name
     row.Size = UDim2.new(1, 0, 0, 54)
@@ -545,7 +564,7 @@ local function makeSlider(item)
     valLabel.Size = UDim2.new(0, 60, 0, 16)
     valLabel.BackgroundTransparency = 1
     valLabel.Font = Enum.Font.GothamBold
-    valLabel.Text = tostring(value)
+    valLabel.Text = fmtVal(value)
     valLabel.TextColor3 = COL.subtext
     valLabel.TextSize = 13
     valLabel.TextXAlignment = Enum.TextXAlignment.Right
@@ -591,11 +610,11 @@ local function makeSlider(item)
         local pct = (value - minV) / (maxV - minV)
         fill.Size = UDim2.fromScale(pct, 1)
         knob.Position = UDim2.new(pct, 0, 0.5, 0)
-        valLabel.Text = tostring(value)
+        valLabel.Text = fmtVal(value)
     end
 
     local function setValue(v, fireCb)
-        value = math.clamp(math.floor(v + 0.5), minV, maxV)
+        value = snapVal(v)
         render()
         if fireCb and type(item.onChange) == "function" then
             pcall(item.onChange, value)
