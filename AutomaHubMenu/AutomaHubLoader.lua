@@ -39,8 +39,12 @@ if getgenv then getgenv().AutomaHubLoaderRan = true end
 if getgenv then getgenv().AutomaHubLoaderModule = true end
 
 local function httpGet(url)
-    local ok, res = pcall(function() return game:HttpGet(url) end)
-    if ok and type(res) == "string" and #res > 30 then return res end
+    -- retry 3x biar ga gampang gagal pas HttpGet hiccup / rate-limit
+    for attempt = 1, 3 do
+        local ok, res = pcall(function() return game:HttpGet(url) end)
+        if ok and type(res) == "string" and #res > 30 then return res end
+        if attempt < 3 then task.wait(0.5 * attempt) end
+    end
     return nil
 end
 
@@ -257,7 +261,7 @@ local function validateKeyViaLuaegis(key)
     pcall(function() runSource(src, "luaegis-validate") end)
 
     -- tunggu bentar kalau luaegis async, cek penanda map kedaftar
-    local deadline = os.clock() + 4
+    local deadline = os.clock() + 8
     while os.clock() < deadline do
         if getgenv and (type(getgenv().AutomaHubMapFn) == "function" or type(getgenv().AutomaHubConfig) == "table") then
             return "VALID"
