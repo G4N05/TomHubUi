@@ -1027,6 +1027,9 @@ end
 -- Widget ga di-destroy -> state & tampilan tetep, ga ada animasi/re-fire onChange.
 -- (UIListLayout otomatis skip yang Visible=false, jadi layout tetep rapi.)
 local function populate(id)
+    -- buang placeholder "Unsupported Experience" kalau masih nyangkut dari awal load
+    local uc = Scroll:FindFirstChild("UnsupportedCard")
+    if uc then uc:Destroy() end
     if not builtTabs[id] then buildTabItems(id) end
     for tid, refs in pairs(itemRefs) do
         local show = (tid == id)
@@ -1070,6 +1073,7 @@ local function showUnsupported()
 
     -- center info card
     local holder = Instance.new("Frame")
+    holder.Name = "UnsupportedCard"
     holder.Size = UDim2.fromScale(1, 1)
     holder.BackgroundTransparency = 1
     holder.Parent = Scroll
