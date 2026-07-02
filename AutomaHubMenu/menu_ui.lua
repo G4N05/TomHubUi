@@ -842,6 +842,142 @@ local function makeDropdown(item)
     return row, getter, setter
 end
 
+-- ---- multi-select dropdown builder (item.multi = true) ----
+local function makeMultiDropdown(item)
+    local name = item.name or "Dropdown"
+    local options = item.options or { "None" }
+    local optH = 26
+    local optGap = 4
+    local holderH = 12 + #options * optH + math.max(#options - 1, 0) * optGap
+
+    local selectedSet = {}
+    if type(item.default) == "table" then
+        for _, o in ipairs(item.default) do selectedSet[o] = true end
+    end
+
+    local function selectedList()
+        local t = {}
+        for _, o in ipairs(options) do if selectedSet[o] then t[#t + 1] = o end end
+        return t
+    end
+    local function summaryText()
+        local l = selectedList()
+        if #l == 0 then return "None" end
+        if #l == #options then return "All" end
+        if #l <= 2 then return table.concat(l, ", ") end
+        return tostring(#l) .. " picked"
+    end
+
+    local row = Instance.new("Frame")
+    row.Name = name
+    row.Size = UDim2.new(1, 0, 0, 40)
+    row.BackgroundColor3 = COL.row
+    row.BackgroundTransparency = 0.35
+    row.BorderSizePixel = 0
+    row.ClipsDescendants = true
+    local rc = Instance.new("UICorner"); rc.CornerRadius = UDim.new(0, 8); rc.Parent = row
+
+    local label = Instance.new("TextLabel")
+    label.Position = UDim2.new(0, 12, 0, 0)
+    label.Size = UDim2.new(0.5, -12, 0, 40)
+    label.BackgroundTransparency = 1
+    label.Font = Enum.Font.Gotham
+    label.Text = name
+    label.TextColor3 = COL.text
+    label.TextSize = 14
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    label.Parent = row
+
+    local valueBtn = Instance.new("TextButton")
+    valueBtn.AnchorPoint = Vector2.new(1, 0)
+    valueBtn.Position = UDim2.new(1, -12, 0, 7)
+    valueBtn.Size = UDim2.fromOffset(120, 26)
+    valueBtn.BackgroundColor3 = COL.field
+    valueBtn.AutoButtonColor = false
+    valueBtn.Font = Enum.Font.GothamBold
+    valueBtn.TextSize = 13
+    valueBtn.TextColor3 = COL.text
+    valueBtn.Parent = row
+    local vcc = Instance.new("UICorner"); vcc.CornerRadius = UDim.new(0, 6); vcc.Parent = valueBtn
+
+    local holder = Instance.new("Frame")
+    holder.Position = UDim2.new(0, 0, 0, 40)
+    holder.Size = UDim2.new(1, 0, 0, holderH)
+    holder.BackgroundTransparency = 1
+    holder.Visible = false
+    holder.Parent = row
+    local hpad = Instance.new("UIPadding")
+    hpad.PaddingLeft = UDim.new(0, 12)
+    hpad.PaddingRight = UDim.new(0, 12)
+    hpad.PaddingBottom = UDim.new(0, 8)
+    hpad.Parent = holder
+    local hlay = Instance.new("UIListLayout")
+    hlay.FillDirection = Enum.FillDirection.Vertical
+    hlay.SortOrder = Enum.SortOrder.LayoutOrder
+    hlay.Padding = UDim.new(0, optGap)
+    hlay.Parent = holder
+
+    local open = false
+    local optButtons = {}
+
+    local function refresh()
+        valueBtn.Text = summaryText() .. (open and "   ^" or "   v")
+        for o, b in pairs(optButtons) do
+            b.Text = (selectedSet[o] and "[x] " or "[  ] ") .. o
+            b.TextColor3 = selectedSet[o] and COL.text or COL.subtext
+        end
+    end
+
+    local function fireChange()
+        if type(item.onChange) == "function" then
+            pcall(item.onChange, selectedList())
+        end
+    end
+
+    local getter = function() return selectedList() end
+    local setter = function(v)
+        selectedSet = {}
+        if type(v) == "table" then for _, o in ipairs(v) do selectedSet[o] = true end end
+        refresh()
+        fireChange()
+    end
+
+    local function setOpen(v)
+        open = v
+        holder.Visible = v
+        refresh()
+        TweenService:Create(row, TweenInfo.new(0.15), {
+            Size = UDim2.new(1, 0, 0, v and (40 + holderH) or 40),
+        }):Play()
+    end
+
+    for i, opt in ipairs(options) do
+        local ob = Instance.new("TextButton")
+        ob.Size = UDim2.new(1, 0, 0, optH)
+        ob.BackgroundColor3 = COL.field
+        ob.BackgroundTransparency = 0.2
+        ob.AutoButtonColor = false
+        ob.Font = Enum.Font.Gotham
+        ob.TextSize = 13
+        ob.TextColor3 = selectedSet[opt] and COL.text or COL.subtext
+        ob.Text = (selectedSet[opt] and "[x] " or "[  ] ") .. opt
+        ob.LayoutOrder = i
+        ob.Parent = holder
+        local occ = Instance.new("UICorner"); occ.CornerRadius = UDim.new(0, 6); occ.Parent = ob
+        optButtons[opt] = ob
+        ob.MouseButton1Click:Connect(function()
+            if selectedSet[opt] then selectedSet[opt] = nil else selectedSet[opt] = true end
+            refresh()
+            fireChange()
+        end)
+    end
+    refresh()
+
+    valueBtn.MouseButton1Click:Connect(function() setOpen(not open) end)
+
+    return row, getter, setter
+end
+
 -- ============================================================
 -- POPULATE + SELECT
 -- ============================================================
@@ -866,7 +1002,11 @@ local function populate(id)
                 elseif item.t == "input" then
                     el, getter, setter = makeInput(item)
                 elseif item.t == "dropdown" then
-                    el, getter, setter = makeDropdown(item)
+                    if item.multi then
+                        el, getter, setter = makeMultiDropdown(item)
+                    else
+                        el, getter, setter = makeDropdown(item)
+                    end
                 end
                 if el then
                     el.LayoutOrder = i
