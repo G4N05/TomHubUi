@@ -483,21 +483,25 @@ local function makeToggle(item)
     kc.CornerRadius = UDim.new(1, 0)
     kc.Parent = knob
 
-    local function render()
-        TweenService:Create(track, TweenInfo.new(0.15), {
-            BackgroundColor3 = state and COL.toggleOn or COL.toggleOff,
-        }):Play()
-        TweenService:Create(knob, TweenInfo.new(0.15), {
-            Position = state and UDim2.new(1, -18, 0.5, 0) or UDim2.new(0, 2, 0.5, 0),
-            BackgroundColor3 = state and COL.knobOn or COL.knob,
-        }):Play()
+    local function render(animated)
+        local trackColor = state and COL.toggleOn or COL.toggleOff
+        local knobPos = state and UDim2.new(1, -18, 0.5, 0) or UDim2.new(0, 2, 0.5, 0)
+        local knobColor = state and COL.knobOn or COL.knob
+        if animated then
+            TweenService:Create(track, TweenInfo.new(0.15), { BackgroundColor3 = trackColor }):Play()
+            TweenService:Create(knob, TweenInfo.new(0.15), { Position = knobPos, BackgroundColor3 = knobColor }):Play()
+        else
+            track.BackgroundColor3 = trackColor
+            knob.Position = knobPos
+            knob.BackgroundColor3 = knobColor
+        end
     end
 
     -- state getter/setter
     local getter = function() return state end
     local setter = function(v)
         state = v == true
-        render()
+        render(true)
         if type(item.onChange) == "function" then
             pcall(item.onChange, state)
         end
@@ -505,13 +509,13 @@ local function makeToggle(item)
 
     track.MouseButton1Click:Connect(function()
         state = not state
-        render()
+        render(true)
         if type(item.onChange) == "function" then
             pcall(item.onChange, state)
         end
     end)
 
-    render()
+    render(false)
     return row, getter, setter
 end
 
@@ -985,27 +989,14 @@ end
 local navButtons = {}
 local activeId = nil
 
-local function populate(id)
-    for _, ch in ipairs(Scroll:GetChildren()) do
-        if ch:IsA("Frame") then ch:Destroy() end
-    end
-    -- reset state refs buat tab ini
+local builtTabs = {}  -- [id] = true (widget dibuild SEKALI, ga di-rebuild pas pindah tab)
+
+local function buildTabItems(id)
     itemStates[id] = {}
     itemRefs[id] = {}
     for _, t in ipairs(TABS) do
         if t.id == id then
             for i, item in ipairs(t.items) do
-                -- wrap onChange SEKALI: tiap perubahan di-cache ke liveState biar ga ilang pas pindah tab
-                if not item._live_wrapped then
-                    local orig = item.onChange
-                    local tid, idx = id, i
-                    item.onChange = function(v)
-                        liveState[tid] = liveState[tid] or {}
-                        liveState[tid][idx] = v
-                        if type(orig) == "function" then orig(v) end
-                    end
-                    item._live_wrapped = true
-                end
                 local el, getter, setter
                 if item.t == "toggle" then
                     el, getter, setter = makeToggle(item)
@@ -1025,11 +1016,22 @@ local function populate(id)
                     el.Parent = Scroll
                     itemStates[id][i] = { get = getter, set = setter }
                     itemRefs[id][i] = el
-                    -- restore nilai terakhir biar tampilan ga balik ke default pas pindah tab
-                    local lv = liveState[id] and liveState[id][i]
-                    if lv ~= nil and type(setter) == "function" then pcall(setter, lv) end
                 end
             end
+        end
+    end
+    builtTabs[id] = true
+end
+
+-- Pindah tab: JANGAN rebuild. Build sekali, terus cukup sembunyiin/tampilin.
+-- Widget ga di-destroy -> state & tampilan tetep, ga ada animasi/re-fire onChange.
+-- (UIListLayout otomatis skip yang Visible=false, jadi layout tetep rapi.)
+local function populate(id)
+    if not builtTabs[id] then buildTabItems(id) end
+    for tid, refs in pairs(itemRefs) do
+        local show = (tid == id)
+        for _, el in pairs(refs) do
+            if el and el.Parent then el.Visible = show end
         end
     end
 end
