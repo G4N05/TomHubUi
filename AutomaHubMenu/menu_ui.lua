@@ -107,6 +107,7 @@ local AutomaHub = {}
 AutomaHub.TABS = {}   -- simpan TABS di dalam AutomaHub table biar bisa diakses dari luar
 local itemStates = {}   -- [tabId][itemIdx] = { getState, setState }
 local itemRefs = {}     -- [tabId][itemIdx] = widget reference
+local liveState = {}    -- [tabId][itemIdx] = nilai terakhir (biar ga reset pas pindah tab)
 local TABS = AutomaHub.TABS   -- alias lokal biar kode lain ga perlu diubah
 
 -- Ambil config dari getgenv atau pakai API
@@ -994,6 +995,17 @@ local function populate(id)
     for _, t in ipairs(TABS) do
         if t.id == id then
             for i, item in ipairs(t.items) do
+                -- wrap onChange SEKALI: tiap perubahan di-cache ke liveState biar ga ilang pas pindah tab
+                if not item._live_wrapped then
+                    local orig = item.onChange
+                    local tid, idx = id, i
+                    item.onChange = function(v)
+                        liveState[tid] = liveState[tid] or {}
+                        liveState[tid][idx] = v
+                        if type(orig) == "function" then orig(v) end
+                    end
+                    item._live_wrapped = true
+                end
                 local el, getter, setter
                 if item.t == "toggle" then
                     el, getter, setter = makeToggle(item)
@@ -1013,6 +1025,9 @@ local function populate(id)
                     el.Parent = Scroll
                     itemStates[id][i] = { get = getter, set = setter }
                     itemRefs[id][i] = el
+                    -- restore nilai terakhir biar tampilan ga balik ke default pas pindah tab
+                    local lv = liveState[id] and liveState[id][i]
+                    if lv ~= nil and type(setter) == "function" then pcall(setter, lv) end
                 end
             end
         end
